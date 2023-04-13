@@ -3,16 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
-import meteordevelopment.meteorclient.utils.world.TickRate;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.HudRenderer;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.utils.world.TickRate;
 
 public class LagNotifierHud extends HudElement {
     public static final HudElementInfo<LagNotifierHud> INFO = new HudElementInfo<>(Hud.GROUP, "lag-notifier", "Displays if the server is lagging in ticks.", LagNotifierHud::new);

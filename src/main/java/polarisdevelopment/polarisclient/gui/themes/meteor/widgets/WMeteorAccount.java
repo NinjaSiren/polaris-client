@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor.widgets;
+package polarisdevelopment.polarisclient.gui.themes.meteor.widgets;
 
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorWidget;
-import meteordevelopment.meteorclient.gui.widgets.WAccount;
-import meteordevelopment.meteorclient.systems.accounts.Account;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorWidget;
+import polarisdevelopment.polarisclient.gui.widgets.WAccount;
+import polarisdevelopment.polarisclient.systems.accounts.Account;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public class WMeteorAccount extends WAccount implements MeteorWidget {
     public WMeteorAccount(WidgetScreen screen, Account<?> account) {

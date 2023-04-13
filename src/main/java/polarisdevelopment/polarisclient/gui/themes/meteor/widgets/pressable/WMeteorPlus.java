@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor.widgets.pressable;
+package polarisdevelopment.polarisclient.gui.themes.meteor.widgets.pressable;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorGuiTheme;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorWidget;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPlus;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorGuiTheme;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorWidget;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPlus;
 
 public class WMeteorPlus extends WPlus implements MeteorWidget {
     @Override

@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.entity;
+package polarisdevelopment.polarisclient.utils.entity;
 
-import meteordevelopment.meteorclient.mixin.CrossbowItemAccessor;
-import meteordevelopment.meteorclient.mixin.ProjectileInGroundAccessor;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.MissHitResult;
+import polarisdevelopment.polarisclient.mixin.CrossbowItemAccessor;
+import polarisdevelopment.polarisclient.mixin.ProjectileInGroundAccessor;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.MissHitResult;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.entity.projectile.thrown.*;
@@ -24,8 +24,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import org.joml.Quaterniond;
 import org.joml.Vector3d;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class ProjectileEntitySimulator {
     private static final BlockPos.Mutable blockPos = new BlockPos.Mutable();
@@ -43,7 +42,7 @@ public class ProjectileEntitySimulator {
         Item item = itemStack.getItem();
 
         if (item instanceof BowItem) {
-            double charge = BowItem.getPullProgress(mc.player.getItemUseTime());
+            double charge = BowItem.getPullProgress(MeteorClient.mc.player.getItemUseTime());
             if (charge <= 0) return false;
 
             set(user, 0, charge * 3, simulated, 0.05000000074505806, 0.6, accurate, tickDelta);
@@ -185,12 +184,12 @@ public class ProjectileEntitySimulator {
         velocity.sub(0, gravity, 0);
 
         // Check if below world
-        if (pos.y < mc.world.getBottomY()) return MissHitResult.INSTANCE;
+        if (pos.y < MeteorClient.mc.world.getBottomY()) return MissHitResult.INSTANCE;
 
         // Check if chunk is loaded
         int chunkX = (int) (pos.x / 16);
         int chunkZ = (int) (pos.z / 16);
-        if (!mc.world.getChunkManager().isChunkLoaded(chunkX, chunkZ)) return MissHitResult.INSTANCE;
+        if (!MeteorClient.mc.world.getChunkManager().isChunkLoaded(chunkX, chunkZ)) return MissHitResult.INSTANCE;
 
         // Check for collision
         ((IVec3d) pos3d).set(pos);
@@ -202,7 +201,7 @@ public class ProjectileEntitySimulator {
     private boolean isTouchingWater() {
         blockPos.set(pos.x, pos.y, pos.z);
 
-        FluidState fluidState = mc.world.getFluidState(blockPos);
+        FluidState fluidState = MeteorClient.mc.world.getFluidState(blockPos);
         if (fluidState.getFluid() != Fluids.WATER && fluidState.getFluid() != Fluids.FLOWING_WATER) return false;
 
         return pos.y - (int) pos.y <= fluidState.getHeight();
@@ -211,12 +210,12 @@ public class ProjectileEntitySimulator {
     private HitResult getCollision() {
         Vec3d vec3d3 = prevPos3d;
 
-        HitResult hitResult = mc.world.raycast(new RaycastContext(vec3d3, pos3d, RaycastContext.ShapeType.COLLIDER, waterDrag == 0 ? RaycastContext.FluidHandling.ANY : RaycastContext.FluidHandling.NONE, mc.player));
+        HitResult hitResult = MeteorClient.mc.world.raycast(new RaycastContext(vec3d3, pos3d, RaycastContext.ShapeType.COLLIDER, waterDrag == 0 ? RaycastContext.FluidHandling.ANY : RaycastContext.FluidHandling.NONE, MeteorClient.mc.player));
         if (hitResult.getType() != HitResult.Type.MISS) {
             vec3d3 = hitResult.getPos();
         }
 
-        HitResult hitResult2 = ProjectileUtil.getEntityCollision(mc.world, mc.player, vec3d3, pos3d, new Box(pos.x, pos.y, pos.z, pos.x, pos.y, pos.z).stretch(mc.player.getVelocity()).expand(1.0D), entity -> !entity.isSpectator() && entity.isAlive() && entity.canHit());
+        HitResult hitResult2 = ProjectileUtil.getEntityCollision(MeteorClient.mc.world, MeteorClient.mc.player, vec3d3, pos3d, new Box(pos.x, pos.y, pos.z, pos.x, pos.y, pos.z).stretch(MeteorClient.mc.player.getVelocity()).expand(1.0D), entity -> !entity.isSpectator() && entity.isAlive() && entity.canHit());
         if (hitResult2 != null) {
             hitResult = hitResult2;
         }

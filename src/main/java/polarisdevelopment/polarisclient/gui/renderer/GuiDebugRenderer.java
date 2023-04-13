@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer;
+package polarisdevelopment.polarisclient.gui.renderer;
 
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.renderer.DrawMode;
-import meteordevelopment.meteorclient.renderer.Mesh;
-import meteordevelopment.meteorclient.renderer.ShaderMesh;
-import meteordevelopment.meteorclient.renderer.Shaders;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.renderer.DrawMode;
+import polarisdevelopment.polarisclient.renderer.Mesh;
+import polarisdevelopment.polarisclient.renderer.ShaderMesh;
+import polarisdevelopment.polarisclient.renderer.Shaders;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class GuiDebugRenderer {

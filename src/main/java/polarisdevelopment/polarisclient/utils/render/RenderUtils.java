@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.renderer.ShapeMode;
-import meteordevelopment.meteorclient.utils.PostInit;
-import meteordevelopment.meteorclient.utils.misc.Pool;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.renderer.ShapeMode;
+import polarisdevelopment.polarisclient.utils.PostInit;
+import polarisdevelopment.polarisclient.utils.misc.Pool;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
@@ -28,8 +28,6 @@ import org.joml.Vector3f;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class RenderUtils {
     public static Vec3d center;
@@ -51,8 +49,8 @@ public class RenderUtils {
         matrices.push();
         matrices.scale((float) scale, (float) scale, 1);
 
-        mc.getItemRenderer().renderGuiItemIcon(itemStack, (int) (x / scale), (int) (y / scale));
-        if (overlay) mc.getItemRenderer().renderGuiItemOverlay(mc.textRenderer, itemStack, (int) (x / scale), (int) (y / scale), null);
+        MeteorClient.mc.getItemRenderer().renderGuiItemIcon(itemStack, (int) (x / scale), (int) (y / scale));
+        if (overlay) MeteorClient.mc.getItemRenderer().renderGuiItemOverlay(MeteorClient.mc.textRenderer, itemStack, (int) (x / scale), (int) (y / scale), null);
 
         matrices.pop();
         //RenderSystem.enableDepthTest();

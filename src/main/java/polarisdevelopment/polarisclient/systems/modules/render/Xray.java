@@ -3,16 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render;
+package polarisdevelopment.polarisclient.systems.modules.render;
 
-import meteordevelopment.meteorclient.events.render.RenderBlockEntityEvent;
-import meteordevelopment.meteorclient.events.world.AmbientOcclusionEvent;
-import meteordevelopment.meteorclient.events.world.ChunkOcclusionEvent;
+import polarisdevelopment.polarisclient.events.render.RenderBlockEntityEvent;
+import polarisdevelopment.polarisclient.events.world.AmbientOcclusionEvent;
+import polarisdevelopment.polarisclient.events.world.ChunkOcclusionEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.world.BlockUtils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.world.BlockUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

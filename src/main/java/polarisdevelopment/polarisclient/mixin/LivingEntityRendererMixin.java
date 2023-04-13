@@ -3,15 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.Chams;
-import meteordevelopment.meteorclient.systems.modules.render.Freecam;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.Chams;
+import polarisdevelopment.polarisclient.systems.modules.render.Freecam;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.RenderLayer;
@@ -29,8 +29,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
+import polarisdevelopment.polarisclient.MeteorClient;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.opengl.GL11.*;
 
 @Mixin(LivingEntityRenderer.class)
@@ -50,19 +50,19 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
 
     @ModifyVariable(method = "render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", ordinal = 2, at = @At(value = "STORE", ordinal = 0))
     public float changeYaw(float oldValue, LivingEntity entity) {
-        if (entity.equals(mc.player) && Rotations.rotationTimer < 10) return Rotations.serverYaw;
+        if (entity.equals(MeteorClient.mc.player) && Rotations.rotationTimer < 10) return Rotations.serverYaw;
         return oldValue;
     }
 
     @ModifyVariable(method = "render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", ordinal = 3, at = @At(value = "STORE", ordinal = 0))
     public float changeHeadYaw(float oldValue, LivingEntity entity) {
-        if (entity.equals(mc.player) && Rotations.rotationTimer < 10) return Rotations.serverYaw;
+        if (entity.equals(MeteorClient.mc.player) && Rotations.rotationTimer < 10) return Rotations.serverYaw;
         return oldValue;
     }
 
     @ModifyVariable(method = "render(Lnet/minecraft/entity/LivingEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", ordinal = 5, at = @At(value = "STORE", ordinal = 3))
     public float changePitch(float oldValue, LivingEntity entity) {
-        if (entity.equals(mc.player) && Rotations.rotationTimer < 10) return Rotations.serverPitch;
+        if (entity.equals(MeteorClient.mc.player) && Rotations.rotationTimer < 10) return Rotations.serverPitch;
         return oldValue;
     }
 
@@ -104,7 +104,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
     private void modifyScale(Args args, T livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         Chams module = Modules.get().get(Chams.class);
         if (!module.isActive() || !module.players.get() || !(livingEntity instanceof PlayerEntity)) return;
-        if (module.ignoreSelf.get() && livingEntity == mc.player) return;
+        if (module.ignoreSelf.get() && livingEntity == MeteorClient.mc.player) return;
 
         args.set(0, -module.playersScale.get().floatValue());
         args.set(1, -module.playersScale.get().floatValue());
@@ -115,7 +115,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
     private void modifyColor(Args args, T livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         Chams module = Modules.get().get(Chams.class);
         if (!module.isActive() || !module.players.get() || !(livingEntity instanceof PlayerEntity)) return;
-        if (module.ignoreSelf.get() && livingEntity == mc.player) return;
+        if (module.ignoreSelf.get() && livingEntity == MeteorClient.mc.player) return;
 
         Color color = PlayerUtils.getPlayerColor(((PlayerEntity) livingEntity), module.playersColor.get());
         args.set(4, color.r / 255f);
@@ -129,7 +129,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
         Chams module = Modules.get().get(Chams.class);
         if (!module.isActive() || !module.players.get() || !(livingEntity instanceof PlayerEntity) || module.playersTexture.get())
             return getRenderLayer(livingEntity, showBody, translucent, showOutline);
-        if (module.ignoreSelf.get() && livingEntity == mc.player)
+        if (module.ignoreSelf.get() && livingEntity == MeteorClient.mc.player)
             return getRenderLayer(livingEntity, showBody, translucent, showOutline);
 
         return RenderLayer.getItemEntityTranslucentCull(Chams.BLANK);

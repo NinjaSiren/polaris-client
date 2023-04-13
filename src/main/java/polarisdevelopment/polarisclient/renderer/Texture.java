@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import org.lwjgl.BufferUtils;

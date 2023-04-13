@@ -3,19 +3,20 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render;
+package polarisdevelopment.polarisclient.systems.modules.render;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.WindowResizedEvent;
-import meteordevelopment.meteorclient.events.render.RenderAfterWorldEvent;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.renderer.Framebuffer;
-import meteordevelopment.meteorclient.renderer.GL;
-import meteordevelopment.meteorclient.renderer.PostProcessRenderer;
-import meteordevelopment.meteorclient.renderer.Shader;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.WindowResizedEvent;
+import polarisdevelopment.polarisclient.events.render.RenderAfterWorldEvent;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.renderer.Framebuffer;
+import polarisdevelopment.polarisclient.renderer.GL;
+import polarisdevelopment.polarisclient.renderer.PostProcessRenderer;
+import polarisdevelopment.polarisclient.renderer.Shader;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 import meteordevelopment.orbit.listeners.ConsumerListener;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.Screen;

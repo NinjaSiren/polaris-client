@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

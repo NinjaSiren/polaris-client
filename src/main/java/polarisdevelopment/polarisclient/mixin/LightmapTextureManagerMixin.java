@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.Fullbright;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.systems.modules.render.Xray;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.Fullbright;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.systems.modules.render.Xray;
 import net.minecraft.client.render.LightmapTextureManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

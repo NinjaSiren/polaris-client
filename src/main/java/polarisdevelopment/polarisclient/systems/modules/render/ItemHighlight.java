@@ -3,15 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render;
+package polarisdevelopment.polarisclient.systems.modules.render;
 
-import meteordevelopment.meteorclient.settings.ColorSetting;
-import meteordevelopment.meteorclient.settings.ItemListSetting;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.ColorSetting;
+import polarisdevelopment.polarisclient.settings.ItemListSetting;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 

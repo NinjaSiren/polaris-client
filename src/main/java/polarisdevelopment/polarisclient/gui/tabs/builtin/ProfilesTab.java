@@ -3,28 +3,27 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.tabs.builtin;
+package polarisdevelopment.polarisclient.gui.tabs.builtin;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.tabs.Tab;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.tabs.WindowTabScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.systems.profiles.Profile;
-import meteordevelopment.meteorclient.systems.profiles.Profiles;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.tabs.Tab;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.tabs.WindowTabScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.systems.profiles.Profile;
+import polarisdevelopment.polarisclient.systems.profiles.Profiles;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
 import net.minecraft.client.gui.screen.Screen;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class ProfilesTab extends Tab {
     public ProfilesTab() {
@@ -55,7 +54,7 @@ public class ProfilesTab extends Tab {
 
             // Create
             WButton create = add(theme.button("Create")).expandX().widget();
-            create.action = () -> mc.setScreen(new EditProfileScreen(theme, null, this::reload));
+            create.action = () -> MeteorClient.mc.setScreen(new EditProfileScreen(theme, null, this::reload));
         }
 
         private void initTable(WTable table) {
@@ -72,7 +71,7 @@ public class ProfilesTab extends Tab {
                 load.action = profile::load;
 
                 WButton edit = table.add(theme.button(GuiRenderer.EDIT)).widget();
-                edit.action = () -> mc.setScreen(new EditProfileScreen(theme, profile, this::reload));
+                edit.action = () -> MeteorClient.mc.setScreen(new EditProfileScreen(theme, profile, this::reload));
 
                 WMinus remove = table.add(theme.minus()).widget();
                 remove.action = () -> {

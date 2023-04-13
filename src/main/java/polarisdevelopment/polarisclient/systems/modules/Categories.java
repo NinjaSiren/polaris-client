@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules;
+package polarisdevelopment.polarisclient.systems.modules;
 
-import meteordevelopment.meteorclient.addons.AddonManager;
-import meteordevelopment.meteorclient.addons.MeteorAddon;
+import polarisdevelopment.polarisclient.addons.AddonManager;
+import polarisdevelopment.polarisclient.addons.MeteorAddon;
 import net.minecraft.item.Items;
 
 public class Categories {

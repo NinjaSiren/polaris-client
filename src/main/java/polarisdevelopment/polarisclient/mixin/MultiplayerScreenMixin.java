@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.gui.GuiThemes;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.misc.NameProtect;
-import meteordevelopment.meteorclient.systems.proxies.Proxies;
-import meteordevelopment.meteorclient.systems.proxies.Proxy;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.GuiThemes;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.misc.NameProtect;
+import polarisdevelopment.polarisclient.systems.proxies.Proxies;
+import polarisdevelopment.polarisclient.systems.proxies.Proxy;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;

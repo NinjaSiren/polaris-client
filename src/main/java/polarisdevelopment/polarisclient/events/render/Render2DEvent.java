@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.render;
+package polarisdevelopment.polarisclient.events.render;
 
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 public class Render2DEvent {
     private static final Render2DEvent INSTANCE = new Render2DEvent();

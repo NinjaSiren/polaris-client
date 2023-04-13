@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets;
+package polarisdevelopment.polarisclient.gui.widgets;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.tabs.Tab;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.tabs.Tabs;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPressable;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.tabs.Tab;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.tabs.Tabs;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPressable;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.gui.screen.Screen;
+import polarisdevelopment.polarisclient.MeteorClient;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.glfw.GLFW.glfwSetCursorPos;
 
 public abstract class WTopBar extends WHorizontalList {
@@ -50,21 +50,21 @@ public abstract class WTopBar extends WHorizontalList {
 
         @Override
         protected void onPressed(int button) {
-            Screen screen = mc.currentScreen;
+            Screen screen = MeteorClient.mc.currentScreen;
 
             if (!(screen instanceof TabScreen) || ((TabScreen) screen).tab != tab) {
-                double mouseX = mc.mouse.getX();
-                double mouseY = mc.mouse.getY();
+                double mouseX = MeteorClient.mc.mouse.getX();
+                double mouseY = MeteorClient.mc.mouse.getY();
 
                 tab.openScreen(theme);
-                glfwSetCursorPos(mc.getWindow().getHandle(), mouseX, mouseY);
+                glfwSetCursorPos(MeteorClient.mc.getWindow().getHandle(), mouseX, mouseY);
             }
         }
 
         @Override
         protected void onRender(GuiRenderer renderer, double mouseX, double mouseY, double delta) {
             double pad = pad();
-            Color color = getButtonColor(pressed || (mc.currentScreen instanceof TabScreen && ((TabScreen) mc.currentScreen).tab == tab), mouseOver);
+            Color color = getButtonColor(pressed || (MeteorClient.mc.currentScreen instanceof TabScreen && ((TabScreen) MeteorClient.mc.currentScreen).tab == tab), mouseOver);
 
             renderer.quad(x, y, width, height, color);
             renderer.text(tab.name, x + pad, y + pad, getNameColor(), false);

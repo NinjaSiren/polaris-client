@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.utils.render.prompts.OkPrompt;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.utils.render.prompts.OkPrompt;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtIo;
@@ -17,8 +17,6 @@ import org.apache.commons.io.output.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.util.*;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class NbtUtils {
     public static <T extends ISerializable<?>> NbtList listToTag(Iterable<T> list) {
@@ -53,11 +51,11 @@ public class NbtUtils {
     }
 
     public static boolean toClipboard(String name, NbtCompound nbtCompound) {
-        String preClipboard = mc.keyboard.getClipboard();
+        String preClipboard = MeteorClient.mc.keyboard.getClipboard();
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             NbtIo.writeCompressed(nbtCompound, byteArrayOutputStream);
-            mc.keyboard.setClipboard(Base64.getEncoder().encodeToString(byteArrayOutputStream.toByteArray()));
+            MeteorClient.mc.keyboard.setClipboard(Base64.getEncoder().encodeToString(byteArrayOutputStream.toByteArray()));
             return true;
         } catch (Exception e) {
             MeteorClient.LOG.error(String.format("Error copying %s NBT to clipboard!", name));
@@ -68,7 +66,7 @@ public class NbtUtils {
                 .id("nbt-copying")
                 .show();
 
-            mc.keyboard.setClipboard(preClipboard);
+            MeteorClient.mc.keyboard.setClipboard(preClipboard);
             return false;
         }
     }
@@ -86,7 +84,7 @@ public class NbtUtils {
 
     public static NbtCompound fromClipboard(NbtCompound schema) {
         try {
-            byte[] data = Base64.getDecoder().decode(mc.keyboard.getClipboard().trim());
+            byte[] data = Base64.getDecoder().decode(MeteorClient.mc.keyboard.getClipboard().trim());
             ByteArrayInputStream bis = new ByteArrayInputStream(data);
 
             NbtCompound pasted = NbtIo.readCompressed(new DataInputStream(bis));

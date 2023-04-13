@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render;
+package polarisdevelopment.polarisclient.systems.modules.render;
 
-import meteordevelopment.meteorclient.settings.IntSetting;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.settings.IntSetting;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 
 public class UnfocusedCPU extends Module {
     private final SettingGroup sgGeneral = this.settings.getDefaultGroup();

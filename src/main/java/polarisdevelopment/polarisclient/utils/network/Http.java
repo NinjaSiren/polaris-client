@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.network;
+package polarisdevelopment.polarisclient.utils.network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import meteordevelopment.meteorclient.utils.other.JsonDateDeserializer;
+import polarisdevelopment.polarisclient.utils.other.JsonDateDeserializer;
 
 import java.io.IOException;
 import java.io.InputStream;

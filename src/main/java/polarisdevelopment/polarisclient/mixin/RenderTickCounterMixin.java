@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.world.Timer;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.world.Timer;
 import net.minecraft.client.render.RenderTickCounter;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;

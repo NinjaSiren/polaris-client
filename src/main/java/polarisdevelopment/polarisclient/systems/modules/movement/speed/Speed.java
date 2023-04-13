@@ -3,19 +3,20 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.speed;
+package polarisdevelopment.polarisclient.systems.modules.movement.speed;
 
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.speed.modes.Strafe;
-import meteordevelopment.meteorclient.systems.modules.movement.speed.modes.Vanilla;
-import meteordevelopment.meteorclient.systems.modules.world.Timer;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.speed.modes.Strafe;
+import polarisdevelopment.polarisclient.systems.modules.movement.speed.modes.Vanilla;
+import polarisdevelopment.polarisclient.systems.modules.world.Timer;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.entity.MovementType;
 import net.minecraft.network.packet.s2c.play.PlayerPositionLookS2CPacket;

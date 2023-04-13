@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.renderer.Fonts;
-import meteordevelopment.meteorclient.renderer.text.FontFace;
-import meteordevelopment.meteorclient.renderer.text.FontFamily;
-import meteordevelopment.meteorclient.renderer.text.FontInfo;
+import polarisdevelopment.polarisclient.renderer.Fonts;
+import polarisdevelopment.polarisclient.renderer.text.FontFace;
+import polarisdevelopment.polarisclient.renderer.text.FontFamily;
+import polarisdevelopment.polarisclient.renderer.text.FontInfo;
 import net.minecraft.nbt.NbtCompound;
 
 import java.util.List;

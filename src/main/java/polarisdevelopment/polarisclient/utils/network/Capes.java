@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.network;
+package polarisdevelopment.polarisclient.utils.network;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.NativeImageBackedTexture;
@@ -19,8 +19,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Stream;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Capes {
     private static final String CAPE_OWNERS_URL = "https://meteorclient.com/api/capeowners";
@@ -162,7 +160,7 @@ public class Capes {
         }
 
         public void register() {
-            mc.getTextureManager().registerTexture(this, new NativeImageBackedTexture(img));
+            MeteorClient.mc.getTextureManager().registerTexture(this, new NativeImageBackedTexture(img));
             img = null;
 
             downloading = false;

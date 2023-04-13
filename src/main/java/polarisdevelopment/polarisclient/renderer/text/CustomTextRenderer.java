@@ -3,13 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer.text;
+package polarisdevelopment.polarisclient.renderer.text;
 
 import meteordevelopment.meteorclient.renderer.*;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.util.math.MatrixStack;
 import org.lwjgl.BufferUtils;
+import polarisdevelopment.polarisclient.renderer.*;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;

@@ -3,25 +3,26 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.misc;
+package polarisdevelopment.polarisclient.systems.modules.misc;
 
 //Created by squidoodly
 
 import meteordevelopment.discordipc.DiscordIPC;
 import meteordevelopment.discordipc.RichPresence;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.OpenScreenEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.gui.utils.StarscriptTextBoxRenderer;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.OpenScreenEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.utils.StarscriptTextBoxRenderer;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.MeteorStarscript;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.MeteorStarscript;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.starscript.Script;
 import net.minecraft.client.gui.screen.*;

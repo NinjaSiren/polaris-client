@@ -1,10 +1,15 @@
-package meteordevelopment.meteorclient.gui.screens;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.settings.Settings;
+package polarisdevelopment.polarisclient.gui.screens;
+
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.settings.Settings;
 
 public abstract class EditSystemScreen<T> extends WindowScreen {
     private WContainer settingsContainer;

@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.mixin.CreativeInventoryScreenAccessor;
-import meteordevelopment.meteorclient.mixin.HorseScreenHandlerAccessor;
+import polarisdevelopment.polarisclient.mixin.CreativeInventoryScreenAccessor;
+import polarisdevelopment.polarisclient.mixin.HorseScreenHandlerAccessor;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
 import net.minecraft.entity.mob.ZombieHorseEntity;
@@ -16,8 +16,7 @@ import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.passive.LlamaEntity;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.screen.*;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class SlotUtils {
     public static final int HOTBAR_START = 0;
@@ -32,8 +31,8 @@ public class SlotUtils {
     public static final int ARMOR_END = 39;
 
     public static int indexToId(int i) {
-        if (mc.player == null) return -1;
-        ScreenHandler handler = mc.player.currentScreenHandler;
+        if (MeteorClient.mc.player == null) return -1;
+        ScreenHandler handler = MeteorClient.mc.player.currentScreenHandler;
 
         if (handler instanceof PlayerScreenHandler) return survivalInventory(i);
         else if (handler instanceof CreativeInventoryScreen.CreativeScreenHandler) return creativeInventory(i);
@@ -67,7 +66,7 @@ public class SlotUtils {
     }
 
     private static int creativeInventory(int i) {
-        if (!(mc.currentScreen instanceof CreativeInventoryScreen) || CreativeInventoryScreenAccessor.getSelectedTab() != ItemGroups.INVENTORY) return -1;
+        if (!(MeteorClient.mc.currentScreen instanceof CreativeInventoryScreen) || CreativeInventoryScreenAccessor.getSelectedTab() != ItemGroups.INVENTORY) return -1;
         return survivalInventory(i);
     }
 

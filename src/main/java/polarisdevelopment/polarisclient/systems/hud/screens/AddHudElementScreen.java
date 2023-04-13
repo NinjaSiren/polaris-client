@@ -3,27 +3,26 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.screens;
+package polarisdevelopment.polarisclient.systems.hud.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.WLabel;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.containers.WSection;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPlus;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudGroup;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.WLabel;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WSection;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPlus;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.HudGroup;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class AddHudElementScreen extends WindowScreen {
     private final int x, y;
@@ -114,7 +113,7 @@ public class AddHudElementScreen extends WindowScreen {
                 HudElementPresetsScreen screen = new HudElementPresetsScreen(theme, info, x, y);
                 screen.parent = parent;
 
-                mc.setScreen(screen);
+                MeteorClient.mc.setScreen(screen);
             }
             else {
                 Hud.get().add(info, x, y);

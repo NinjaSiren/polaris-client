@@ -3,27 +3,27 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import baritone.api.BaritoneAPI;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.EntityDestroyEvent;
-import meteordevelopment.meteorclient.events.entity.player.PickItemsEvent;
-import meteordevelopment.meteorclient.events.game.GameJoinedEvent;
-import meteordevelopment.meteorclient.events.game.GameLeftEvent;
-import meteordevelopment.meteorclient.events.game.SendMessageEvent;
-import meteordevelopment.meteorclient.events.packets.ContainerSlotUpdateEvent;
-import meteordevelopment.meteorclient.events.packets.InventoryEvent;
-import meteordevelopment.meteorclient.events.packets.PlaySoundPacketEvent;
-import meteordevelopment.meteorclient.events.world.ChunkDataEvent;
-import meteordevelopment.meteorclient.mixininterface.IExplosionS2CPacket;
-import meteordevelopment.meteorclient.systems.commands.Commands;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.Velocity;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.EntityDestroyEvent;
+import polarisdevelopment.polarisclient.events.entity.player.PickItemsEvent;
+import polarisdevelopment.polarisclient.events.game.GameJoinedEvent;
+import polarisdevelopment.polarisclient.events.game.GameLeftEvent;
+import polarisdevelopment.polarisclient.events.game.SendMessageEvent;
+import polarisdevelopment.polarisclient.events.packets.ContainerSlotUpdateEvent;
+import polarisdevelopment.polarisclient.events.packets.InventoryEvent;
+import polarisdevelopment.polarisclient.events.packets.PlaySoundPacketEvent;
+import polarisdevelopment.polarisclient.events.world.ChunkDataEvent;
+import polarisdevelopment.polarisclient.mixininterface.IExplosionS2CPacket;
+import polarisdevelopment.polarisclient.systems.commands.Commands;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.Velocity;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.world.ClientWorld;

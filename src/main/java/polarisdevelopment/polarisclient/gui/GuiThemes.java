@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui;
+package polarisdevelopment.polarisclient.gui;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorGuiTheme;
-import meteordevelopment.meteorclient.utils.PostInit;
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorGuiTheme;
+import polarisdevelopment.polarisclient.utils.PostInit;
+import polarisdevelopment.polarisclient.utils.PreInit;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 

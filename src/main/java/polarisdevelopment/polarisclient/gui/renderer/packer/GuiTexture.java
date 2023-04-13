@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer.packer;
+package polarisdevelopment.polarisclient.gui.renderer.packer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -3,21 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
 import baritone.api.BaritoneAPI;
 import baritone.api.utils.Rotation;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.NoFall;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
-import meteordevelopment.meteorclient.utils.misc.BaritoneUtils;
-import meteordevelopment.meteorclient.utils.misc.text.TextUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.world.Dimension;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoFall;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.utils.misc.BaritoneUtils;
+import polarisdevelopment.polarisclient.utils.misc.text.TextUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.world.Dimension;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BedBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
@@ -35,9 +35,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.GameMode;
 import net.minecraft.world.RaycastContext;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-import static meteordevelopment.meteorclient.utils.Utils.WHITE;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class PlayerUtils {
     private static final double diagonal = 1 / Math.sqrt(2);
@@ -50,7 +48,7 @@ public class PlayerUtils {
             return color.set(Config.get().friendColor.get()).a(defaultColor.a);
         }
 
-        if (Config.get().useTeamColor.get() && !color.set(TextUtils.getMostPopularColor(entity.getDisplayName())).equals(WHITE)) {
+        if (Config.get().useTeamColor.get() && !color.set(TextUtils.getMostPopularColor(entity.getDisplayName())).equals(Utils.WHITE)) {
             return color.a(defaultColor.a);
         }
 
@@ -58,7 +56,7 @@ public class PlayerUtils {
     }
 
     public static Vec3d getHorizontalVelocity(double bps) {
-        float yaw = mc.player.getYaw();
+        float yaw = MeteorClient.mc.player.getYaw();
 
         if (BaritoneAPI.getProvider().getPrimaryBaritone().getPathingBehavior().isPathing()) {
             Rotation target = BaritoneUtils.getTarget();
@@ -71,24 +69,24 @@ public class PlayerUtils {
         double velZ = 0;
 
         boolean a = false;
-        if (mc.player.input.pressingForward) {
+        if (MeteorClient.mc.player.input.pressingForward) {
             velX += forward.x / 20 * bps;
             velZ += forward.z / 20 * bps;
             a = true;
         }
-        if (mc.player.input.pressingBack) {
+        if (MeteorClient.mc.player.input.pressingBack) {
             velX -= forward.x / 20 * bps;
             velZ -= forward.z / 20 * bps;
             a = true;
         }
 
         boolean b = false;
-        if (mc.player.input.pressingRight) {
+        if (MeteorClient.mc.player.input.pressingRight) {
             velX += right.x / 20 * bps;
             velZ += right.z / 20 * bps;
             b = true;
         }
-        if (mc.player.input.pressingLeft) {
+        if (MeteorClient.mc.player.input.pressingLeft) {
             velX -= right.x / 20 * bps;
             velZ -= right.z / 20 * bps;
             b = true;
@@ -104,28 +102,28 @@ public class PlayerUtils {
     }
 
     public static void centerPlayer() {
-        double x = MathHelper.floor(mc.player.getX()) + 0.5;
-        double z = MathHelper.floor(mc.player.getZ()) + 0.5;
-        mc.player.setPosition(x, mc.player.getY(), z);
-        mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY(), mc.player.getZ(), mc.player.isOnGround()));
+        double x = MathHelper.floor(MeteorClient.mc.player.getX()) + 0.5;
+        double z = MathHelper.floor(MeteorClient.mc.player.getZ()) + 0.5;
+        MeteorClient.mc.player.setPosition(x, MeteorClient.mc.player.getY(), z);
+        MeteorClient.mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(MeteorClient.mc.player.getX(), MeteorClient.mc.player.getY(), MeteorClient.mc.player.getZ(), MeteorClient.mc.player.isOnGround()));
     }
 
     public static boolean canSeeEntity(Entity entity) {
         Vec3d vec1 = new Vec3d(0, 0, 0);
         Vec3d vec2 = new Vec3d(0, 0, 0);
 
-        ((IVec3d) vec1).set(mc.player.getX(), mc.player.getY() + mc.player.getStandingEyeHeight(), mc.player.getZ());
+        ((IVec3d) vec1).set(MeteorClient.mc.player.getX(), MeteorClient.mc.player.getY() + MeteorClient.mc.player.getStandingEyeHeight(), MeteorClient.mc.player.getZ());
         ((IVec3d) vec2).set(entity.getX(), entity.getY(), entity.getZ());
-        boolean canSeeFeet = mc.world.raycast(new RaycastContext(vec1, vec2, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, mc.player)).getType() == HitResult.Type.MISS;
+        boolean canSeeFeet = MeteorClient.mc.world.raycast(new RaycastContext(vec1, vec2, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, MeteorClient.mc.player)).getType() == HitResult.Type.MISS;
 
         ((IVec3d) vec2).set(entity.getX(), entity.getY() + entity.getStandingEyeHeight(), entity.getZ());
-        boolean canSeeEyes = mc.world.raycast(new RaycastContext(vec1, vec2, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, mc.player)).getType() == HitResult.Type.MISS;
+        boolean canSeeEyes = MeteorClient.mc.world.raycast(new RaycastContext(vec1, vec2, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, MeteorClient.mc.player)).getType() == HitResult.Type.MISS;
 
         return canSeeFeet || canSeeEyes;
     }
 
     public static float[] calculateAngle(Vec3d target) {
-        Vec3d eyesPos = new Vec3d(mc.player.getX(), mc.player.getY() + mc.player.getEyeHeight(mc.player.getPose()), mc.player.getZ());
+        Vec3d eyesPos = new Vec3d(MeteorClient.mc.player.getX(), MeteorClient.mc.player.getY() + MeteorClient.mc.player.getEyeHeight(MeteorClient.mc.player.getPose()), MeteorClient.mc.player.getZ());
 
         double dX = target.x - eyesPos.x;
         double dY = (target.y - eyesPos.y) * -1.0D;
@@ -137,29 +135,29 @@ public class PlayerUtils {
     }
 
     public static boolean shouldPause(boolean ifBreaking, boolean ifEating, boolean ifDrinking) {
-        if (ifBreaking && mc.interactionManager.isBreakingBlock()) return true;
-        if (ifEating && (mc.player.isUsingItem() && (mc.player.getMainHandStack().getItem().isFood() || mc.player.getOffHandStack().getItem().isFood()))) return true;
-        return ifDrinking && (mc.player.isUsingItem() && (mc.player.getMainHandStack().getItem() instanceof PotionItem || mc.player.getOffHandStack().getItem() instanceof PotionItem));
+        if (ifBreaking && MeteorClient.mc.interactionManager.isBreakingBlock()) return true;
+        if (ifEating && (MeteorClient.mc.player.isUsingItem() && (MeteorClient.mc.player.getMainHandStack().getItem().isFood() || MeteorClient.mc.player.getOffHandStack().getItem().isFood()))) return true;
+        return ifDrinking && (MeteorClient.mc.player.isUsingItem() && (MeteorClient.mc.player.getMainHandStack().getItem() instanceof PotionItem || MeteorClient.mc.player.getOffHandStack().getItem() instanceof PotionItem));
     }
 
     public static boolean isMoving() {
-        return mc.player.forwardSpeed != 0 || mc.player.sidewaysSpeed != 0;
+        return MeteorClient.mc.player.forwardSpeed != 0 || MeteorClient.mc.player.sidewaysSpeed != 0;
     }
 
     public static boolean isSprinting() {
-        return mc.player.isSprinting() && (mc.player.forwardSpeed != 0 || mc.player.sidewaysSpeed != 0);
+        return MeteorClient.mc.player.isSprinting() && (MeteorClient.mc.player.forwardSpeed != 0 || MeteorClient.mc.player.sidewaysSpeed != 0);
     }
 
     public static boolean isInHole(boolean doubles) {
         if (!Utils.canUpdate()) return false;
 
-        BlockPos blockPos = mc.player.getBlockPos();
+        BlockPos blockPos = MeteorClient.mc.player.getBlockPos();
         int air = 0;
 
         for (Direction direction : Direction.values()) {
             if (direction == Direction.UP) continue;
 
-            BlockState state = mc.world.getBlockState(blockPos.offset(direction));
+            BlockState state = MeteorClient.mc.world.getBlockState(blockPos.offset(direction));
 
             if (state.getBlock().getBlastResistance() < 600) {
                 if (!doubles || direction == Direction.DOWN) return false;
@@ -169,7 +167,7 @@ public class PlayerUtils {
                 for (Direction dir : Direction.values()) {
                     if (dir == direction.getOpposite() || dir == Direction.UP) continue;
 
-                    BlockState blockState1 = mc.world.getBlockState(blockPos.offset(direction).offset(dir));
+                    BlockState blockState1 = MeteorClient.mc.world.getBlockState(blockPos.offset(direction).offset(dir));
 
                     if (blockState1.getBlock().getBlastResistance() < 600) {
                         return false;
@@ -189,10 +187,10 @@ public class PlayerUtils {
         double damageTaken = 0;
 
         if (entities) {
-            for (Entity entity : mc.world.getEntities()) {
+            for (Entity entity : MeteorClient.mc.world.getEntities()) {
                 // Check for end crystals
-                if (entity instanceof EndCrystalEntity && damageTaken < DamageUtils.crystalDamage(mc.player, entity.getPos())) {
-                    damageTaken = DamageUtils.crystalDamage(mc.player, entity.getPos());
+                if (entity instanceof EndCrystalEntity && damageTaken < DamageUtils.crystalDamage(MeteorClient.mc.player, entity.getPos())) {
+                    damageTaken = DamageUtils.crystalDamage(MeteorClient.mc.player, entity.getPos());
                 }
                 // Check for players holding swords
                 else if (entity instanceof PlayerEntity && damageTaken < DamageUtils.getSwordDamage((PlayerEntity) entity, true)) {
@@ -210,8 +208,8 @@ public class PlayerUtils {
                     BlockPos bp = blockEntity.getPos();
                     Vec3d pos = new Vec3d(bp.getX(), bp.getY(), bp.getZ());
 
-                    if (blockEntity instanceof BedBlockEntity && damageTaken < DamageUtils.bedDamage(mc.player, pos)) {
-                        damageTaken = DamageUtils.bedDamage(mc.player, pos);
+                    if (blockEntity instanceof BedBlockEntity && damageTaken < DamageUtils.bedDamage(MeteorClient.mc.player, pos)) {
+                        damageTaken = DamageUtils.bedDamage(MeteorClient.mc.player, pos);
                     }
                 }
             }
@@ -219,10 +217,10 @@ public class PlayerUtils {
 
         // Check for fall distance with water check
         if (fall) {
-            if (!Modules.get().isActive(NoFall.class) && mc.player.fallDistance > 3) {
-                double damage = mc.player.fallDistance * 0.5;
+            if (!Modules.get().isActive(NoFall.class) && MeteorClient.mc.player.fallDistance > 3) {
+                double damage = MeteorClient.mc.player.fallDistance * 0.5;
 
-                if (damage > damageTaken && !EntityUtils.isAboveWater(mc.player)) {
+                if (damage > damageTaken && !EntityUtils.isAboveWater(MeteorClient.mc.player)) {
                     damageTaken = damage;
                 }
             }
@@ -256,7 +254,7 @@ public class PlayerUtils {
     }
 
     public static double squaredDistanceTo(double x, double y, double z) {
-        return squaredDistance(mc.player.getX(), mc.player.getY(), mc.player.getZ(), x, y, z);
+        return squaredDistance(MeteorClient.mc.player.getX(), MeteorClient.mc.player.getY(), MeteorClient.mc.player.getZ(), x, y, z);
     }
 
     public static double squaredDistance(double x1, double y1, double z1, double x2, double y2, double z2) {
@@ -291,7 +289,7 @@ public class PlayerUtils {
     }
 
     public static double squaredDistanceToCamera(double x, double y, double z) {
-        Vec3d cameraPos = mc.gameRenderer.getCamera().getPos();
+        Vec3d cameraPos = MeteorClient.mc.gameRenderer.getCamera().getPos();
         return squaredDistance(cameraPos.x, cameraPos.y, cameraPos.z, x, y, z);
     }
 
@@ -328,13 +326,13 @@ public class PlayerUtils {
     }
 
     public static boolean isWithinReach(double x, double y, double z) {
-        return squaredDistance(mc.player.getX(), mc.player.getEyeY(), mc.player.getZ(), x, y, z) <= mc.interactionManager.getReachDistance() * mc.interactionManager.getReachDistance();
+        return squaredDistance(MeteorClient.mc.player.getX(), MeteorClient.mc.player.getEyeY(), MeteorClient.mc.player.getZ(), x, y, z) <= MeteorClient.mc.interactionManager.getReachDistance() * MeteorClient.mc.interactionManager.getReachDistance();
     }
 
     public static Dimension getDimension() {
-        if (mc.world == null) return Dimension.Overworld;
+        if (MeteorClient.mc.world == null) return Dimension.Overworld;
 
-        return switch (mc.world.getRegistryKey().getValue().getPath()) {
+        return switch (MeteorClient.mc.world.getRegistryKey().getValue().getPath()) {
             case "the_nether" -> Dimension.Nether;
             case "the_end" -> Dimension.End;
             default -> Dimension.Overworld;
@@ -342,23 +340,23 @@ public class PlayerUtils {
     }
 
     public static GameMode getGameMode() {
-        PlayerListEntry playerListEntry = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid());
+        PlayerListEntry playerListEntry = MeteorClient.mc.getNetworkHandler().getPlayerListEntry(MeteorClient.mc.player.getUuid());
         if (playerListEntry == null) return GameMode.SPECTATOR;
         return playerListEntry.getGameMode();
     }
 
     public static double getTotalHealth() {
-        return mc.player.getHealth() + mc.player.getAbsorptionAmount();
+        return MeteorClient.mc.player.getHealth() + MeteorClient.mc.player.getAbsorptionAmount();
     }
 
     public static boolean isAlive() {
-        return mc.player.isAlive() && !mc.player.isDead();
+        return MeteorClient.mc.player.isAlive() && !MeteorClient.mc.player.isDead();
     }
 
     public static int getPing() {
-        if (mc.getNetworkHandler() == null) return 0;
+        if (MeteorClient.mc.getNetworkHandler() == null) return 0;
 
-        PlayerListEntry playerListEntry = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid());
+        PlayerListEntry playerListEntry = MeteorClient.mc.getNetworkHandler().getPlayerListEntry(MeteorClient.mc.player.getUuid());
         if (playerListEntry == null) return 0;
         return playerListEntry.getLatency();
     }

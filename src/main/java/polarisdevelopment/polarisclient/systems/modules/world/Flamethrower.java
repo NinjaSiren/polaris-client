@@ -3,17 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.world;
+package polarisdevelopment.polarisclient.systems.modules.world;
 
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
-import meteordevelopment.meteorclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.player.FindItemResult;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.player.FindItemResult;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

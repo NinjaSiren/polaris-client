@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.notebot.decoder;
+package polarisdevelopment.polarisclient.utils.notebot.decoder;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.MultimapBuilder;
-import meteordevelopment.meteorclient.utils.notebot.song.Note;
-import meteordevelopment.meteorclient.utils.notebot.song.Song;
+import polarisdevelopment.polarisclient.utils.notebot.song.Note;
+import polarisdevelopment.polarisclient.utils.notebot.song.Song;
 import net.minecraft.block.enums.Instrument;
 import org.jetbrains.annotations.NotNull;
 

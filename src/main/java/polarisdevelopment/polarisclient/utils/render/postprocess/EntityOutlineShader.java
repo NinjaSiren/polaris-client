@@ -1,7 +1,12 @@
-package meteordevelopment.meteorclient.utils.render.postprocess;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.ESP;
+package polarisdevelopment.polarisclient.utils.render.postprocess;
+
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.ESP;
 import net.minecraft.entity.Entity;
 
 public class EntityOutlineShader extends EntityShader {

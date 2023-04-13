@@ -3,24 +3,25 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render;
+package polarisdevelopment.polarisclient.systems.modules.render;
 
 import com.google.gson.JsonSyntaxException;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import meteordevelopment.meteorclient.events.game.ItemStackTooltipEvent;
-import meteordevelopment.meteorclient.events.game.SectionVisibleEvent;
-import meteordevelopment.meteorclient.events.render.TooltipDataEvent;
-import meteordevelopment.meteorclient.mixin.EntityAccessor;
-import meteordevelopment.meteorclient.mixin.EntityBucketItemAccessor;
+import polarisdevelopment.polarisclient.events.game.ItemStackTooltipEvent;
+import polarisdevelopment.polarisclient.events.game.SectionVisibleEvent;
+import polarisdevelopment.polarisclient.events.render.TooltipDataEvent;
+import polarisdevelopment.polarisclient.mixin.EntityAccessor;
+import polarisdevelopment.polarisclient.mixin.EntityBucketItemAccessor;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.ByteCountDataOutput;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.player.EChestMemory;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.ByteCountDataOutput;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.player.EChestMemory;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import meteordevelopment.meteorclient.utils.tooltip.*;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.entity.BannerPattern;
@@ -43,6 +44,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.collection.DefaultedList;
+import polarisdevelopment.polarisclient.utils.tooltip.*;
 
 import java.io.IOException;
 import java.util.Comparator;

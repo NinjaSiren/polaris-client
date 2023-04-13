@@ -3,21 +3,22 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement;
+package polarisdevelopment.polarisclient.systems.modules.movement;
 
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPlus;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPlus;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

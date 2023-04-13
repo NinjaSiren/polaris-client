@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import net.minecraft.client.gl.VertexBuffer;
 import net.minecraft.client.render.BufferRenderer;

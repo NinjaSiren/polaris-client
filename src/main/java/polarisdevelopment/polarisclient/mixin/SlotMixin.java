@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.ISlot;
+import polarisdevelopment.polarisclient.mixininterface.ISlot;
 import net.minecraft.screen.slot.Slot;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

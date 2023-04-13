@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.systems.modules.render.marker.BaseMarker;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.systems.modules.render.marker.BaseMarker;
 
 public class MarkerScreen extends WindowScreen {
     private final BaseMarker marker;

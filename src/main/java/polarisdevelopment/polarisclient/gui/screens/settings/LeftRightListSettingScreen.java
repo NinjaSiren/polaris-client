@@ -3,17 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens.settings;
+package polarisdevelopment.polarisclient.gui.screens.settings;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPressable;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPressable;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Pair;
 

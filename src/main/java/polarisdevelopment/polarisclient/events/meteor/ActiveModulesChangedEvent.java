@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.meteor;
+package polarisdevelopment.polarisclient.events.meteor;
 
 public class ActiveModulesChangedEvent {
     private static final ActiveModulesChangedEvent INSTANCE = new ActiveModulesChangedEvent();

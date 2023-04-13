@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.pressable;
+package polarisdevelopment.polarisclient.gui.widgets.pressable;
 
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
 
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_RIGHT;

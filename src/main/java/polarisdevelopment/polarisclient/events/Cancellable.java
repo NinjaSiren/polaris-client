@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events;
+package polarisdevelopment.polarisclient.events;
 
 import meteordevelopment.orbit.ICancellable;
 

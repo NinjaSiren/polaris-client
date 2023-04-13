@@ -3,23 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.platform.GlStateManager;
-import meteordevelopment.meteorclient.mixin.BufferRendererAccessor;
-import meteordevelopment.meteorclient.mixininterface.ICapabilityTracker;
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.mixin.BufferRendererAccessor;
+import polarisdevelopment.polarisclient.mixininterface.ICapabilityTracker;
+import polarisdevelopment.polarisclient.utils.PreInit;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import org.joml.Matrix4f;
 import org.lwjgl.BufferUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.opengl.GL32C.*;
 
 public class GL {
@@ -298,7 +298,7 @@ public class GL {
 
     public static void bindTexture(Identifier id) {
         GlStateManager._activeTexture(GL_TEXTURE0);
-        mc.getTextureManager().bindTexture(id);
+        MeteorClient.mc.getTextureManager().bindTexture(id);
     }
 
     public static void bindTexture(int i, int slot) {

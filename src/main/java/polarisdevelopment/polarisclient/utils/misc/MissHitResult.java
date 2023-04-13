@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;

@@ -3,22 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.input;
+package polarisdevelopment.polarisclient.gui.widgets.input;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.player.InteractBlockEvent;
-import meteordevelopment.meteorclient.events.entity.player.StartBreakingBlockEvent;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.marker.Marker;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.player.InteractBlockEvent;
+import polarisdevelopment.polarisclient.events.entity.player.StartBreakingBlockEvent;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.marker.Marker;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-import static meteordevelopment.meteorclient.utils.Utils.canUpdate;
+import static polarisdevelopment.polarisclient.utils.Utils.canUpdate;
 
 public class WBlockPosEdit extends WHorizontalList {
     public Runnable action;
@@ -50,14 +49,14 @@ public class WBlockPosEdit extends WHorizontalList {
 
                 clicking = true;
                 MeteorClient.EVENT_BUS.subscribe(this);
-                previousScreen = mc.currentScreen;
-                mc.setScreen(null);
+                previousScreen = MeteorClient.mc.currentScreen;
+                MeteorClient.mc.setScreen(null);
             };
 
             WButton here = add(theme.button("Set Here")).expandX().widget();
             here.action = () -> {
                 lastValue = value;
-                set(new BlockPos(mc.player.getBlockPos()));
+                set(new BlockPos(MeteorClient.mc.player.getBlockPos()));
                 newValueCheck();
 
                 clear();
@@ -72,7 +71,7 @@ public class WBlockPosEdit extends WHorizontalList {
             clicking = false;
             event.cancel();
             MeteorClient.EVENT_BUS.unsubscribe(this);
-            mc.setScreen(previousScreen);
+            MeteorClient.mc.setScreen(previousScreen);
         }
     }
 
@@ -87,7 +86,7 @@ public class WBlockPosEdit extends WHorizontalList {
             clicking = false;
             event.cancel();
             MeteorClient.EVENT_BUS.unsubscribe(this);
-            mc.setScreen(previousScreen);
+            MeteorClient.mc.setScreen(previousScreen);
         }
     }
 

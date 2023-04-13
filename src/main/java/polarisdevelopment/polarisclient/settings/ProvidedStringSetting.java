@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;

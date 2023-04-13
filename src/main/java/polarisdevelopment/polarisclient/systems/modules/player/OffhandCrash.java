@@ -3,17 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.player;
+package polarisdevelopment.polarisclient.systems.modules.player;
 
 import io.netty.channel.Channel;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.mixin.ClientConnectionAccessor;
-import meteordevelopment.meteorclient.settings.BoolSetting;
-import meteordevelopment.meteorclient.settings.IntSetting;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.mixin.ClientConnectionAccessor;
+import polarisdevelopment.polarisclient.settings.BoolSetting;
+import polarisdevelopment.polarisclient.settings.IntSetting;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.util.math.BlockPos;

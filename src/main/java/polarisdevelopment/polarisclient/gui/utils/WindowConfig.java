@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.utils;
+package polarisdevelopment.polarisclient.gui.utils;
 
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
 import net.minecraft.nbt.NbtCompound;
 
 public class WindowConfig implements ISerializable<WindowConfig> {

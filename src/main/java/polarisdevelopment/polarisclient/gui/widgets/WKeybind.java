@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets;
+package polarisdevelopment.polarisclient.gui.widgets;
 
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
 
 public class WKeybind extends WHorizontalList {
     public Runnable action;

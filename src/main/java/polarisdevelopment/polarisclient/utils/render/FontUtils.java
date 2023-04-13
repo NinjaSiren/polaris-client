@@ -3,12 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.renderer.Fonts;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.renderer.Fonts;
 import meteordevelopment.meteorclient.renderer.text.*;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.renderer.text.*;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.util.Util;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBTTFontinfo;

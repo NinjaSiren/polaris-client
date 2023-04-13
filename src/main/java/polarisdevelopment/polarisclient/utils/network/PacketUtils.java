@@ -1,14 +1,14 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.network;
+package polarisdevelopment.polarisclient.utils.network;
 
 import com.google.common.collect.Iterators;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Lifecycle;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
 import net.minecraft.network.Packet;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -19,6 +19,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 import java.util.stream.Stream;
 

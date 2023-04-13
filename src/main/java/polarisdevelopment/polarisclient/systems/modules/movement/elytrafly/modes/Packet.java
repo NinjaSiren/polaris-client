@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.elytrafly.modes;
+package polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.modes;
 
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFlightMode;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFlightModes;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFlightMode;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFlightModes;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;

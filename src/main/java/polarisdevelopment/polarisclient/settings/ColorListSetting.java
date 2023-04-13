@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 

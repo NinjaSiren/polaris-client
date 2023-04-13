@@ -3,18 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets;
+package polarisdevelopment.polarisclient.gui.widgets;
 
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.systems.accounts.Account;
-import meteordevelopment.meteorclient.systems.accounts.Accounts;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.systems.accounts.Account;
+import polarisdevelopment.polarisclient.systems.accounts.Accounts;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public abstract class WAccount extends WHorizontalList {
     public Runnable refreshScreenAction;
@@ -37,7 +36,7 @@ public abstract class WAccount extends WHorizontalList {
 
         // Name
         WLabel name = add(theme.label(account.getUsername())).widget();
-        if (mc.getSession().getUsername().equalsIgnoreCase(account.getUsername())) name.color = loggedInColor();
+        if (MeteorClient.mc.getSession().getUsername().equalsIgnoreCase(account.getUsername())) name.color = loggedInColor();
 
         // Type
         WLabel label = add(theme.label("(" + account.getType() + ")")).expandCellX().right().widget();

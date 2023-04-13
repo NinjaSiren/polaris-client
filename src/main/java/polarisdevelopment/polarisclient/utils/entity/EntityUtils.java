@@ -3,18 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.entity;
+package polarisdevelopment.polarisclient.utils.entity;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.LongBidirectionalIterator;
 import it.unimi.dsi.fastutil.longs.LongSortedSet;
-import meteordevelopment.meteorclient.mixin.EntityTrackingSectionAccessor;
-import meteordevelopment.meteorclient.mixin.SectionedEntityCacheAccessor;
-import meteordevelopment.meteorclient.mixin.SimpleEntityLookupAccessor;
-import meteordevelopment.meteorclient.mixin.WorldAccessor;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import net.minecraft.block.AirBlock;
+import polarisdevelopment.polarisclient.mixin.EntityTrackingSectionAccessor;
+import polarisdevelopment.polarisclient.mixin.SectionedEntityCacheAccessor;
+import polarisdevelopment.polarisclient.mixin.SimpleEntityLookupAccessor;
+import polarisdevelopment.polarisclient.mixin.WorldAccessor;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -27,7 +26,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.ChunkSectionPos;
@@ -37,13 +35,10 @@ import net.minecraft.world.entity.EntityLookup;
 import net.minecraft.world.entity.EntityTrackingSection;
 import net.minecraft.world.entity.SectionedEntityCache;
 import net.minecraft.world.entity.SimpleEntityLookup;
+import polarisdevelopment.polarisclient.MeteorClient;
 
-import javax.annotation.Nullable;
-import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Predicate;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class EntityUtils {
     private static BlockPos.Mutable testPos = new BlockPos.Mutable();
@@ -57,16 +52,16 @@ public class EntityUtils {
     }
 
     public static int getPing(PlayerEntity player) {
-        if (mc.getNetworkHandler() == null) return 0;
+        if (MeteorClient.mc.getNetworkHandler() == null) return 0;
 
-        PlayerListEntry playerListEntry = mc.getNetworkHandler().getPlayerListEntry(player.getUuid());
+        PlayerListEntry playerListEntry = MeteorClient.mc.getNetworkHandler().getPlayerListEntry(player.getUuid());
         if (playerListEntry == null) return 0;
         return playerListEntry.getLatency();
     }
 
     public static GameMode getGameMode(PlayerEntity player) {
         if (player == null) return null;
-        PlayerListEntry playerListEntry = mc.getNetworkHandler().getPlayerListEntry(player.getUuid());
+        PlayerListEntry playerListEntry = MeteorClient.mc.getNetworkHandler().getPlayerListEntry(player.getUuid());
         if (playerListEntry == null) return null;
         return playerListEntry.getGameMode();
     }
@@ -75,7 +70,7 @@ public class EntityUtils {
         BlockPos.Mutable blockPos = entity.getBlockPos().mutableCopy();
 
         for (int i = 0; i < 64; i++) {
-            BlockState state = mc.world.getBlockState(blockPos);
+            BlockState state = MeteorClient.mc.world.getBlockState(blockPos);
 
             if (state.getMaterial().blocksMovement()) break;
 
@@ -106,9 +101,9 @@ public class EntityUtils {
     }
 
     public static boolean isInRenderDistance(double posX, double posZ) {
-        double x = Math.abs(mc.gameRenderer.getCamera().getPos().x - posX);
-        double z = Math.abs(mc.gameRenderer.getCamera().getPos().z - posZ);
-        double d = (mc.options.getViewDistance().getValue() + 1) * 16;
+        double x = Math.abs(MeteorClient.mc.gameRenderer.getCamera().getPos().x - posX);
+        double z = Math.abs(MeteorClient.mc.gameRenderer.getCamera().getPos().z - posZ);
+        double d = (MeteorClient.mc.options.getViewDistance().getValue() + 1) * 16;
 
         return x < d && z < d;
     }
@@ -122,7 +117,7 @@ public class EntityUtils {
         for (Direction direction : Direction.HORIZONTAL) {
             testPos.set(player.getBlockPos().offset(direction));
 
-            Block block = mc.world.getBlockState(testPos).getBlock();
+            Block block = MeteorClient.mc.world.getBlockState(testPos).getBlock();
             if (block != Blocks.OBSIDIAN && block != Blocks.NETHERITE_BLOCK && block != Blocks.CRYING_OBSIDIAN
             && block != Blocks.RESPAWN_ANCHOR && block != Blocks.ANCIENT_DEBRIS) continue;
 
@@ -170,7 +165,7 @@ public class EntityUtils {
     }
 
     public static boolean intersectsWithEntity(Box box, Predicate<Entity> predicate) {
-        EntityLookup<Entity> entityLookup = ((WorldAccessor) mc.world).getEntityLookup();
+        EntityLookup<Entity> entityLookup = ((WorldAccessor) MeteorClient.mc.world).getEntityLookup();
 
         // Fast implementation using SimpleEntityLookup that returns on the first intersecting entity
         if (entityLookup instanceof SimpleEntityLookup<Entity> simpleEntityLookup) {

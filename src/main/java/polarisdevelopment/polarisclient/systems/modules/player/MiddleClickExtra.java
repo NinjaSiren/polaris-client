@@ -3,23 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.player;
+package polarisdevelopment.polarisclient.systems.modules.player;
 
 //Created by squidoodly 06/07/2020
 
-import meteordevelopment.meteorclient.events.entity.player.FinishUsingItemEvent;
-import meteordevelopment.meteorclient.events.entity.player.StoppedUsingItemEvent;
-import meteordevelopment.meteorclient.events.meteor.MouseButtonEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.settings.BoolSetting;
-import meteordevelopment.meteorclient.settings.EnumSetting;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.misc.input.KeyAction;
-import meteordevelopment.meteorclient.utils.player.FindItemResult;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.events.entity.player.FinishUsingItemEvent;
+import polarisdevelopment.polarisclient.events.entity.player.StoppedUsingItemEvent;
+import polarisdevelopment.polarisclient.events.meteor.MouseButtonEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.settings.BoolSetting;
+import polarisdevelopment.polarisclient.settings.EnumSetting;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.misc.input.KeyAction;
+import polarisdevelopment.polarisclient.utils.player.FindItemResult;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;

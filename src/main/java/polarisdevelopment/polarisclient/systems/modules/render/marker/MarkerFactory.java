@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.marker;
+package polarisdevelopment.polarisclient.systems.modules.render.marker;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
 
 import java.util.HashMap;
 import java.util.Map;

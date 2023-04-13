@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.DamageEvent;
-import meteordevelopment.meteorclient.events.entity.player.CanWalkOnFluidEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFly;
-import meteordevelopment.meteorclient.systems.modules.player.OffhandCrash;
-import meteordevelopment.meteorclient.systems.modules.player.PotionSpoof;
-import meteordevelopment.meteorclient.systems.modules.render.HandView;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.DamageEvent;
+import polarisdevelopment.polarisclient.events.entity.player.CanWalkOnFluidEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFly;
+import polarisdevelopment.polarisclient.systems.modules.player.OffhandCrash;
+import polarisdevelopment.polarisclient.systems.modules.player.PotionSpoof;
+import polarisdevelopment.polarisclient.systems.modules.render.HandView;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -36,8 +36,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
     @Shadow
@@ -56,7 +54,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "canWalkOnFluid", at = @At("HEAD"), cancellable = true)
     private void onCanWalkOnFluid(FluidState fluidState, CallbackInfoReturnable<Boolean> info) {
-        if ((Object) this != mc.player) return;
+        if ((Object) this != MeteorClient.mc.player) return;
         CanWalkOnFluidEvent event = MeteorClient.EVENT_BUS.post(CanWalkOnFluidEvent.get(fluidState));
 
         info.setReturnValue(event.walkOnFluid);
@@ -78,7 +76,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "onEquipStack", at = @At("HEAD"), cancellable = true)
     private void onEquipStack(EquipmentSlot slot, ItemStack oldStack, ItemStack newStack, CallbackInfo info) {
-        if ((Object) this == mc.player && Modules.get().get(OffhandCrash.class).isAntiCrash()) {
+        if ((Object) this == MeteorClient.mc.player && Modules.get().get(OffhandCrash.class).isAntiCrash()) {
             info.cancel();
         }
     }
@@ -86,7 +84,7 @@ public abstract class LivingEntityMixin extends Entity {
     @ModifyArg(method = "swingHand(Lnet/minecraft/util/Hand;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;swingHand(Lnet/minecraft/util/Hand;Z)V"))
     private Hand setHand(Hand hand) {
         HandView handView = Modules.get().get(HandView.class);
-        if ((Object) this == mc.player && handView.isActive()) {
+        if ((Object) this == MeteorClient.mc.player && handView.isActive()) {
             if (handView.swingMode.get() == HandView.SwingMode.None) return hand;
             return handView.swingMode.get() == HandView.SwingMode.Offhand ? Hand.OFF_HAND : Hand.MAIN_HAND;
         }
@@ -95,13 +93,13 @@ public abstract class LivingEntityMixin extends Entity {
 
     @ModifyConstant(method = "getHandSwingDuration", constant = @Constant(intValue = 6))
     private int getHandSwingDuration(int constant) {
-        if ((Object) this != mc.player) return constant;
-        return Modules.get().get(HandView.class).isActive() && mc.options.getPerspective().isFirstPerson() ? Modules.get().get(HandView.class).swingSpeed.get() : constant;
+        if ((Object) this != MeteorClient.mc.player) return constant;
+        return Modules.get().get(HandView.class).isActive() && MeteorClient.mc.options.getPerspective().isFirstPerson() ? Modules.get().get(HandView.class).swingSpeed.get() : constant;
     }
 
     @Inject(method = "isFallFlying", at = @At("HEAD"), cancellable = true)
     private void isFallFlyingHook(CallbackInfoReturnable<Boolean> info) {
-        if ((Object) this == mc.player && Modules.get().get(ElytraFly.class).canPacketEfly()) {
+        if ((Object) this == MeteorClient.mc.player && Modules.get().get(ElytraFly.class).canPacketEfly()) {
             info.setReturnValue(true);
         }
     }

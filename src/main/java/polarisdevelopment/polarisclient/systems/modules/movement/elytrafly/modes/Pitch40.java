@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.elytrafly.modes;
+package polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.modes;
 
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFlightMode;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFlightModes;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFlightMode;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFlightModes;
 
 public class Pitch40 extends ElytraFlightMode {
     private boolean pitchingDown = true;

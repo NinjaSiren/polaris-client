@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui;
+package polarisdevelopment.polarisclient.gui;
 
 public class GuiKeyEvents {
     public static boolean canUseKeys = true;

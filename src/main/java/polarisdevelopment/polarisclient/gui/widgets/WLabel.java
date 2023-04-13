@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets;
+package polarisdevelopment.polarisclient.gui.widgets;
 
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPressable;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPressable;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public abstract class WLabel extends WPressable {
     public Color color;

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixininterface;
+package polarisdevelopment.polarisclient.mixininterface;
 
 import net.minecraft.util.math.Vec3i;
 import org.joml.Vector3d;

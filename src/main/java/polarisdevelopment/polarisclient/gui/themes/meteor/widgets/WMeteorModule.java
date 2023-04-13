@@ -3,17 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor.widgets;
+package polarisdevelopment.polarisclient.gui.themes.meteor.widgets;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorGuiTheme;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorWidget;
-import meteordevelopment.meteorclient.gui.utils.AlignmentX;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPressable;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorGuiTheme;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorWidget;
+import polarisdevelopment.polarisclient.gui.utils.AlignmentX;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPressable;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_RIGHT;
 
@@ -57,7 +57,7 @@ public class WMeteorModule extends WPressable implements MeteorWidget {
     @Override
     protected void onPressed(int button) {
         if (button == GLFW_MOUSE_BUTTON_LEFT) module.toggle();
-        else if (button == GLFW_MOUSE_BUTTON_RIGHT) mc.setScreen(theme.moduleScreen(module));
+        else if (button == GLFW_MOUSE_BUTTON_RIGHT) MeteorClient.mc.setScreen(theme.moduleScreen(module));
     }
 
     @Override

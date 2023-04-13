@@ -3,21 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.tabs.builtin;
+package polarisdevelopment.polarisclient.gui.tabs.builtin;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.tabs.Tab;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.tabs.WindowTabScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPlus;
-import meteordevelopment.meteorclient.systems.friends.Friend;
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.tabs.Tab;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.tabs.WindowTabScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPlus;
+import polarisdevelopment.polarisclient.systems.friends.Friend;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
 import net.minecraft.client.gui.screen.Screen;
 
 public class FriendsTab extends Tab {

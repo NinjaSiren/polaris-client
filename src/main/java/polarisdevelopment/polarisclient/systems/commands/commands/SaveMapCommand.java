@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.commands;
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import meteordevelopment.meteorclient.mixin.MapRendererAccessor;
-import meteordevelopment.meteorclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.mixin.MapRendererAccessor;
+import polarisdevelopment.polarisclient.systems.commands.Command;
 import net.minecraft.client.render.MapRenderer;
 import net.minecraft.command.CommandSource;
 import net.minecraft.item.FilledMapItem;

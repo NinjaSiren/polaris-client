@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.player;
+package polarisdevelopment.polarisclient.systems.modules.player;
 
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.player.FindItemResult;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.player.FindItemResult;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.item.Items;
 

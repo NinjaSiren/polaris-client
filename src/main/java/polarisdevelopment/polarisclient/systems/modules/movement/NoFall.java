@@ -3,28 +3,28 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement;
+package polarisdevelopment.polarisclient.systems.modules.movement;
 
 import baritone.api.BaritoneAPI;
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.mixin.PlayerMoveC2SPacketAccessor;
-import meteordevelopment.meteorclient.mixininterface.IPlayerMoveC2SPacket;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
-import meteordevelopment.meteorclient.settings.BoolSetting;
-import meteordevelopment.meteorclient.settings.EnumSetting;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
-import meteordevelopment.meteorclient.utils.player.FindItemResult;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
-import meteordevelopment.meteorclient.utils.world.BlockUtils;
-import meteordevelopment.meteorclient.utils.world.Dimension;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.mixin.PlayerMoveC2SPacketAccessor;
+import polarisdevelopment.polarisclient.mixininterface.IPlayerMoveC2SPacket;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.settings.BoolSetting;
+import polarisdevelopment.polarisclient.settings.EnumSetting;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.utils.player.FindItemResult;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.utils.world.BlockUtils;
+import polarisdevelopment.polarisclient.utils.world.Dimension;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

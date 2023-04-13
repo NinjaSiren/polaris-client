@@ -20,7 +20,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "meteordevelopment.meteorclient.MeteorClient"
+      "polarisdevelopment.polarisclient.MeteorClient"
     ]
   },
   "mixins": [

@@ -3,15 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.IEntityRenderer;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.Fullbright;
-import meteordevelopment.meteorclient.systems.modules.render.Nametags;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
-import meteordevelopment.meteorclient.utils.render.postprocess.PostProcessShaders;
+import polarisdevelopment.polarisclient.mixininterface.IEntityRenderer;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.Fullbright;
+import polarisdevelopment.polarisclient.systems.modules.render.Nametags;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.utils.render.postprocess.PostProcessShaders;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;

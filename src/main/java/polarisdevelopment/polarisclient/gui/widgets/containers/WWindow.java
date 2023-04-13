@@ -3,19 +3,19 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.containers;
+package polarisdevelopment.polarisclient.gui.widgets.containers;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.utils.WindowConfig;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WTriangle;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.utils.WindowConfig;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WTriangle;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 import java.util.function.Consumer;
 
-import static meteordevelopment.meteorclient.utils.Utils.getWindowHeight;
-import static meteordevelopment.meteorclient.utils.Utils.getWindowWidth;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowHeight;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowWidth;
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_RIGHT;
 
 public abstract class WWindow extends WVerticalList {

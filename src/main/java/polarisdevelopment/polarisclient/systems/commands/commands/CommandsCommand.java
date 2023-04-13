@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.commands;
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import meteordevelopment.meteorclient.systems.commands.Command;
-import meteordevelopment.meteorclient.systems.commands.Commands;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.systems.commands.Commands;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import net.minecraft.command.CommandSource;
 import net.minecraft.text.ClickEvent;
 import net.minecraft.text.HoverEvent;

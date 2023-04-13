@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.render;
+package polarisdevelopment.polarisclient.events.render;
 
 public class GetFovEvent {
     private static final GetFovEvent INSTANCE = new GetFovEvent();

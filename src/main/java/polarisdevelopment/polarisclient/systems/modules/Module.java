@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules;
+package polarisdevelopment.polarisclient.systems.modules;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

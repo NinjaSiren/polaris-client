@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.render;
+package polarisdevelopment.polarisclient.events.render;
 
-import meteordevelopment.meteorclient.renderer.Renderer3D;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.renderer.Renderer3D;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class Render3DEvent {

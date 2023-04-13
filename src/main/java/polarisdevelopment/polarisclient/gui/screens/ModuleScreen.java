@@ -3,29 +3,29 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.events.meteor.ActiveModulesChangedEvent;
-import meteordevelopment.meteorclient.events.meteor.ModuleBindChangedEvent;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WKeybind;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.containers.WSection;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WCheckbox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WFavorite;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.events.meteor.ActiveModulesChangedEvent;
+import polarisdevelopment.polarisclient.events.meteor.ModuleBindChangedEvent;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WKeybind;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WSection;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WCheckbox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WFavorite;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.nbt.NbtCompound;
 
-import static meteordevelopment.meteorclient.utils.Utils.getWindowWidth;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowWidth;
 
 public class ModuleScreen extends WindowScreen {
     private final Module module;

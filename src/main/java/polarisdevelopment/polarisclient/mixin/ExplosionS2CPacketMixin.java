@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.IExplosionS2CPacket;
+import polarisdevelopment.polarisclient.mixininterface.IExplosionS2CPacket;
 import net.minecraft.network.packet.s2c.play.ExplosionS2CPacket;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer.packer;
+package polarisdevelopment.polarisclient.gui.renderer.packer;
 
 public class TextureRegion {
     public double x1, y1;

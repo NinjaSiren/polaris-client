@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.PreInit;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class PostProcessRenderer {

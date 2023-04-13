@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor.widgets;
+package polarisdevelopment.polarisclient.gui.themes.meteor.widgets;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorGuiTheme;
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorWidget;
-import meteordevelopment.meteorclient.gui.widgets.WVerticalSeparator;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorGuiTheme;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorWidget;
+import polarisdevelopment.polarisclient.gui.widgets.WVerticalSeparator;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public class WMeteorVerticalSeparator extends WVerticalSeparator implements MeteorWidget {
     @Override

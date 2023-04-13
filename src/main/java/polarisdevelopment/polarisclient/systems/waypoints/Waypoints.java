@@ -3,24 +3,24 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.waypoints;
+package polarisdevelopment.polarisclient.systems.waypoints;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.GameJoinedEvent;
-import meteordevelopment.meteorclient.events.game.GameLeftEvent;
-import meteordevelopment.meteorclient.events.render.Render2DEvent;
-import meteordevelopment.meteorclient.renderer.text.TextRenderer;
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.WaypointsModule;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.files.StreamUtils;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.render.NametagUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.world.Dimension;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.GameJoinedEvent;
+import polarisdevelopment.polarisclient.events.game.GameLeftEvent;
+import polarisdevelopment.polarisclient.events.render.Render2DEvent;
+import polarisdevelopment.polarisclient.renderer.text.TextRenderer;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.WaypointsModule;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.files.StreamUtils;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.render.NametagUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.world.Dimension;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.client.texture.AbstractTexture;
@@ -36,8 +36,6 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Waypoints extends System<Waypoints> implements Iterable<Waypoint> {
     public static final String[] BUILTIN_ICONS = {"square", "circle", "triangle", "star", "diamond", "skull"};
@@ -133,7 +131,7 @@ public class Waypoints extends System<Waypoints> implements Iterable<Waypoint> {
         if (!module.isActive()) return;
 
         TextRenderer text = TextRenderer.get();
-        Vector3d center = new Vector3d(mc.getWindow().getFramebufferWidth() / 2.0, mc.getWindow().getFramebufferHeight() / 2.0, 0);
+        Vector3d center = new Vector3d(MeteorClient.mc.getWindow().getFramebufferWidth() / 2.0, MeteorClient.mc.getWindow().getFramebufferHeight() / 2.0, 0);
         int textRenderDist = module.textRenderDistance.get();
 
         for (Waypoint waypoint : this) {

@@ -3,17 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WVerticalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.systems.proxies.Proxies;
-import meteordevelopment.meteorclient.systems.proxies.Proxy;
-import meteordevelopment.meteorclient.systems.proxies.ProxyType;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WVerticalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.systems.proxies.Proxies;
+import polarisdevelopment.polarisclient.systems.proxies.Proxy;
+import polarisdevelopment.polarisclient.systems.proxies.ProxyType;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 import java.io.File;
 import java.io.IOException;

@@ -3,14 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets;
+package polarisdevelopment.polarisclient.gui.widgets;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class WItem extends WWidget {
     protected ItemStack itemStack;
@@ -39,8 +38,8 @@ public class WItem extends WWidget {
                 matrices.scale((float) s, (float) s, 1);
                 matrices.translate(x / s, y / s, 0);
 
-                mc.getItemRenderer().renderGuiItemIcon(itemStack, 0, 0);
-                mc.getItemRenderer().renderGuiItemOverlay(mc.textRenderer, itemStack, 0, 0);
+                MeteorClient.mc.getItemRenderer().renderGuiItemIcon(itemStack, 0, 0);
+                MeteorClient.mc.getItemRenderer().renderGuiItemOverlay(MeteorClient.mc.textRenderer, itemStack, 0, 0);
 
                 matrices.pop();
             });

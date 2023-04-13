@@ -3,15 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement;
+package polarisdevelopment.polarisclient.systems.modules.movement;
 
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.mixin.ClientPlayerEntityAccessor;
-import meteordevelopment.meteorclient.mixin.PlayerMoveC2SPacketAccessor;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.mixin.ClientPlayerEntityAccessor;
+import polarisdevelopment.polarisclient.mixin.PlayerMoveC2SPacketAccessor;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.entity.Entity;
@@ -22,7 +23,7 @@ import net.minecraft.util.math.Vec3d;
 public class Flight extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
     private final SettingGroup sgAntiKick = settings.createGroup("Anti Kick"); //Pog
-    
+
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
         .name("mode")
         .description("The mode for Flight.")
@@ -70,7 +71,7 @@ public class Flight extends Module {
         .sliderRange(1, 20)
         .build()
     );
-    
+
     private int delayLeft = delay.get();
     private int offLeft = offTime.get();
     private boolean flip;

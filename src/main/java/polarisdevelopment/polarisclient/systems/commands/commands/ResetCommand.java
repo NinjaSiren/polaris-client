@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.commands;
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import meteordevelopment.meteorclient.gui.GuiThemes;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.systems.commands.Command;
-import meteordevelopment.meteorclient.systems.commands.arguments.ModuleArgumentType;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.gui.GuiThemes;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.systems.Systems;
+import polarisdevelopment.polarisclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.systems.commands.arguments.ModuleArgumentType;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import net.minecraft.command.CommandSource;
 
 import static com.mojang.brigadier.Command.SINGLE_SUCCESS;

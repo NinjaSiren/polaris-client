@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.asm;
+package polarisdevelopment.polarisclient.asm;
 
-import meteordevelopment.meteorclient.asm.transformers.CanvasWorldRendererTransformer;
-import meteordevelopment.meteorclient.asm.transformers.GameRendererTransformer;
+import polarisdevelopment.polarisclient.asm.transformers.CanvasWorldRendererTransformer;
+import polarisdevelopment.polarisclient.asm.transformers.GameRendererTransformer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;

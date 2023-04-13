@@ -3,19 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.blockesp;
+package polarisdevelopment.polarisclient.systems.modules.render.blockesp;
 
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
-import meteordevelopment.meteorclient.renderer.ShapeMode;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.renderer.ShapeMode;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class ESPBlock {
     private static final BlockPos.Mutable blockPos = new BlockPos.Mutable();
@@ -96,7 +95,7 @@ public class ESPBlock {
     }
 
     public void update() {
-        state = mc.world.getBlockState(blockPos.set(x, y, z));
+        state = MeteorClient.mc.world.getBlockState(blockPos.set(x, y, z));
         neighbours = 0;
 
         if (isNeighbour(Direction.SOUTH)) neighbours |= FO;
@@ -124,13 +123,13 @@ public class ESPBlock {
 
     private boolean isNeighbour(Direction dir) {
         blockPos.set(x + dir.getOffsetX(), y + dir.getOffsetY(), z + dir.getOffsetZ());
-        BlockState neighbourState = mc.world.getBlockState(blockPos);
+        BlockState neighbourState = MeteorClient.mc.world.getBlockState(blockPos);
 
         if (neighbourState.getBlock() != state.getBlock()) return false;
 
         VoxelShape cube = VoxelShapes.fullCube();
-        VoxelShape shape = state.getOutlineShape(mc.world, blockPos);
-        VoxelShape neighbourShape = neighbourState.getOutlineShape(mc.world, blockPos);
+        VoxelShape shape = state.getOutlineShape(MeteorClient.mc.world, blockPos);
+        VoxelShape neighbourShape = neighbourState.getOutlineShape(MeteorClient.mc.world, blockPos);
 
         if (shape.isEmpty()) shape = cube;
         if (neighbourShape.isEmpty()) neighbourShape = cube;
@@ -166,7 +165,7 @@ public class ESPBlock {
 
     private boolean isNeighbourDiagonal(double x, double y, double z) {
         blockPos.set(this.x + x, this.y + y, this.z + z);
-        return state.getBlock() == mc.world.getBlockState(blockPos).getBlock();
+        return state.getBlock() == MeteorClient.mc.world.getBlockState(blockPos).getBlock();
     }
 
     public void render(Render3DEvent event) {
@@ -177,7 +176,7 @@ public class ESPBlock {
         double y2 = y + 1;
         double z2 = z + 1;
 
-        VoxelShape shape = state.getOutlineShape(mc.world, blockPos);
+        VoxelShape shape = state.getOutlineShape(MeteorClient.mc.world, blockPos);
 
         if (!shape.isEmpty()) {
             x1 = x + shape.getMin(Direction.Axis.X);

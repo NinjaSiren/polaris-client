@@ -3,17 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.world;
+package polarisdevelopment.polarisclient.systems.modules.world;
 
-import meteordevelopment.meteorclient.mixininterface.IAbstractFurnaceScreenHandler;
-import meteordevelopment.meteorclient.settings.BoolSetting;
-import meteordevelopment.meteorclient.settings.ItemListSetting;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.mixininterface.IAbstractFurnaceScreenHandler;
+import polarisdevelopment.polarisclient.settings.BoolSetting;
+import polarisdevelopment.polarisclient.settings.ItemListSetting;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;

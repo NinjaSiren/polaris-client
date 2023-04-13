@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor.widgets.pressable;
+package polarisdevelopment.polarisclient.gui.themes.meteor.widgets.pressable;
 
-import meteordevelopment.meteorclient.gui.themes.meteor.MeteorWidget;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WFavorite;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.themes.meteor.MeteorWidget;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WFavorite;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public class WMeteorFavorite extends WFavorite implements MeteorWidget {
     public WMeteorFavorite(boolean checked) {

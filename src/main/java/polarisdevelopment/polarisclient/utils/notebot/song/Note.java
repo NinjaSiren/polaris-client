@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.notebot.song;
+package polarisdevelopment.polarisclient.utils.notebot.song;
 
 import net.minecraft.block.enums.Instrument;
 

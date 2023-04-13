@@ -3,10 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.tabs;
+package polarisdevelopment.polarisclient.gui.tabs;
 
 import meteordevelopment.meteorclient.gui.tabs.builtin.*;
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.gui.tabs.builtin.*;
+import polarisdevelopment.polarisclient.utils.PreInit;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -3,22 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.player;
+package polarisdevelopment.polarisclient.systems.modules.player;
 
 import baritone.api.BaritoneAPI;
-import meteordevelopment.meteorclient.events.entity.player.ItemUseCrosshairTargetEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.events.entity.player.ItemUseCrosshairTargetEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.combat.AnchorAura;
-import meteordevelopment.meteorclient.systems.modules.combat.BedAura;
-import meteordevelopment.meteorclient.systems.modules.combat.CrystalAura;
-import meteordevelopment.meteorclient.systems.modules.combat.KillAura;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.player.SlotUtils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.combat.AnchorAura;
+import polarisdevelopment.polarisclient.systems.modules.combat.BedAura;
+import polarisdevelopment.polarisclient.systems.modules.combat.CrystalAura;
+import polarisdevelopment.polarisclient.systems.modules.combat.KillAura;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.utils.player.SlotUtils;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.item.Item;

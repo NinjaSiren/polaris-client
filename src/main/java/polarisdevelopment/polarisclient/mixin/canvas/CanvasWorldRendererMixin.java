@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin.canvas;
+package polarisdevelopment.polarisclient.mixin.canvas;
 
 /*import grondag.canvas.render.world.CanvasWorldRenderer;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.BlockSelection;
-import meteordevelopment.meteorclient.utils.render.postprocess.PostProcessShaders;
+import modules.systems.polarisdevelopment.polarisclient.Modules;
+import render.modules.systems.polarisdevelopment.polarisclient.BlockSelection;
+import postprocess.render.utils.polarisdevelopment.polarisclient.PostProcessShaders;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.LightmapTextureManager;

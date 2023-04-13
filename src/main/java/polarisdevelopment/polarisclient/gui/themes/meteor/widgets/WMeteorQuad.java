@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor.widgets;
+package polarisdevelopment.polarisclient.gui.themes.meteor.widgets;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.widgets.WQuad;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.widgets.WQuad;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public class WMeteorQuad extends WQuad {
     public WMeteorQuad(Color color) {

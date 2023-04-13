@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.NoSlow;
-import meteordevelopment.meteorclient.systems.modules.movement.Slippy;
-import meteordevelopment.meteorclient.systems.modules.render.Xray;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoSlow;
+import polarisdevelopment.polarisclient.systems.modules.movement.Slippy;
+import polarisdevelopment.polarisclient.systems.modules.render.Xray;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

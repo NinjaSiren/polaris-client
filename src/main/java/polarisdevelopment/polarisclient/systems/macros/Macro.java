@@ -3,23 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.macros;
+package polarisdevelopment.polarisclient.systems.macros;
 
-import meteordevelopment.meteorclient.gui.utils.StarscriptTextBoxRenderer;
+import polarisdevelopment.polarisclient.gui.utils.StarscriptTextBoxRenderer;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.misc.MeteorStarscript;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.misc.MeteorStarscript;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import meteordevelopment.starscript.Script;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Macro implements ISerializable<Macro> {
     public final Settings settings = new Settings();
@@ -56,7 +56,7 @@ public class Macro implements ISerializable<Macro> {
     }
 
     public boolean onAction(boolean isKey, int value) {
-        if (!keybind.get().matches(isKey, value) || mc.currentScreen != null) return false;
+        if (!keybind.get().matches(isKey, value) || MeteorClient.mc.currentScreen != null) return false;
         return onAction();
     }
 

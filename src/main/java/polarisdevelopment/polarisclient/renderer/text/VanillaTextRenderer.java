@@ -3,17 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer.text;
+package polarisdevelopment.polarisclient.renderer.text;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
 import org.joml.Matrix4f;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class VanillaTextRenderer implements TextRenderer {
     public static final VanillaTextRenderer INSTANCE = new VanillaTextRenderer();
@@ -44,12 +43,12 @@ public class VanillaTextRenderer implements TextRenderer {
         if (text.isEmpty()) return 0;
 
         if (length != text.length()) text = text.substring(0, length);
-        return (mc.textRenderer.getWidth(text) + (shadow ? 1 : 0)) * scale;
+        return (MeteorClient.mc.textRenderer.getWidth(text) + (shadow ? 1 : 0)) * scale;
     }
 
     @Override
     public double getHeight(boolean shadow) {
-        return (mc.textRenderer.fontHeight + (shadow ? 1 : 0)) * scale;
+        return (MeteorClient.mc.textRenderer.fontHeight + (shadow ? 1 : 0)) * scale;
     }
 
     @Override
@@ -78,7 +77,7 @@ public class VanillaTextRenderer implements TextRenderer {
             matrix = matrices.peek().getPositionMatrix();
         }
 
-        double x2 = mc.textRenderer.draw(text, (float) (x / scale), (float) (y / scale), color.getPacked(), shadow, matrix, immediate, false, 0, LightmapTextureManager.MAX_LIGHT_COORDINATE);
+        double x2 = MeteorClient.mc.textRenderer.draw(text, (float) (x / scale), (float) (y / scale), color.getPacked(), shadow, matrix, immediate, false, 0, LightmapTextureManager.MAX_LIGHT_COORDINATE);
 
         if (scaleIndividually) matrices.pop();
 

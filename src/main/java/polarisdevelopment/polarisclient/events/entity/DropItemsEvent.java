@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.entity;
+package polarisdevelopment.polarisclient.events.entity;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 import net.minecraft.item.ItemStack;
 
 public class DropItemsEvent extends Cancellable {

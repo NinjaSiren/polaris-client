@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.entity.player;
+package polarisdevelopment.polarisclient.events.entity.player;
 
 import net.minecraft.item.ItemStack;
 

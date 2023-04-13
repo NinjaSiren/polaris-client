@@ -1,9 +1,13 @@
-package meteordevelopment.meteorclient.utils.render.postprocess;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
 
-import meteordevelopment.meteorclient.utils.PreInit;
+package polarisdevelopment.polarisclient.utils.render.postprocess;
+
+import polarisdevelopment.polarisclient.utils.PreInit;
 import net.minecraft.client.render.VertexConsumerProvider;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class PostProcessShaders {
     public static EntityShader CHAMS;
@@ -31,7 +35,7 @@ public class PostProcessShaders {
     }
 
     public static void onResized(int width, int height) {
-        if (mc == null) return;
+        if (MeteorClient.mc == null) return;
 
         CHAMS.onResized(width, height);
         ENTITY_OUTLINE.onResized(width, height);

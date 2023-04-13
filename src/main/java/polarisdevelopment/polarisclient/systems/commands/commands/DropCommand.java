@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.commands;
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import meteordevelopment.meteorclient.systems.commands.Command;
-import meteordevelopment.meteorclient.systems.commands.Commands;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.systems.commands.Commands;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.argument.ItemStackArgumentType;

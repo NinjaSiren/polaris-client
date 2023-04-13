@@ -3,25 +3,25 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
-import meteordevelopment.meteorclient.mixin.WorldRendererAccessor;
+import polarisdevelopment.polarisclient.mixin.WorldRendererAccessor;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.render.RenderUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.HudRenderer;
+import polarisdevelopment.polarisclient.utils.render.RenderUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class HoleHud extends HudElement {
     public static final HudElementInfo<HoleHud> INFO = new HudElementInfo<>(Hud.GROUP, "hole", "Displays information about the hole you are standing in.", HoleHud::new);
@@ -110,19 +110,19 @@ public class HoleHud extends HudElement {
 
     private Direction get(Facing dir) {
         if (isInEditor()) return Direction.DOWN;
-        return Direction.fromRotation(MathHelper.wrapDegrees(mc.player.getYaw() + dir.offset));
+        return Direction.fromRotation(MathHelper.wrapDegrees(MeteorClient.mc.player.getYaw() + dir.offset));
     }
 
     private void drawBlock(HudRenderer renderer, Direction dir, double x, double y) {
-        Block block = dir == Direction.DOWN ? Blocks.OBSIDIAN : mc.world.getBlockState(mc.player.getBlockPos().offset(dir)).getBlock();
+        Block block = dir == Direction.DOWN ? Blocks.OBSIDIAN : MeteorClient.mc.world.getBlockState(MeteorClient.mc.player.getBlockPos().offset(dir)).getBlock();
         if (!safe.get().contains(block)) return;
 
         RenderUtils.drawItem(block.asItem().getDefaultStack(), (int) x, (int) y, scale.get(), false);
 
         if (dir == Direction.DOWN) return;
 
-        ((WorldRendererAccessor) mc.worldRenderer).getBlockBreakingInfos().values().forEach(info -> {
-            if (info.getPos().equals(mc.player.getBlockPos().offset(dir))) {
+        ((WorldRendererAccessor) MeteorClient.mc.worldRenderer).getBlockBreakingInfos().values().forEach(info -> {
+            if (info.getPos().equals(MeteorClient.mc.player.getBlockPos().offset(dir))) {
                 renderBreaking(renderer, x, y, info.getStage() / 9f);
             }
         });

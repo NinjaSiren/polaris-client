@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.input.Input;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.input.Input;
 import net.minecraft.nbt.NbtCompound;
 
 import java.util.Objects;

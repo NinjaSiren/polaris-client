@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.input;
+package polarisdevelopment.polarisclient.gui.widgets.input;
 
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 public abstract class WSlider extends WWidget {
     public Runnable action;

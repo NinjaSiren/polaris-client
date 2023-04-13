@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,8 +17,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class PathFinder {
     private final static int PATH_AHEAD = 3;
@@ -57,19 +55,19 @@ public class PathFinder {
     }
 
     public Vec3d getNextStraightPos() {
-        Vec3d nextPos = new Vec3d(mc.player.getX(), mc.player.getY(), mc.player.getZ());
+        Vec3d nextPos = new Vec3d(MeteorClient.mc.player.getX(), MeteorClient.mc.player.getY(), MeteorClient.mc.player.getZ());
         double multiplier = 1.0;
-        while (nextPos == mc.player.getPos()) {
-            nextPos = new Vec3d((int) (mc.player.getX() + multiplier * Math.cos(Math.toRadians(mc.player.getYaw()))), (int) (mc.player.getY()), (int) (mc.player.getZ() + multiplier * Math.sin(Math.toRadians(mc.player.getYaw()))));
+        while (nextPos == MeteorClient.mc.player.getPos()) {
+            nextPos = new Vec3d((int) (MeteorClient.mc.player.getX() + multiplier * Math.cos(Math.toRadians(MeteorClient.mc.player.getYaw()))), (int) (MeteorClient.mc.player.getY()), (int) (MeteorClient.mc.player.getZ() + multiplier * Math.sin(Math.toRadians(MeteorClient.mc.player.getYaw()))));
             multiplier += .1;
         }
         return nextPos;
     }
 
     public int getYawToTarget() {
-        if (target == null || mc.player == null) return Integer.MAX_VALUE;
+        if (target == null || MeteorClient.mc.player == null) return Integer.MAX_VALUE;
         Vec3d tPos = target.getPos();
-        Vec3d pPos = mc.player.getPos();
+        Vec3d pPos = MeteorClient.mc.player.getPos();
         int yaw = 0;
         int direction = getDirection();
         double tan = (tPos.z - pPos.z) / (tPos.x - pPos.x);
@@ -82,9 +80,9 @@ public class PathFinder {
     }
 
     public int getDirection() {
-        if (target == null || mc.player == null) return 0;
+        if (target == null || MeteorClient.mc.player == null) return 0;
         Vec3d targetPos = target.getPos();
-        Vec3d playerPos = mc.player.getPos();
+        Vec3d playerPos = MeteorClient.mc.player.getPos();
         if (targetPos.x == playerPos.x && targetPos.z > playerPos.z)
             return SOUTH;
         if (targetPos.x == playerPos.x && targetPos.z < playerPos.z)
@@ -97,20 +95,20 @@ public class PathFinder {
     }
 
     public BlockState getBlockStateAtPos(BlockPos pos) {
-        if (mc.world != null)
-            return mc.world.getBlockState(pos);
+        if (MeteorClient.mc.world != null)
+            return MeteorClient.mc.world.getBlockState(pos);
         return null;
     }
 
     public BlockState getBlockStateAtPos(int x, int y, int z) {
-        if (mc.world != null)
-            return mc.world.getBlockState(new BlockPos(x, y, z));
+        if (MeteorClient.mc.world != null)
+            return MeteorClient.mc.world.getBlockState(new BlockPos(x, y, z));
         return null;
     }
 
     public Block getBlockAtPos(BlockPos pos) {
-        if (mc.world != null)
-            return mc.world.getBlockState(pos).getBlock();
+        if (MeteorClient.mc.world != null)
+            return MeteorClient.mc.world.getBlockState(pos).getBlock();
         return null;
     }
 
@@ -127,24 +125,24 @@ public class PathFinder {
     }
 
     public void lookAtDestination(PathBlock pathBlock) {
-        if (mc.player != null) {
-            mc.player.lookAt(EntityAnchorArgumentType.EntityAnchor.EYES, new Vec3d(pathBlock.blockPos.getX(), pathBlock.blockPos.getY() + mc.player.getStandingEyeHeight(), pathBlock.blockPos.getZ()));
+        if (MeteorClient.mc.player != null) {
+            MeteorClient.mc.player.lookAt(EntityAnchorArgumentType.EntityAnchor.EYES, new Vec3d(pathBlock.blockPos.getX(), pathBlock.blockPos.getY() + MeteorClient.mc.player.getStandingEyeHeight(), pathBlock.blockPos.getZ()));
         }
     }
 
     @EventHandler
     private void moveEventListener(PlayerMoveEvent event) {
-        if (target != null && mc.player != null) {
+        if (target != null && MeteorClient.mc.player != null) {
             if (!PlayerUtils.isWithin(target, 3)) {
                 if (currentPathBlock == null) currentPathBlock = getNextPathBlock();
-                if (mc.player.getPos().distanceTo(new Vec3d(currentPathBlock.blockPos.getX(), currentPathBlock.blockPos.getY(), currentPathBlock.blockPos.getZ())) < .1)
+                if (MeteorClient.mc.player.getPos().distanceTo(new Vec3d(currentPathBlock.blockPos.getX(), currentPathBlock.blockPos.getY(), currentPathBlock.blockPos.getZ())) < .1)
                     currentPathBlock = getNextPathBlock();
                 lookAtDestination(currentPathBlock);
-                if (!mc.options.forwardKey.isPressed())
-                    mc.options.forwardKey.setPressed(true);
+                if (!MeteorClient.mc.options.forwardKey.isPressed())
+                    MeteorClient.mc.options.forwardKey.setPressed(true);
             } else {
-                if (mc.options.forwardKey.isPressed())
-                    mc.options.forwardKey.setPressed(false);
+                if (MeteorClient.mc.options.forwardKey.isPressed())
+                    MeteorClient.mc.options.forwardKey.setPressed(false);
                 path.clear();
                 currentPathBlock = null;
             }
@@ -160,7 +158,7 @@ public class PathFinder {
     public void disable() {
         target = null;
         path.clear();
-        if (mc.options.forwardKey.isPressed()) mc.options.forwardKey.setPressed(false);
+        if (MeteorClient.mc.options.forwardKey.isPressed()) MeteorClient.mc.options.forwardKey.setPressed(false);
         MeteorClient.EVENT_BUS.unsubscribe(this);
     }
 

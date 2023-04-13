@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.utils;
+package polarisdevelopment.polarisclient.gui.utils;
 
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
 
 public class Cell<T extends WWidget> {
     private final T widget;

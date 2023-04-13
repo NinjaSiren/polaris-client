@@ -3,23 +3,22 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.WAccount;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.systems.accounts.Account;
-import meteordevelopment.meteorclient.systems.accounts.Accounts;
-import meteordevelopment.meteorclient.systems.accounts.MicrosoftLogin;
-import meteordevelopment.meteorclient.systems.accounts.types.MicrosoftAccount;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.WAccount;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.systems.accounts.Account;
+import polarisdevelopment.polarisclient.systems.accounts.Accounts;
+import polarisdevelopment.polarisclient.systems.accounts.MicrosoftLogin;
+import polarisdevelopment.polarisclient.systems.accounts.types.MicrosoftAccount;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
 import org.jetbrains.annotations.Nullable;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class AccountsScreen extends WindowScreen {
     public AccountsScreen(GuiTheme theme) {
@@ -37,8 +36,8 @@ public class AccountsScreen extends WindowScreen {
         // Add account
         WHorizontalList l = add(theme.horizontalList()).expandX().widget();
 
-        addButton(l, "Cracked", () -> mc.setScreen(new AddCrackedAccountScreen(theme, this)));
-        addButton(l, "Altening", () -> mc.setScreen(new AddAlteningAccountScreen(theme, this)));
+        addButton(l, "Cracked", () -> MeteorClient.mc.setScreen(new AddCrackedAccountScreen(theme, this)));
+        addButton(l, "Altening", () -> MeteorClient.mc.setScreen(new AddAlteningAccountScreen(theme, this)));
         addButton(l, "Microsoft", () -> {
             locked = true;
 

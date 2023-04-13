@@ -3,12 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.marker;
+package polarisdevelopment.polarisclient.systems.modules.render.marker;
 
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
-import meteordevelopment.meteorclient.renderer.ShapeMode;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.renderer.ShapeMode;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.util.math.BlockPos;
 
 // TODO: Add outline and more modes

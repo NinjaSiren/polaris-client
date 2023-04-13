@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.utils.misc.IChangeable;
-import meteordevelopment.meteorclient.utils.misc.ICopyable;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.utils.misc.IChangeable;
+import polarisdevelopment.polarisclient.utils.misc.ICopyable;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
 import net.minecraft.block.Block;
 
 public interface IBlockData<T extends ICopyable<T> & ISerializable<T> & IChangeable & IBlockData<T>> {

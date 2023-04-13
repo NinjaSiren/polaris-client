@@ -3,16 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.waypoints;
+package polarisdevelopment.polarisclient.systems.waypoints;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.renderer.GL;
-import meteordevelopment.meteorclient.renderer.Renderer2D;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.renderer.GL;
+import polarisdevelopment.polarisclient.renderer.Renderer2D;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
-import meteordevelopment.meteorclient.utils.world.Dimension;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.utils.world.Dimension;
 import net.minecraft.client.texture.AbstractTexture;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

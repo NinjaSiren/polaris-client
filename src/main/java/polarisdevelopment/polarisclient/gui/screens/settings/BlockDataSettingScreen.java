@@ -3,28 +3,27 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens.settings;
+package polarisdevelopment.polarisclient.gui.screens.settings;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.settings.BlockDataSetting;
-import meteordevelopment.meteorclient.settings.IBlockData;
-import meteordevelopment.meteorclient.utils.misc.IChangeable;
-import meteordevelopment.meteorclient.utils.misc.ICopyable;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.misc.Names;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.settings.BlockDataSetting;
+import polarisdevelopment.polarisclient.settings.IBlockData;
+import polarisdevelopment.polarisclient.utils.misc.IChangeable;
+import polarisdevelopment.polarisclient.utils.misc.ICopyable;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.Names;
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
 import org.apache.commons.lang3.StringUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class BlockDataSettingScreen extends WindowScreen {
     private static final List<Block> BLOCKS = new ArrayList<>(100);
@@ -78,7 +77,7 @@ public class BlockDataSettingScreen extends WindowScreen {
                 T data = blockData;
                 if (data == null) data = (T) setting.defaultData.get().copy();
 
-                mc.setScreen(data.createScreen(theme, block, (BlockDataSetting<T>) setting));
+                MeteorClient.mc.setScreen(data.createScreen(theme, block, (BlockDataSetting<T>) setting));
             };
 
             WButton reset = table.add(theme.button(GuiRenderer.RESET)).widget();

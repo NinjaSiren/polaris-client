@@ -1,11 +1,16 @@
-package meteordevelopment.meteorclient.utils.render;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
+
+package polarisdevelopment.polarisclient.utils.render;
 
 import com.google.gson.Gson;
 import com.mojang.util.UUIDTypeAdapter;
-import meteordevelopment.meteorclient.systems.accounts.TexturesJson;
-import meteordevelopment.meteorclient.systems.accounts.UuidToProfileResponse;
-import meteordevelopment.meteorclient.utils.PostInit;
-import meteordevelopment.meteorclient.utils.network.Http;
+import polarisdevelopment.polarisclient.systems.accounts.TexturesJson;
+import polarisdevelopment.polarisclient.systems.accounts.UuidToProfileResponse;
+import polarisdevelopment.polarisclient.utils.PostInit;
+import polarisdevelopment.polarisclient.utils.network.Http;
 
 import java.util.Base64;
 import java.util.UUID;

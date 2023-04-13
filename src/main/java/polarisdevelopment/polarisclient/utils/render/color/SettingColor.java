@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render.color;
+package polarisdevelopment.polarisclient.utils.render.color;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Style;

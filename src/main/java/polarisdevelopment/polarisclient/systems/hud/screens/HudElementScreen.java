@@ -3,25 +3,24 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.screens;
+package polarisdevelopment.polarisclient.systems.hud.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WCheckbox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.settings.BoolSetting;
-import meteordevelopment.meteorclient.settings.EnumSetting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.XAnchor;
-import meteordevelopment.meteorclient.systems.hud.YAnchor;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WCheckbox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.settings.BoolSetting;
+import polarisdevelopment.polarisclient.settings.EnumSetting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.XAnchor;
+import polarisdevelopment.polarisclient.systems.hud.YAnchor;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
 import net.minecraft.nbt.NbtCompound;
-
-import static meteordevelopment.meteorclient.utils.Utils.getWindowWidth;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 public class HudElementScreen extends WindowScreen {
     private final HudElement element;
@@ -70,7 +69,7 @@ public class HudElementScreen extends WindowScreen {
     @Override
     public void initWidgets() {
         // Description
-        add(theme.label(element.info.description, getWindowWidth() / 2.0));
+        add(theme.label(element.info.description, Utils.getWindowWidth() / 2.0));
 
         // Settings
         if (element.settings.sizeGroups() > 0) {

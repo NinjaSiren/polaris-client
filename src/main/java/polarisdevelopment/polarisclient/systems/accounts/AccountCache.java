@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.accounts;
+package polarisdevelopment.polarisclient.systems.accounts;
 
 import com.mojang.util.UUIDTypeAdapter;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.misc.NbtException;
-import meteordevelopment.meteorclient.utils.render.PlayerHeadTexture;
-import meteordevelopment.meteorclient.utils.render.PlayerHeadUtils;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.NbtException;
+import polarisdevelopment.polarisclient.utils.render.PlayerHeadTexture;
+import polarisdevelopment.polarisclient.utils.render.PlayerHeadUtils;
 import net.minecraft.nbt.NbtCompound;
 
 public class AccountCache implements ISerializable<AccountCache> {

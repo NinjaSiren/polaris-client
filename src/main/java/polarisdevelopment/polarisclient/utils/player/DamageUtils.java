@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.GameJoinedEvent;
-import meteordevelopment.meteorclient.mixininterface.IExplosion;
-import meteordevelopment.meteorclient.mixininterface.IRaycastContext;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerEntity;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.GameJoinedEvent;
+import polarisdevelopment.polarisclient.mixininterface.IExplosion;
+import polarisdevelopment.polarisclient.mixininterface.IRaycastContext;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerEntity;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -38,8 +38,6 @@ import net.minecraft.world.explosion.Explosion;
 
 import java.util.Objects;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-
 public class DamageUtils {
     private static final Vec3d vec3d = new Vec3d(0, 0, 0);
     private static Explosion explosion;
@@ -52,8 +50,8 @@ public class DamageUtils {
 
     @EventHandler
     private static void onGameJoined(GameJoinedEvent event) {
-        explosion = new Explosion(mc.world, null, 0, 0, 0, 6, false, Explosion.DestructionType.DESTROY);
-        raycastContext = new RaycastContext(null, null, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.ANY, mc.player);
+        explosion = new Explosion(MeteorClient.mc.world, null, 0, 0, 0, 6, false, Explosion.DestructionType.DESTROY);
+        raycastContext = new RaycastContext(null, null, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.ANY, MeteorClient.mc.player);
     }
 
     // Crystal damage
@@ -164,16 +162,16 @@ public class DamageUtils {
     // Anchor damage
 
     public static double anchorDamage(LivingEntity player, Vec3d anchor) {
-        mc.world.removeBlock(new BlockPos(anchor), false);
+        MeteorClient.mc.world.removeBlock(new BlockPos(anchor), false);
         double damage = bedDamage(player, anchor);
-        mc.world.setBlockState(new BlockPos(anchor), Blocks.RESPAWN_ANCHOR.getDefaultState());
+        MeteorClient.mc.world.setBlockState(new BlockPos(anchor), Blocks.RESPAWN_ANCHOR.getDefaultState());
         return damage;
     }
 
     // Utils
 
     private static double getDamageForDifficulty(double damage) {
-        return switch (mc.world.getDifficulty()) {
+        return switch (MeteorClient.mc.world.getDifficulty()) {
             case PEACEFUL -> 0;
             case EASY     -> Math.min(damage / 2 + 1, damage);
             case HARD     -> damage * 3 / 2;
@@ -251,15 +249,15 @@ public class DamageUtils {
             BlockState blockState;
             if (blockPos.equals(obsidianPos)) blockState = Blocks.OBSIDIAN.getDefaultState();
             else {
-                blockState = mc.world.getBlockState(blockPos);
+                blockState = MeteorClient.mc.world.getBlockState(blockPos);
                 if (blockState.getBlock().getBlastResistance() < 600 && ignoreTerrain) blockState = Blocks.AIR.getDefaultState();
             }
 
             Vec3d vec3d = raycastContext.getStart();
             Vec3d vec3d2 = raycastContext.getEnd();
 
-            VoxelShape voxelShape = raycastContext.getBlockShape(blockState, mc.world, blockPos);
-            BlockHitResult blockHitResult = mc.world.raycastBlock(vec3d, vec3d2, blockPos, voxelShape, blockState);
+            VoxelShape voxelShape = raycastContext.getBlockShape(blockState, MeteorClient.mc.world, blockPos);
+            BlockHitResult blockHitResult = MeteorClient.mc.world.raycastBlock(vec3d, vec3d2, blockPos, voxelShape, blockState);
             VoxelShape voxelShape2 = VoxelShapes.empty();
             BlockHitResult blockHitResult2 = voxelShape2.raycast(vec3d, vec3d2, blockPos);
 

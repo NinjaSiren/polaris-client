@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.utils;
+package polarisdevelopment.polarisclient.gui.utils;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
 
 public interface IScreenFactory {
     WidgetScreen createScreen(GuiTheme theme);

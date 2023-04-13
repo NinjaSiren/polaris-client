@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.tooltip;
+package polarisdevelopment.polarisclient.utils.tooltip;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.BetterTooltips;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.BetterTooltips;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.tooltip.TooltipComponent;
@@ -18,8 +18,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.map.MapState;
 import net.minecraft.util.Identifier;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class MapTooltipComponent implements TooltipComponent, MeteorTooltipData {
     private static final Identifier TEXTURE_MAP_BACKGROUND = new Identifier("textures/map/map_background.png");
@@ -61,14 +60,14 @@ public class MapTooltipComponent implements TooltipComponent, MeteorTooltipData 
         matrices.pop();
 
         // Contents
-        VertexConsumerProvider.Immediate consumer = mc.getBufferBuilders().getEntityVertexConsumers();
-        MapState mapState = FilledMapItem.getMapState(this.mapId, mc.world);
+        VertexConsumerProvider.Immediate consumer = MeteorClient.mc.getBufferBuilders().getEntityVertexConsumers();
+        MapState mapState = FilledMapItem.getMapState(this.mapId, MeteorClient.mc.world);
         if (mapState == null) return;
         matrices.push();
         matrices.translate(x, y, z);
         matrices.scale((float) scale, (float) scale, 0);
         matrices.translate(8, 8, 0);
-        mc.gameRenderer.getMapRenderer().draw(matrices, consumer, this.mapId, mapState, false, 0xF000F0);
+        MeteorClient.mc.gameRenderer.getMapRenderer().draw(matrices, consumer, this.mapId, mapState, false, 0xF000F0);
         consumer.draw();
         matrices.pop();
     }

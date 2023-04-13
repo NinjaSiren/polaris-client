@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.arguments;
+package polarisdevelopment.polarisclient.systems.commands.arguments;
 
 import com.google.common.collect.Streams;
 import com.mojang.brigadier.StringReader;
@@ -13,8 +13,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 import net.minecraft.command.CommandSource;
 import net.minecraft.text.Text;
 

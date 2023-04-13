@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin.sodium;
+package polarisdevelopment.polarisclient.mixin.sodium;
 
 import me.jellysquid.mods.sodium.client.model.light.LightPipeline;
 import me.jellysquid.mods.sodium.client.model.quad.ModelQuadView;
@@ -12,9 +12,9 @@ import me.jellysquid.mods.sodium.client.render.chunk.compile.buffers.ChunkModelB
 import me.jellysquid.mods.sodium.client.render.chunk.compile.pipeline.FluidRenderer;
 import me.jellysquid.mods.sodium.client.util.color.ColorABGR;
 import me.jellysquid.mods.sodium.client.util.color.ColorARGB;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.Xray;
-import meteordevelopment.meteorclient.systems.modules.world.Ambience;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.Xray;
+import polarisdevelopment.polarisclient.systems.modules.world.Ambience;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;

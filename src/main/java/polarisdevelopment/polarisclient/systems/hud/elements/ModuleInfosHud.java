@@ -3,14 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.hud.*;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.systems.modules.combat.*;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.systems.modules.combat.*;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.systems.hud.*;
 
 import java.util.List;
 

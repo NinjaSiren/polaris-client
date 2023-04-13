@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
 import baritone.api.BaritoneAPI;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.mixininterface.IChatHud;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.PostInit;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.mixininterface.IChatHud;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.PostInit;
 import net.minecraft.text.*;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Pair;
@@ -19,8 +19,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class ChatUtils {
     private static final List<Pair<String, Supplier<Text>>> customPrefixes = new ArrayList<>();
@@ -66,10 +64,10 @@ public class ChatUtils {
 
     /** Sends the message as if the user typed it into chat. */
     public static void sendPlayerMsg(String message) {
-        mc.inGameHud.getChatHud().addToMessageHistory(message);
+        MeteorClient.mc.inGameHud.getChatHud().addToMessageHistory(message);
 
-        if (message.startsWith("/")) mc.player.networkHandler.sendChatCommand(message.substring(1));
-        else mc.player.networkHandler.sendChatMessage(message);
+        if (message.startsWith("/")) MeteorClient.mc.player.networkHandler.sendChatCommand(message.substring(1));
+        else MeteorClient.mc.player.networkHandler.sendChatMessage(message);
     }
 
     // Default
@@ -131,7 +129,7 @@ public class ChatUtils {
     }
 
     public static void sendMsg(int id, @Nullable String prefixTitle, @Nullable Formatting prefixColor, Text msg) {
-        if (mc.world == null) return;
+        if (MeteorClient.mc.world == null) return;
 
         MutableText message = Text.literal("");
         message.append(getPrefix());
@@ -140,7 +138,7 @@ public class ChatUtils {
 
         if (!Config.get().deleteChatFeedback.get()) id = 0;
 
-        ((IChatHud) mc.inGameHud.getChatHud()).add(message, id);
+        ((IChatHud) MeteorClient.mc.inGameHud.getChatHud()).add(message, id);
     }
 
     private static MutableText getCustomPrefix(String prefixTitle, Formatting prefixColor) {

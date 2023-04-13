@@ -2,9 +2,9 @@
   "required": false,
   "package": "meteordevelopment.meteorclient.mixin.lithium",
   "compatibilityLevel": "JAVA_17",
-  "plugin": "meteordevelopment.meteorclient.MixinPlugin",
+  "plugin": "polarisdevelopment.polarisclient.MixinPlugin",
   "client": [
-    "ChunkAwareBlockCollisionSweeperMixin"
+    "polarisdevelopment.polarisclient.mixin.lithium.ChunkAwareBlockCollisionSweeperMixin"
   ],
   "injectors": {
     "defaultRequire": 1

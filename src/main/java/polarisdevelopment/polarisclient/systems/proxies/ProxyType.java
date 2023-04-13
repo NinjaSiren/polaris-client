@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.proxies;
+package polarisdevelopment.polarisclient.systems.proxies;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.network;
+package polarisdevelopment.polarisclient.utils.network;
 
 public class OnlinePlayers {
     private static long lastPingTime;

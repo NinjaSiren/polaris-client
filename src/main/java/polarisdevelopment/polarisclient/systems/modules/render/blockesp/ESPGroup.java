@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.blockesp;
+package polarisdevelopment.polarisclient.systems.modules.render.blockesp;
 
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.misc.UnorderedArrayList;
-import meteordevelopment.meteorclient.utils.render.RenderUtils;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.utils.misc.UnorderedArrayList;
+import polarisdevelopment.polarisclient.utils.render.RenderUtils;
 import net.minecraft.block.Block;
 
 import java.util.ArrayDeque;

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.pressable;
+package polarisdevelopment.polarisclient.gui.widgets.pressable;
 
 public abstract class WMinus extends WPressable {
     @Override

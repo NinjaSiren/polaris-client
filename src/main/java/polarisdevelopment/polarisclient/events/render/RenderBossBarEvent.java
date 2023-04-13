@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.render;
+package polarisdevelopment.polarisclient.events.render;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 import net.minecraft.client.gui.hud.ClientBossBar;
 import net.minecraft.text.Text;
 

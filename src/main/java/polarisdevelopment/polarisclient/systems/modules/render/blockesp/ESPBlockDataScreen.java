@@ -3,13 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.blockesp;
+package polarisdevelopment.polarisclient.systems.modules.render.blockesp;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.renderer.ShapeMode;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.renderer.ShapeMode;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.block.Block;
 
 public class ESPBlockDataScreen extends WindowScreen {

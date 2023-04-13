@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.utils.misc.IChangeable;
-import meteordevelopment.meteorclient.utils.misc.ICopyable;
-import meteordevelopment.meteorclient.utils.misc.IGetter;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.IChangeable;
+import polarisdevelopment.polarisclient.utils.misc.ICopyable;
+import polarisdevelopment.polarisclient.utils.misc.IGetter;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;

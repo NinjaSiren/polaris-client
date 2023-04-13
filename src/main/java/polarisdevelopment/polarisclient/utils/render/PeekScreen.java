@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.BetterTooltips;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.BetterTooltips;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -18,8 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ShulkerBoxScreenHandler;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class PeekScreen extends ShulkerBoxScreen {
     private final Identifier TEXTURE = new Identifier("textures/gui/container/shulker_box.png");
@@ -27,7 +26,7 @@ public class PeekScreen extends ShulkerBoxScreen {
     private final ItemStack storageBlock;
 
     public PeekScreen(ItemStack storageBlock, ItemStack[] contents) {
-        super(new ShulkerBoxScreenHandler(0, mc.player.getInventory(), new SimpleInventory(contents)), mc.player.getInventory(), storageBlock.getName());
+        super(new ShulkerBoxScreenHandler(0, MeteorClient.mc.player.getInventory(), new SimpleInventory(contents)), MeteorClient.mc.player.getInventory(), storageBlock.getName());
         this.contents = contents;
         this.storageBlock = storageBlock;
     }
@@ -36,7 +35,7 @@ public class PeekScreen extends ShulkerBoxScreen {
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         BetterTooltips tooltips = Modules.get().get(BetterTooltips.class);
 
-        if (button == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && focusedSlot != null && !focusedSlot.getStack().isEmpty() && mc.player.currentScreenHandler.getCursorStack().isEmpty() && tooltips.middleClickOpen()) {
+        if (button == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && focusedSlot != null && !focusedSlot.getStack().isEmpty() && MeteorClient.mc.player.currentScreenHandler.getCursorStack().isEmpty() && tooltips.middleClickOpen()) {
             return Utils.openContainer(focusedSlot.getStack(), contents, false);
         }
         return false;

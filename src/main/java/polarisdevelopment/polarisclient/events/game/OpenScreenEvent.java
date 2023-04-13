@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.game;
+package polarisdevelopment.polarisclient.events.game;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 import net.minecraft.client.gui.screen.Screen;
 
 public class OpenScreenEvent extends Cancellable {

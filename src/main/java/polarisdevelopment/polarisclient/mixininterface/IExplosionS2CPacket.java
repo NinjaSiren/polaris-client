@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixininterface;
+package polarisdevelopment.polarisclient.mixininterface;
 
 public interface IExplosionS2CPacket {
     void setVelocityX(float velocity);

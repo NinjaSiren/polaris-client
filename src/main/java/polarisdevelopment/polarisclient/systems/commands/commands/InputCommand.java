@@ -1,10 +1,15 @@
-package meteordevelopment.meteorclient.systems.commands.commands;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
+
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.systems.commands.Command;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.command.CommandSource;

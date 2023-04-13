@@ -3,18 +3,19 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.hud.*;
-import meteordevelopment.meteorclient.utils.misc.Names;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.utils.misc.Names;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffectUtil;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.systems.hud.*;
 
 public class PotionTimersHud extends HudElement {
     public static final HudElementInfo<PotionTimersHud> INFO = new HudElementInfo<>(Hud.GROUP, "potion-timers", "Displays active potion effects with timers.", PotionTimersHud::new);
@@ -100,7 +101,7 @@ public class PotionTimersHud extends HudElement {
 
     @Override
     public void tick(HudRenderer renderer) {
-        if (mc.player == null || isInEditor()) {
+        if (MeteorClient.mc.player == null || isInEditor()) {
             setSize(renderer.textWidth("Potion Timers 0:00", shadow.get(), getScale()), renderer.textHeight(shadow.get(), getScale()));
             return;
         }
@@ -108,7 +109,7 @@ public class PotionTimersHud extends HudElement {
         double width = 0;
         double height = 0;
 
-        for (StatusEffectInstance statusEffectInstance : mc.player.getStatusEffects()) {
+        for (StatusEffectInstance statusEffectInstance : MeteorClient.mc.player.getStatusEffects()) {
             width = Math.max(width, renderer.textWidth(getString(statusEffectInstance), shadow.get(), getScale()));
             height += renderer.textHeight(shadow.get(), getScale());
         }
@@ -125,12 +126,12 @@ public class PotionTimersHud extends HudElement {
             renderer.quad(this.x, this.y, getWidth(), getHeight(), backgroundColor.get());
         }
 
-        if (mc.player == null || isInEditor()) {
+        if (MeteorClient.mc.player == null || isInEditor()) {
             renderer.text("Potion Timers 0:00", x, y, color, shadow.get(), getScale());
             return;
         }
 
-        for (StatusEffectInstance statusEffectInstance : mc.player.getStatusEffects()) {
+        for (StatusEffectInstance statusEffectInstance : MeteorClient.mc.player.getStatusEffects()) {
             StatusEffect statusEffect = statusEffectInstance.getEffectType();
 
             int c = statusEffect.getColor();

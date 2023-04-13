@@ -3,22 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
 import meteordevelopment.meteorclient.systems.hud.*;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.systems.hud.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class PlayerRadarHud extends HudElement {
     public static final HudElementInfo<PlayerRadarHud> INFO = new HudElementInfo<>(Hud.GROUP, "player-radar", "Displays players in your visual range.", PlayerRadarHud::new);
@@ -144,17 +145,17 @@ public class PlayerRadarHud extends HudElement {
         double width = renderer.textWidth("Players:", shadow.get(), getScale());
         double height = renderer.textHeight(shadow.get(), getScale());
 
-        if (mc.world == null) {
+        if (MeteorClient.mc.world == null) {
             setSize(width, height);
             return;
         }
 
         for (PlayerEntity entity : getPlayers()) {
-            if (entity.equals(mc.player)) continue;
+            if (entity.equals(MeteorClient.mc.player)) continue;
             if (!friends.get() && Friends.get().isFriend(entity)) continue;
 
             String text = entity.getEntityName();
-            if (distance.get()) text += String.format("(%sm)", Math.round(mc.getCameraEntity().distanceTo(entity)));
+            if (distance.get()) text += String.format("(%sm)", Math.round(MeteorClient.mc.getCameraEntity().distanceTo(entity)));
 
             width = Math.max(width, renderer.textWidth(text, shadow.get(), getScale()));
             height += renderer.textHeight(shadow.get(), getScale()) + 2;
@@ -173,11 +174,11 @@ public class PlayerRadarHud extends HudElement {
 
         renderer.text("Players:", x + border.get() + alignX(renderer.textWidth("Players:", shadow.get(), getScale()), alignment.get()), y, secondaryColor.get(), shadow.get(), getScale());
 
-        if (mc.world == null) return;
+        if (MeteorClient.mc.world == null) return;
         double spaceWidth = renderer.textWidth(" ", shadow.get(), getScale());
 
         for (PlayerEntity entity : getPlayers()) {
-            if (entity.equals(mc.player)) continue;
+            if (entity.equals(MeteorClient.mc.player)) continue;
             if (!friends.get() && Friends.get().isFriend(entity)) continue;
 
             String text = entity.getEntityName();
@@ -188,7 +189,7 @@ public class PlayerRadarHud extends HudElement {
             if (distance.get()) width += spaceWidth;
 
             if (distance.get()) {
-                distanceText = String.format("(%sm)", Math.round(mc.getCameraEntity().distanceTo(entity)));
+                distanceText = String.format("(%sm)", Math.round(MeteorClient.mc.getCameraEntity().distanceTo(entity)));
                 width += renderer.textWidth(distanceText, shadow.get(), getScale());
             }
 
@@ -202,9 +203,9 @@ public class PlayerRadarHud extends HudElement {
 
     private List<AbstractClientPlayerEntity> getPlayers() {
         players.clear();
-        players.addAll(mc.world.getPlayers());
+        players.addAll(MeteorClient.mc.world.getPlayers());
         if (players.size() > limit.get()) players.subList(limit.get() - 1, players.size() - 1).clear();
-        players.sort(Comparator.comparingDouble(e -> e.squaredDistanceTo(mc.getCameraEntity())));
+        players.sort(Comparator.comparingDouble(e -> e.squaredDistanceTo(MeteorClient.mc.getCameraEntity())));
 
         return players;
     }

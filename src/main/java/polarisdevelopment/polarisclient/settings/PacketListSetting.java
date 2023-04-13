@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
-import meteordevelopment.meteorclient.utils.network.PacketUtils;
+import polarisdevelopment.polarisclient.utils.network.PacketUtils;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;

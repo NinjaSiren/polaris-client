@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.world;
+package polarisdevelopment.polarisclient.events.world;
 
-import meteordevelopment.meteorclient.utils.misc.Pool;
+import polarisdevelopment.polarisclient.utils.misc.Pool;
 import net.minecraft.world.chunk.WorldChunk;
 
 public class ChunkDataEvent {

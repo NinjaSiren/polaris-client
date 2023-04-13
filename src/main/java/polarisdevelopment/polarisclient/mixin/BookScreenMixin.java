@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import it.unimi.dsi.fastutil.io.FastByteArrayOutputStream;
-import meteordevelopment.meteorclient.gui.GuiThemes;
-import meteordevelopment.meteorclient.gui.screens.EditBookTitleAndAuthorScreen;
+import polarisdevelopment.polarisclient.gui.GuiThemes;
+import polarisdevelopment.polarisclient.gui.screens.EditBookTitleAndAuthorScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.BookScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -25,12 +25,11 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Base64;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 @Mixin(BookScreen.class)
 public class BookScreenMixin extends Screen {
@@ -63,7 +62,7 @@ public class BookScreenMixin extends Screen {
                         e.printStackTrace();
                     }
 
-                    GLFW.glfwSetClipboardString(mc.getWindow().getHandle(), Base64.getEncoder().encodeToString(bytes.array));
+                    GLFW.glfwSetClipboardString(MeteorClient.mc.getWindow().getHandle(), Base64.getEncoder().encodeToString(bytes.array));
                 })
                 .position(4, 4)
                 .size(120, 20)
@@ -71,11 +70,11 @@ public class BookScreenMixin extends Screen {
         );
 
         // Edit title & author
-        ItemStack itemStack = mc.player.getMainHandStack();
+        ItemStack itemStack = MeteorClient.mc.player.getMainHandStack();
         Hand hand = Hand.MAIN_HAND;
 
         if (itemStack.getItem() != Items.WRITTEN_BOOK) {
-            itemStack = mc.player.getOffHandStack();
+            itemStack = MeteorClient.mc.player.getOffHandStack();
             hand = Hand.OFF_HAND;
         }
         if (itemStack.getItem() != Items.WRITTEN_BOOK) return;
@@ -85,7 +84,7 @@ public class BookScreenMixin extends Screen {
 
         addDrawableChild(
                 new ButtonWidget.Builder(Text.literal("Edit title & author"), button -> {
-                    mc.setScreen(new EditBookTitleAndAuthorScreen(GuiThemes.get(), book, hand2));
+                    MeteorClient.mc.setScreen(new EditBookTitleAndAuthorScreen(GuiThemes.get(), book, hand2));
                 })
                 .position(4, 4 + 20 + 2)
                 .size(120, 20)

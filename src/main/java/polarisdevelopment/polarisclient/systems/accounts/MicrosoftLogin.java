@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.accounts;
+package polarisdevelopment.polarisclient.systems.accounts;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-import meteordevelopment.meteorclient.utils.network.Http;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.utils.network.Http;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
 import net.minecraft.util.Util;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;

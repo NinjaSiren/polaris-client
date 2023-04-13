@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.tooltip;
+package polarisdevelopment.polarisclient.utils.tooltip;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
-import meteordevelopment.meteorclient.utils.render.RenderUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.render.RenderUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.tooltip.TooltipComponent;

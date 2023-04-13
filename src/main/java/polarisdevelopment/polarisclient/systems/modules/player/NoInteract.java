@@ -3,17 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.player;
+package polarisdevelopment.polarisclient.systems.modules.player;
 
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
-import meteordevelopment.meteorclient.events.entity.player.AttackEntityEvent;
-import meteordevelopment.meteorclient.events.entity.player.InteractBlockEvent;
-import meteordevelopment.meteorclient.events.entity.player.InteractEntityEvent;
-import meteordevelopment.meteorclient.events.entity.player.StartBreakingBlockEvent;
+import polarisdevelopment.polarisclient.events.entity.player.AttackEntityEvent;
+import polarisdevelopment.polarisclient.events.entity.player.InteractBlockEvent;
+import polarisdevelopment.polarisclient.events.entity.player.InteractEntityEvent;
+import polarisdevelopment.polarisclient.events.entity.player.StartBreakingBlockEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.block.Block;

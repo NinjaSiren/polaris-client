@@ -1,4 +1,9 @@
-package meteordevelopment.meteorclient.renderer.text;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
+
+package polarisdevelopment.polarisclient.renderer.text;
 
 import java.io.InputStream;
 

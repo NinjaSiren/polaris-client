@@ -3,9 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
+
 import static org.lwjgl.opengl.GL32C.*;
 
 public class Framebuffer {
@@ -29,7 +30,7 @@ public class Framebuffer {
         GL.textureParam(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         GL.textureParam(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        GL.textureImage2D(GL_TEXTURE_2D, 0, GL_RGB, mc.getWindow().getFramebufferWidth(), mc.getWindow().getFramebufferHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, null);
+        GL.textureImage2D(GL_TEXTURE_2D, 0, GL_RGB, MeteorClient.mc.getWindow().getFramebufferWidth(), MeteorClient.mc.getWindow().getFramebufferHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, null);
         GL.framebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
 
         unbind();
@@ -40,7 +41,7 @@ public class Framebuffer {
     }
 
     public void unbind() {
-        mc.getFramebuffer().beginWrite(false);
+        MeteorClient.mc.getFramebuffer().beginWrite(false);
     }
 
     public void resize() {

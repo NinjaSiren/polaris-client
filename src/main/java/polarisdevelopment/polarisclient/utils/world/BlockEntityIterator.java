@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.world;
+package polarisdevelopment.polarisclient.utils.world;
 
-import meteordevelopment.meteorclient.mixin.ChunkAccessor;
+import polarisdevelopment.polarisclient.mixin.ChunkAccessor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.Chunk;

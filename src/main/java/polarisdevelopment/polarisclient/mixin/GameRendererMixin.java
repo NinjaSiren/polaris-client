@@ -3,25 +3,25 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
-import meteordevelopment.meteorclient.events.render.RenderAfterWorldEvent;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
-import meteordevelopment.meteorclient.renderer.Renderer3D;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.player.LiquidInteract;
-import meteordevelopment.meteorclient.systems.modules.player.NoMiningTrace;
-import meteordevelopment.meteorclient.systems.modules.player.Reach;
-import meteordevelopment.meteorclient.systems.modules.render.Freecam;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.systems.modules.render.Zoom;
-import meteordevelopment.meteorclient.systems.modules.world.HighwayBuilder;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.NametagUtils;
-import meteordevelopment.meteorclient.utils.render.RenderUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.events.render.RenderAfterWorldEvent;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.renderer.Renderer3D;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.player.LiquidInteract;
+import polarisdevelopment.polarisclient.systems.modules.player.NoMiningTrace;
+import polarisdevelopment.polarisclient.systems.modules.player.Reach;
+import polarisdevelopment.polarisclient.systems.modules.render.Freecam;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.systems.modules.render.Zoom;
+import polarisdevelopment.polarisclient.systems.modules.world.HighwayBuilder;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.NametagUtils;
+import polarisdevelopment.polarisclient.utils.render.RenderUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;

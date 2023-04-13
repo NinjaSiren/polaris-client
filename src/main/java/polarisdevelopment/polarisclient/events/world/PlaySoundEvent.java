@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.world;
+package polarisdevelopment.polarisclient.events.world;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 import net.minecraft.client.sound.SoundInstance;
 
 public class PlaySoundEvent extends Cancellable {

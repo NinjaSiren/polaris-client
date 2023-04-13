@@ -3,35 +3,39 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui;
+package polarisdevelopment.polarisclient.gui;
 
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
 import meteordevelopment.meteorclient.gui.screens.settings.*;
-import meteordevelopment.meteorclient.gui.themes.meteor.widgets.WMeteorLabel;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.utils.CharFilter;
-import meteordevelopment.meteorclient.gui.utils.SettingsWidgetFactory;
+import polarisdevelopment.polarisclient.gui.screens.settings.*;
+import polarisdevelopment.polarisclient.gui.themes.meteor.widgets.WMeteorLabel;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.utils.CharFilter;
+import polarisdevelopment.polarisclient.gui.utils.SettingsWidgetFactory;
 import meteordevelopment.meteorclient.gui.widgets.*;
 import meteordevelopment.meteorclient.gui.widgets.containers.*;
 import meteordevelopment.meteorclient.gui.widgets.input.*;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WCheckbox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPlus;
-import meteordevelopment.meteorclient.renderer.Fonts;
+import polarisdevelopment.polarisclient.gui.widgets.*;
+import polarisdevelopment.polarisclient.gui.widgets.containers.*;
+import polarisdevelopment.polarisclient.gui.widgets.input.*;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WCheckbox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPlus;
+import polarisdevelopment.polarisclient.renderer.Fonts;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import org.apache.commons.lang3.StringUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
     private static final SettingColor WHITE = new SettingColor();
@@ -213,7 +217,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
 
     private void genericW(WTable table, GenericSetting<?> setting) {
         WButton edit = table.add(theme.button(GuiRenderer.EDIT)).widget();
-        edit.action = () -> mc.setScreen(setting.get().createScreen(theme));
+        edit.action = () -> MeteorClient.mc.setScreen(setting.get().createScreen(theme));
 
         reset(table, setting, null);
     }
@@ -224,7 +228,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
         WQuad quad = list.add(theme.quad(setting.get())).widget();
 
         WButton edit = list.add(theme.button(GuiRenderer.EDIT)).widget();
-        edit.action = () -> mc.setScreen(new ColorSettingScreen(theme, setting));
+        edit.action = () -> MeteorClient.mc.setScreen(new ColorSettingScreen(theme, setting));
 
         reset(table, setting, () -> quad.color = setting.get());
     }
@@ -250,7 +254,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
             BlockSettingScreen screen = new BlockSettingScreen(theme, setting);
             screen.onClosed(() -> item.set(setting.get().asItem().getDefaultStack()));
 
-            mc.setScreen(screen);
+            MeteorClient.mc.setScreen(screen);
         };
 
         reset(table, setting, () -> item.set(setting.get().asItem().getDefaultStack()));
@@ -267,7 +271,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
     }
 
     private void blockListW(WTable table, BlockListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new BlockListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new BlockListSettingScreen(theme, setting)));
     }
 
     private void itemW(WTable table, ItemSetting setting) {
@@ -280,59 +284,59 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
             ItemSettingScreen screen = new ItemSettingScreen(theme, setting);
             screen.onClosed(() -> item.set(setting.get().getDefaultStack()));
 
-            mc.setScreen(screen);
+            MeteorClient.mc.setScreen(screen);
         };
 
         reset(table, setting, () -> item.set(setting.get().getDefaultStack()));
     }
 
     private void itemListW(WTable table, ItemListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new ItemListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new ItemListSettingScreen(theme, setting)));
     }
 
     private void entityTypeListW(WTable table, EntityTypeListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new EntityTypeListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new EntityTypeListSettingScreen(theme, setting)));
     }
 
     private void enchantmentListW(WTable table, EnchantmentListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new EnchantmentListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new EnchantmentListSettingScreen(theme, setting)));
     }
 
     private void moduleListW(WTable table, ModuleListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new ModuleListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new ModuleListSettingScreen(theme, setting)));
     }
 
     private void packetListW(WTable table, PacketListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new PacketBoolSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new PacketBoolSettingScreen(theme, setting)));
     }
 
     private void particleTypeListW(WTable table, ParticleTypeListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new ParticleTypeListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new ParticleTypeListSettingScreen(theme, setting)));
     }
 
     private void soundEventListW(WTable table, SoundEventListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new SoundEventListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new SoundEventListSettingScreen(theme, setting)));
     }
 
     private void statusEffectAmplifierMapW(WTable table, StatusEffectAmplifierMapSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new StatusEffectAmplifierMapSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new StatusEffectAmplifierMapSettingScreen(theme, setting)));
     }
 
     private void statusEffectListW(WTable table, StatusEffectListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new StatusEffectListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new StatusEffectListSettingScreen(theme, setting)));
     }
 
     private void storageBlockListW(WTable table, StorageBlockListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new StorageBlockListSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new StorageBlockListSettingScreen(theme, setting)));
     }
 
     private void screenHandlerListW(WTable table, ScreenHandlerListSetting setting) {
-        selectW(table, setting, () -> mc.setScreen(new ScreenHandlerSettingScreen(theme, setting)));
+        selectW(table, setting, () -> MeteorClient.mc.setScreen(new ScreenHandlerSettingScreen(theme, setting)));
     }
 
     private void blockDataW(WTable table, BlockDataSetting<?> setting) {
         WButton button = table.add(theme.button(GuiRenderer.EDIT)).expandCellX().widget();
-        button.action = () -> mc.setScreen(new BlockDataSettingScreen(theme, setting));
+        button.action = () -> MeteorClient.mc.setScreen(new BlockDataSettingScreen(theme, setting));
 
         reset(table, setting, null);
     }
@@ -346,7 +350,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
             WidgetScreen screen = new PotionSettingScreen(theme, setting);
             screen.onClosed(() -> item.set(setting.get().potion));
 
-            mc.setScreen(screen);
+            MeteorClient.mc.setScreen(screen);
         };
 
         reset(list, setting, () -> item.set(setting.get().potion));
@@ -361,7 +365,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
             WidgetScreen screen = new FontFaceSettingScreen(theme, setting);
             screen.onClosed(() -> label.set(setting.get().info.family()));
 
-            mc.setScreen(screen);
+            MeteorClient.mc.setScreen(screen);
         };
 
         reset(list, setting, () -> label.set(Fonts.DEFAULT_FONT.info.family()));
@@ -408,7 +412,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
                     setting.onChanged();
                 }, null, null);
                 set.set(setting.get().get(_i));
-                mc.setScreen(new ColorSettingScreen(theme, set));
+                MeteorClient.mc.setScreen(new ColorSettingScreen(theme, set));
             };
 
             WMinus remove = t.add(theme.minus()).expandCellX().right().widget();

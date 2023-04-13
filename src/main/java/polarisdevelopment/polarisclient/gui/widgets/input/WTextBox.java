@@ -3,25 +3,25 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.input;
+package polarisdevelopment.polarisclient.gui.widgets.input;
 
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
-import meteordevelopment.meteorclient.gui.GuiKeyEvents;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.utils.CharFilter;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.GuiKeyEvents;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.utils.CharFilter;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.MinecraftClient;
 import org.apache.commons.lang3.SystemUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.glfw.GLFW.*;
 
 public abstract class WTextBox extends WWidget {
@@ -204,13 +204,13 @@ public abstract class WTextBox extends WWidget {
 
         if (control && key == GLFW_KEY_C) {
             if (cursor != selectionStart || cursor != selectionEnd) {
-                mc.keyboard.setClipboard(text.substring(selectionStart, selectionEnd));
+                MeteorClient.mc.keyboard.setClipboard(text.substring(selectionStart, selectionEnd));
             }
             return true;
         }
         else if (control && key == GLFW_KEY_X) {
             if (cursor != selectionStart || cursor != selectionEnd) {
-                mc.keyboard.setClipboard(text.substring(selectionStart, selectionEnd));
+                MeteorClient.mc.keyboard.setClipboard(text.substring(selectionStart, selectionEnd));
                 clearSelection();
             }
 
@@ -273,7 +273,7 @@ public abstract class WTextBox extends WWidget {
             clearSelection();
 
             String preText = text;
-            String clipboard = mc.keyboard.getClipboard();
+            String clipboard = MeteorClient.mc.keyboard.getClipboard();
             int addedChars = 0;
 
             StringBuilder sb = new StringBuilder(text.length() + clipboard.length());

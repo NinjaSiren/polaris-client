@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
-import meteordevelopment.meteorclient.renderer.Mesh;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.renderer.Mesh;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 

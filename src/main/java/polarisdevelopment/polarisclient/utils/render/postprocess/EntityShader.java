@@ -1,18 +1,22 @@
-package meteordevelopment.meteorclient.utils.render.postprocess;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
 
-import meteordevelopment.meteorclient.mixin.WorldRendererAccessor;
+package polarisdevelopment.polarisclient.utils.render.postprocess;
+
+import polarisdevelopment.polarisclient.mixin.WorldRendererAccessor;
 import net.minecraft.client.gl.Framebuffer;
 import net.minecraft.client.render.OutlineVertexConsumerProvider;
 import net.minecraft.client.render.WorldRenderer;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public abstract class EntityShader extends PostProcessShader {
     private Framebuffer prevBuffer;
 
     @Override
     protected void preDraw() {
-        WorldRenderer worldRenderer = mc.worldRenderer;
+        WorldRenderer worldRenderer = MeteorClient.mc.worldRenderer;
         WorldRendererAccessor wra = (WorldRendererAccessor) worldRenderer;
         prevBuffer = worldRenderer.getEntityOutlinesFramebuffer();
         wra.setEntityOutlinesFramebuffer(framebuffer);
@@ -22,7 +26,7 @@ public abstract class EntityShader extends PostProcessShader {
     protected void postDraw() {
         if (prevBuffer == null) return;
 
-        WorldRenderer worldRenderer = mc.worldRenderer;
+        WorldRenderer worldRenderer = MeteorClient.mc.worldRenderer;
         WorldRendererAccessor wra = (WorldRendererAccessor) worldRenderer;
         wra.setEntityOutlinesFramebuffer(prevBuffer);
         prevBuffer = null;

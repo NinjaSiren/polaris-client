@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render.postprocess;
+package polarisdevelopment.polarisclient.utils.render.postprocess;
 
 import com.mojang.blaze3d.platform.TextureUtil;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.ResourcePacksReloadedEvent;
-import meteordevelopment.meteorclient.renderer.Texture;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.Chams;
-import meteordevelopment.meteorclient.utils.PostInit;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.ResourcePacksReloadedEvent;
+import polarisdevelopment.polarisclient.renderer.Texture;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.Chams;
+import polarisdevelopment.polarisclient.utils.PostInit;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.resource.Resource;
@@ -23,8 +23,6 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.util.Optional;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class ChamsShader extends EntityShader {
     private static final String[] FILE_FORMATS = { "png", "jpg" };
@@ -41,7 +39,7 @@ public class ChamsShader extends EntityShader {
         try {
             ByteBuffer data = null;
             for (String fileFormat : FILE_FORMATS) {
-                Optional<Resource> optional = mc.getResourceManager().getResource(new MeteorIdentifier("textures/chams." + fileFormat));
+                Optional<Resource> optional = MeteorClient.mc.getResourceManager().getResource(new MeteorIdentifier("textures/chams." + fileFormat));
                 if (optional.isEmpty() || optional.get().getInputStream() == null) {
                     continue;
                 }
@@ -97,6 +95,6 @@ public class ChamsShader extends EntityShader {
     @Override
     public boolean shouldDraw(Entity entity) {
         if (!shouldDraw()) return false;
-        return chams.entities.get().getBoolean(entity.getType()) && (entity != mc.player || !chams.ignoreSelfDepth.get());
+        return chams.entities.get().getBoolean(entity.getType()) && (entity != MeteorClient.mc.player || !chams.ignoreSelfDepth.get());
     }
 }

@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient;
+package polarisdevelopment.polarisclient;
 
-import meteordevelopment.meteorclient.asm.Asm;
+import polarisdevelopment.polarisclient.asm.Asm;
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;

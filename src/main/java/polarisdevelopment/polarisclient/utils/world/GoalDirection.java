@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.world;
+package polarisdevelopment.polarisclient.utils.world;
 
 import baritone.api.BaritoneAPI;
 import baritone.api.pathing.goals.Goal;

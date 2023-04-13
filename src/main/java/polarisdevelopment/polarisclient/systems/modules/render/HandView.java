@@ -3,14 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render;
+package polarisdevelopment.polarisclient.systems.modules.render;
 
-import meteordevelopment.meteorclient.events.render.ArmRenderEvent;
-import meteordevelopment.meteorclient.events.render.HeldItemRendererEvent;
+import polarisdevelopment.polarisclient.events.render.ArmRenderEvent;
+import polarisdevelopment.polarisclient.events.render.HeldItemRendererEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Hand;

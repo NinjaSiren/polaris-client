@@ -3,22 +3,22 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer;
+package polarisdevelopment.polarisclient.gui.renderer;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.renderer.operations.TextOperation;
-import meteordevelopment.meteorclient.gui.renderer.packer.GuiTexture;
-import meteordevelopment.meteorclient.gui.renderer.packer.TexturePacker;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.renderer.GL;
-import meteordevelopment.meteorclient.renderer.Renderer2D;
-import meteordevelopment.meteorclient.renderer.Texture;
-import meteordevelopment.meteorclient.utils.PostInit;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
-import meteordevelopment.meteorclient.utils.misc.Pool;
-import meteordevelopment.meteorclient.utils.render.ByteTexture;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.renderer.operations.TextOperation;
+import polarisdevelopment.polarisclient.gui.renderer.packer.GuiTexture;
+import polarisdevelopment.polarisclient.gui.renderer.packer.TexturePacker;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.renderer.GL;
+import polarisdevelopment.polarisclient.renderer.Renderer2D;
+import polarisdevelopment.polarisclient.renderer.Texture;
+import polarisdevelopment.polarisclient.utils.PostInit;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.misc.Pool;
+import polarisdevelopment.polarisclient.utils.render.ByteTexture;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import static meteordevelopment.meteorclient.utils.Utils.getWindowHeight;
-import static meteordevelopment.meteorclient.utils.Utils.getWindowWidth;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowHeight;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowWidth;
 
 public class GuiRenderer {
     private static final Color WHITE = new Color(255, 255, 255);

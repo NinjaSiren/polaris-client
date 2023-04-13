@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
 
 public class MeteorTextHud {
     public static final HudElementInfo<TextHud> INFO = new HudElementInfo<>(Hud.GROUP, "text", "Displays arbitrary text with Starscript.", MeteorTextHud::create);

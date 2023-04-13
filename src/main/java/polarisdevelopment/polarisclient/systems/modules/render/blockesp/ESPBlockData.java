@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.blockesp;
+package polarisdevelopment.polarisclient.systems.modules.render.blockesp;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.gui.utils.IScreenFactory;
-import meteordevelopment.meteorclient.renderer.ShapeMode;
-import meteordevelopment.meteorclient.settings.BlockDataSetting;
-import meteordevelopment.meteorclient.settings.IBlockData;
-import meteordevelopment.meteorclient.utils.misc.IChangeable;
-import meteordevelopment.meteorclient.utils.misc.ICopyable;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.utils.IScreenFactory;
+import polarisdevelopment.polarisclient.renderer.ShapeMode;
+import polarisdevelopment.polarisclient.settings.BlockDataSetting;
+import polarisdevelopment.polarisclient.settings.IBlockData;
+import polarisdevelopment.polarisclient.utils.misc.IChangeable;
+import polarisdevelopment.polarisclient.utils.misc.ICopyable;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NbtCompound;
 

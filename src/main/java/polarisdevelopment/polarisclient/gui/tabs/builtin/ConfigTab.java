@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.tabs.builtin;
+package polarisdevelopment.polarisclient.gui.tabs.builtin;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.tabs.Tab;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.tabs.WindowTabScreen;
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.render.prompts.YesNoPrompt;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.tabs.Tab;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.tabs.WindowTabScreen;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.render.prompts.YesNoPrompt;
 import net.minecraft.client.gui.screen.Screen;
 
 public class ConfigTab extends Tab {

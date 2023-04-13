@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import com.google.gson.JsonParser;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.Version;
-import meteordevelopment.meteorclient.utils.network.Http;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
-import meteordevelopment.meteorclient.utils.player.TitleScreenCredits;
-import meteordevelopment.meteorclient.utils.render.prompts.OkPrompt;
-import meteordevelopment.meteorclient.utils.render.prompts.YesNoPrompt;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.Version;
+import polarisdevelopment.polarisclient.utils.network.Http;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.utils.player.TitleScreenCredits;
+import polarisdevelopment.polarisclient.utils.render.prompts.OkPrompt;
+import polarisdevelopment.polarisclient.utils.render.prompts.YesNoPrompt;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.util.math.MatrixStack;

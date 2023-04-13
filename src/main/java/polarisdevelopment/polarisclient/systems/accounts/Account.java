@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.accounts;
+package polarisdevelopment.polarisclient.systems.accounts;
 
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.minecraft.UserApiService;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
-import meteordevelopment.meteorclient.mixin.MinecraftClientAccessor;
-import meteordevelopment.meteorclient.mixin.PlayerSkinProviderAccessor;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.misc.NbtException;
+import polarisdevelopment.polarisclient.mixin.MinecraftClientAccessor;
+import polarisdevelopment.polarisclient.mixin.PlayerSkinProviderAccessor;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.NbtException;
 import net.minecraft.client.network.SocialInteractionsManager;
 import net.minecraft.client.report.AbuseReportContext;
 import net.minecraft.client.report.ReporterEnvironment;
@@ -21,8 +21,7 @@ import net.minecraft.client.util.ProfileKeys;
 import net.minecraft.client.util.Session;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.encryption.SignatureVerifier;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public abstract class Account<T extends Account<?>> implements ISerializable<T> {
     protected AccountType type;
@@ -39,7 +38,7 @@ public abstract class Account<T extends Account<?>> implements ISerializable<T> 
     public abstract boolean fetchInfo();
 
     public boolean login() {
-        YggdrasilAuthenticationService authenticationService = new YggdrasilAuthenticationService(((MinecraftClientAccessor) mc).getProxy());
+        YggdrasilAuthenticationService authenticationService = new YggdrasilAuthenticationService(((MinecraftClientAccessor) MeteorClient.mc).getProxy());
         applyLoginEnvironment(authenticationService, authenticationService.createMinecraftSessionService());
 
         return true;
@@ -59,9 +58,9 @@ public abstract class Account<T extends Account<?>> implements ISerializable<T> 
     }
 
     public static void setSession(Session session) {
-        MinecraftClientAccessor mca = (MinecraftClientAccessor) mc;
+        MinecraftClientAccessor mca = (MinecraftClientAccessor) MeteorClient.mc;
         mca.setSession(session);
-        mc.getSessionProperties().clear();
+        MeteorClient.mc.getSessionProperties().clear();
         UserApiService apiService;
         try {
             apiService = mca.getAuthenticationService().createUserApiService(session.getAccessToken());
@@ -69,17 +68,17 @@ public abstract class Account<T extends Account<?>> implements ISerializable<T> 
             apiService = UserApiService.OFFLINE;
         }
         mca.setUserApiService(apiService);
-        mca.setSocialInteractionsManager(new SocialInteractionsManager(mc, apiService));
-        mca.setProfileKeys(ProfileKeys.create(apiService, session, mc.runDirectory.toPath()));
+        mca.setSocialInteractionsManager(new SocialInteractionsManager(MeteorClient.mc, apiService));
+        mca.setProfileKeys(ProfileKeys.create(apiService, session, MeteorClient.mc.runDirectory.toPath()));
         mca.setAbuseReportContext(AbuseReportContext.create(ReporterEnvironment.ofIntegratedServer(), apiService));
     }
 
     public static void applyLoginEnvironment(YggdrasilAuthenticationService authService, MinecraftSessionService sessService) {
-        MinecraftClientAccessor mca = (MinecraftClientAccessor) mc;
+        MinecraftClientAccessor mca = (MinecraftClientAccessor) MeteorClient.mc;
         mca.setAuthenticationService(authService);
         mca.setServicesSignatureVerifier(SignatureVerifier.create(authService.getServicesKey()));
         mca.setSessionService(sessService);
-        mca.setSkinProvider(new PlayerSkinProvider(mc.getTextureManager(), ((PlayerSkinProviderAccessor) mc.getSkinProvider()).getSkinCacheDir(), sessService));
+        mca.setSkinProvider(new PlayerSkinProvider(MeteorClient.mc.getTextureManager(), ((PlayerSkinProviderAccessor) MeteorClient.mc.getSkinProvider()).getSkinCacheDir(), sessService));
     }
 
     @Override

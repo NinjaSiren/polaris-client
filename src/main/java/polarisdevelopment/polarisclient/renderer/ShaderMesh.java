@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
 public class ShaderMesh extends Mesh {
     private final Shader shader;

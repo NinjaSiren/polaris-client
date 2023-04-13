@@ -3,20 +3,20 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems;
+package polarisdevelopment.polarisclient.systems;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.GameLeftEvent;
-import meteordevelopment.meteorclient.systems.accounts.Accounts;
-import meteordevelopment.meteorclient.systems.commands.Commands;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.macros.Macros;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.profiles.Profiles;
-import meteordevelopment.meteorclient.systems.proxies.Proxies;
-import meteordevelopment.meteorclient.systems.waypoints.Waypoints;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.GameLeftEvent;
+import polarisdevelopment.polarisclient.systems.accounts.Accounts;
+import polarisdevelopment.polarisclient.systems.commands.Commands;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.macros.Macros;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.profiles.Profiles;
+import polarisdevelopment.polarisclient.systems.proxies.Proxies;
+import polarisdevelopment.polarisclient.systems.waypoints.Waypoints;
 import meteordevelopment.orbit.EventHandler;
 
 import java.io.File;

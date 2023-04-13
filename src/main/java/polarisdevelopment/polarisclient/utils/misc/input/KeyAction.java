@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc.input;
+package polarisdevelopment.polarisclient.utils.misc.input;
 
 import org.lwjgl.glfw.GLFW;
 

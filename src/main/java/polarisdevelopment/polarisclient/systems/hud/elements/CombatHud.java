@@ -3,27 +3,27 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.renderer.Renderer2D;
-import meteordevelopment.meteorclient.renderer.text.TextRenderer;
+import polarisdevelopment.polarisclient.renderer.Renderer2D;
+import polarisdevelopment.polarisclient.renderer.text.TextRenderer;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
-import meteordevelopment.meteorclient.utils.entity.SortPriority;
-import meteordevelopment.meteorclient.utils.entity.TargetUtils;
-import meteordevelopment.meteorclient.utils.misc.FakeClientPlayer;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.render.RenderUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.HudRenderer;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.utils.entity.SortPriority;
+import polarisdevelopment.polarisclient.utils.entity.TargetUtils;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.render.RenderUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.enchantment.Enchantment;
@@ -35,13 +35,12 @@ import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.math.MathHelper;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 // TODO: Rewrite this to use the hud renderer system
 public class CombatHud extends HudElement {
@@ -196,7 +195,7 @@ public class CombatHud extends HudElement {
             Color primaryColor = TextHud.getSectionColor(0);
             Color secondaryColor = TextHud.getSectionColor(1);
 
-            if (isInEditor()) playerEntity = mc.player;
+            if (isInEditor()) playerEntity = MeteorClient.mc.player;
             else playerEntity = TargetUtils.getPlayerTarget(range.get(), SortPriority.LowestDistance);
 
             if (playerEntity == null && !isInEditor()) return;
@@ -213,7 +212,7 @@ public class CombatHud extends HudElement {
                 (int) (x + (25 * scale.get())),
                 (int) (y + (66 * scale.get())),
                 (int) (30 * scale.get()),
-                -MathHelper.wrapDegrees(playerEntity.prevYaw + (playerEntity.getYaw() - playerEntity.prevYaw) * mc.getTickDelta()),
+                -MathHelper.wrapDegrees(playerEntity.prevYaw + (playerEntity.getYaw() - playerEntity.prevYaw) * MeteorClient.mc.getTickDelta()),
                 -playerEntity.getPitch(), playerEntity
             );
 
@@ -239,7 +238,7 @@ public class CombatHud extends HudElement {
 
             // Distance
             double dist = 0;
-            if (!isInEditor()) dist = Math.round(mc.player.distanceTo(playerEntity) * 100.0) / 100.0;
+            if (!isInEditor()) dist = Math.round(MeteorClient.mc.player.distanceTo(playerEntity) * 100.0) / 100.0;
             String distText = dist + "m";
 
             Color distColor;

@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.misc.InventoryTweaks;
-import meteordevelopment.meteorclient.systems.modules.render.BetterTooltips;
-import meteordevelopment.meteorclient.systems.modules.render.ItemHighlight;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.misc.InventoryTweaks;
+import polarisdevelopment.polarisclient.systems.modules.render.BetterTooltips;
+import polarisdevelopment.polarisclient.systems.modules.render.ItemHighlight;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.ScreenHandlerProvider;
@@ -28,8 +28,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import polarisdevelopment.polarisclient.MeteorClient;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 
 @Mixin(HandledScreen.class)
@@ -88,7 +88,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
     private void mouseClicked(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir) {
         BetterTooltips toolips = Modules.get().get(BetterTooltips.class);
 
-        if (button == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && focusedSlot != null && !focusedSlot.getStack().isEmpty() && mc.player.currentScreenHandler.getCursorStack().isEmpty() && toolips.middleClickOpen()) {
+        if (button == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && focusedSlot != null && !focusedSlot.getStack().isEmpty() && MeteorClient.mc.player.currentScreenHandler.getCursorStack().isEmpty() && toolips.middleClickOpen()) {
             ItemStack itemStack = focusedSlot.getStack();
             if (Utils.hasItems(itemStack) || itemStack.getItem() == Items.ENDER_CHEST) {
                 cir.setReturnValue(Utils.openContainer(focusedSlot.getStack(), ITEMS, false));

@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.accounts.types;
+package polarisdevelopment.polarisclient.systems.accounts.types;
 
-import meteordevelopment.meteorclient.systems.accounts.Account;
-import meteordevelopment.meteorclient.systems.accounts.AccountType;
+import polarisdevelopment.polarisclient.systems.accounts.Account;
+import polarisdevelopment.polarisclient.systems.accounts.AccountType;
 import net.minecraft.client.util.Session;
 import net.minecraft.util.Uuids;
 

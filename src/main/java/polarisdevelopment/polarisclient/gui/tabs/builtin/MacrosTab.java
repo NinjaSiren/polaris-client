@@ -3,24 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.tabs.builtin;
+package polarisdevelopment.polarisclient.gui.tabs.builtin;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.screens.EditSystemScreen;
-import meteordevelopment.meteorclient.gui.tabs.Tab;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.tabs.WindowTabScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.macros.Macro;
-import meteordevelopment.meteorclient.systems.macros.Macros;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.screens.EditSystemScreen;
+import polarisdevelopment.polarisclient.gui.tabs.Tab;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.tabs.WindowTabScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.macros.Macro;
+import polarisdevelopment.polarisclient.systems.macros.Macros;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
 import net.minecraft.client.gui.screen.Screen;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class MacrosTab extends Tab {
     public MacrosTab() {
@@ -50,7 +49,7 @@ public class MacrosTab extends Tab {
             add(theme.horizontalSeparator()).expandX();
 
             WButton create = add(theme.button("Create")).expandX().widget();
-            create.action = () -> mc.setScreen(new EditMacroScreen(theme, null, this::reload));
+            create.action = () -> MeteorClient.mc.setScreen(new EditMacroScreen(theme, null, this::reload));
         }
 
         private void initTable(WTable table) {
@@ -61,7 +60,7 @@ public class MacrosTab extends Tab {
                 table.add(theme.label(macro.name.get() + " (" + macro.keybind.get() + ")"));
 
                 WButton edit = table.add(theme.button(GuiRenderer.EDIT)).expandCellX().right().widget();
-                edit.action = () -> mc.setScreen(new EditMacroScreen(theme, macro, this::reload));
+                edit.action = () -> MeteorClient.mc.setScreen(new EditMacroScreen(theme, macro, this::reload));
 
                 WMinus remove = table.add(theme.minus()).widget();
                 remove.action = () -> {

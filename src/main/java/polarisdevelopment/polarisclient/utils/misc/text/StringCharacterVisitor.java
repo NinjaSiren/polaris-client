@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc.text;
+package polarisdevelopment.polarisclient.utils.misc.text;
 
 import net.minecraft.text.CharacterVisitor;
 import net.minecraft.text.Style;

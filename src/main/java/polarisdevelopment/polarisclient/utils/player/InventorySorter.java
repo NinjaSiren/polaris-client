@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.mixininterface.ISlot;
-import meteordevelopment.meteorclient.utils.render.PeekScreen;
+import polarisdevelopment.polarisclient.mixininterface.ISlot;
+import polarisdevelopment.polarisclient.utils.render.PeekScreen;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.GenericContainerScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;

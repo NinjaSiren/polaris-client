@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
 public enum HorizontalDirection {
     South("South", "Z+", false, 0, 0, 1),

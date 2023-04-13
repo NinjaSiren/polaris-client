@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixininterface;
+package polarisdevelopment.polarisclient.mixininterface;
 
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;

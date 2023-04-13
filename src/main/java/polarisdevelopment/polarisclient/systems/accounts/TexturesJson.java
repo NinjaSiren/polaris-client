@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.accounts;
+package polarisdevelopment.polarisclient.systems.accounts;
 
 public class TexturesJson {
     public Textures textures;

@@ -3,23 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
-import meteordevelopment.meteorclient.utils.render.RenderUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.HudRenderer;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.render.RenderUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class InventoryHud extends HudElement {
     public static final HudElementInfo<InventoryHud> INFO = new HudElementInfo<>(Hud.GROUP, "inventory", "Displays your inventory.", InventoryHud::new);
@@ -81,11 +81,11 @@ public class InventoryHud extends HudElement {
             drawBackground(renderer, (int) x, (int) y, drawColor);
         }
 
-        if (mc.player != null) {
+        if (MeteorClient.mc.player != null) {
             for (int row = 0; row < 3; row++) {
                 for (int i = 0; i < 9; i++) {
                     int index = row * 9 + i;
-                    ItemStack stack = hasContainer ? containerItems[index] : mc.player.getInventory().getStack(index + 9);
+                    ItemStack stack = hasContainer ? containerItems[index] : MeteorClient.mc.player.getInventory().getStack(index + 9);
                     if (stack == null) continue;
 
                     int itemX = background.get() == Background.Texture ? (int) (x + (8 + i * 18) * scale.get()) : (int) (x + (1 + i * 18) * scale.get());
@@ -110,10 +110,10 @@ public class InventoryHud extends HudElement {
     private ItemStack getContainer() {
         if (isInEditor()) return null;
 
-        ItemStack stack = mc.player.getOffHandStack();
+        ItemStack stack = MeteorClient.mc.player.getOffHandStack();
         if (Utils.hasItems(stack) || stack.getItem() == Items.ENDER_CHEST) return stack;
 
-        stack = mc.player.getMainHandStack();
+        stack = MeteorClient.mc.player.getMainHandStack();
         if (Utils.hasItems(stack) || stack.getItem() == Items.ENDER_CHEST) return stack;
 
         return null;

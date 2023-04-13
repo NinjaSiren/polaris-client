@@ -1,4 +1,9 @@
-package meteordevelopment.meteorclient.systems.commands.arguments;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
+
+package polarisdevelopment.polarisclient.systems.commands.arguments;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -6,8 +11,8 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerEntity;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerManager;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerEntity;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerManager;
 
 import java.util.Collection;
 import java.util.List;

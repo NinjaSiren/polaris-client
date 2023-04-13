@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.json;
+package polarisdevelopment.polarisclient.utils.json;
 
 import com.google.gson.*;
 

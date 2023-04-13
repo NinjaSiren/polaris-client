@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.addons;
+package polarisdevelopment.polarisclient.addons;
 
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public abstract class MeteorAddon {
     /** This field is automatically assigned from fabric.mod.json file. */

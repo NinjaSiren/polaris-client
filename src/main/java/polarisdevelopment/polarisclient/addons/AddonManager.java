@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.addons;
+package polarisdevelopment.polarisclient.addons;
 
-import meteordevelopment.meteorclient.MeteorClient;
+import polarisdevelopment.polarisclient.MeteorClient;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;

@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.accounts;
+package polarisdevelopment.polarisclient.systems.accounts;
 
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.systems.accounts.types.CrackedAccount;
-import meteordevelopment.meteorclient.systems.accounts.types.MicrosoftAccount;
-import meteordevelopment.meteorclient.systems.accounts.types.TheAlteningAccount;
-import meteordevelopment.meteorclient.utils.misc.NbtException;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
+import polarisdevelopment.polarisclient.systems.accounts.types.CrackedAccount;
+import polarisdevelopment.polarisclient.systems.accounts.types.MicrosoftAccount;
+import polarisdevelopment.polarisclient.systems.accounts.types.TheAlteningAccount;
+import polarisdevelopment.polarisclient.utils.misc.NbtException;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
 import net.minecraft.nbt.NbtCompound;
 
 import java.util.ArrayList;

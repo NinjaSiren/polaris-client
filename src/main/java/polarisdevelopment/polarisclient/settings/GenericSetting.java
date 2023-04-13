@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.gui.utils.IScreenFactory;
-import meteordevelopment.meteorclient.utils.misc.ICopyable;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.gui.utils.IScreenFactory;
+import polarisdevelopment.polarisclient.utils.misc.ICopyable;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
 import net.minecraft.nbt.NbtCompound;
 
 import java.util.function.Consumer;

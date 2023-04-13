@@ -3,20 +3,20 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui;
+package polarisdevelopment.polarisclient.gui;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.gui.renderer.GuiDebugRenderer;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WRoot;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.CursorStyle;
-import meteordevelopment.meteorclient.utils.misc.input.Input;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.gui.renderer.GuiDebugRenderer;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WRoot;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WContainer;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.CursorStyle;
+import polarisdevelopment.polarisclient.utils.misc.input.Input;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
@@ -28,9 +28,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-import static meteordevelopment.meteorclient.utils.Utils.getWindowHeight;
-import static meteordevelopment.meteorclient.utils.Utils.getWindowWidth;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowHeight;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowWidth;
 import static org.lwjgl.glfw.GLFW.*;
 
 public abstract class WidgetScreen extends Screen {
@@ -61,7 +60,7 @@ public abstract class WidgetScreen extends Screen {
     public WidgetScreen(GuiTheme theme, String title) {
         super(Text.literal(title));
 
-        this.parent = mc.currentScreen;
+        this.parent = MeteorClient.mc.currentScreen;
         this.root = new WFullScreenRoot();
         this.theme = theme;
 
@@ -116,7 +115,7 @@ public abstract class WidgetScreen extends Screen {
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (locked) return false;
 
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
         mouseX *= s;
         mouseY *= s;
 
@@ -127,7 +126,7 @@ public abstract class WidgetScreen extends Screen {
     public boolean mouseReleased(double mouseX, double mouseY, int button) {
         if (locked) return false;
 
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
         mouseX *= s;
         mouseY *= s;
 
@@ -138,7 +137,7 @@ public abstract class WidgetScreen extends Screen {
     public void mouseMoved(double mouseX, double mouseY) {
         if (locked) return;
 
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
         mouseX *= s;
         mouseY *= s;
 
@@ -247,7 +246,7 @@ public abstract class WidgetScreen extends Screen {
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         if (!Utils.canUpdate()) renderBackground(matrices);
 
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
         mouseX *= s;
         mouseY *= s;
 
@@ -334,7 +333,7 @@ public abstract class WidgetScreen extends Screen {
             if (onClose) {
                 taskAfterRender = () -> {
                     locked = true;
-                    mc.setScreen(parent);
+                    MeteorClient.mc.setScreen(parent);
                 };
             }
         }
@@ -402,7 +401,7 @@ public abstract class WidgetScreen extends Screen {
                 calculateWidgetPositions();
 
                 valid = true;
-                mouseMoved(mc.mouse.getX(), mc.mouse.getY(), mc.mouse.getX(), mc.mouse.getY());
+                mouseMoved(MeteorClient.mc.mouse.getX(), MeteorClient.mc.mouse.getY(), MeteorClient.mc.mouse.getX(), MeteorClient.mc.mouse.getY());
             }
 
             return super.render(renderer, mouseX, mouseY, delta);

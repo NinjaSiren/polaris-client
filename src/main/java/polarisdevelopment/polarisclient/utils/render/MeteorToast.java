@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
@@ -21,8 +21,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class MeteorToast implements Toast {
     public static final int TITLE_COLOR = Color.fromRGBA(145, 61, 226, 255);
@@ -63,16 +62,16 @@ public class MeteorToast implements Toast {
         int titleY = 12;
 
         if (text != null) {
-            mc.textRenderer.draw(matrices, text, x, 18, TEXT_COLOR);
+            MeteorClient.mc.textRenderer.draw(matrices, text, x, 18, TEXT_COLOR);
             titleY = 7;
         }
 
-        mc.textRenderer.draw(matrices, title, x, titleY, TITLE_COLOR);
+        MeteorClient.mc.textRenderer.draw(matrices, title, x, titleY, TITLE_COLOR);
 
-        if (icon != null) mc.getItemRenderer().renderInGui(icon, 8, 8);
+        if (icon != null) MeteorClient.mc.getItemRenderer().renderInGui(icon, 8, 8);
 
         if (!playedSound) {
-            mc.getSoundManager().play(getSound());
+            MeteorClient.mc.getSoundManager().play(getSound());
             playedSound = true;
         }
 

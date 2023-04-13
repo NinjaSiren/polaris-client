@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.packets;
+package polarisdevelopment.polarisclient.events.packets;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 import net.minecraft.network.Packet;
 
 public class PacketEvent extends Cancellable {

@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens.settings;
+package polarisdevelopment.polarisclient.gui.screens.settings;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WIntEdit;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.utils.misc.Names;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WIntEdit;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.utils.misc.Names;
 import net.minecraft.entity.effect.StatusEffect;
 import org.apache.commons.lang3.StringUtils;
 

@@ -3,35 +3,40 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.themes.meteor;
+package polarisdevelopment.polarisclient.gui.themes.meteor;
 
-import meteordevelopment.meteorclient.gui.DefaultSettingsWidgetFactory;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.gui.renderer.packer.GuiTexture;
+import polarisdevelopment.polarisclient.gui.DefaultSettingsWidgetFactory;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.renderer.packer.GuiTexture;
 import meteordevelopment.meteorclient.gui.themes.meteor.widgets.*;
-import meteordevelopment.meteorclient.gui.themes.meteor.widgets.input.WMeteorDropdown;
-import meteordevelopment.meteorclient.gui.themes.meteor.widgets.input.WMeteorSlider;
-import meteordevelopment.meteorclient.gui.themes.meteor.widgets.input.WMeteorTextBox;
+import polarisdevelopment.polarisclient.gui.themes.meteor.widgets.*;
+import polarisdevelopment.polarisclient.gui.themes.meteor.widgets.input.WMeteorDropdown;
+import polarisdevelopment.polarisclient.gui.themes.meteor.widgets.input.WMeteorSlider;
+import polarisdevelopment.polarisclient.gui.themes.meteor.widgets.input.WMeteorTextBox;
 import meteordevelopment.meteorclient.gui.themes.meteor.widgets.pressable.*;
-import meteordevelopment.meteorclient.gui.utils.AlignmentX;
-import meteordevelopment.meteorclient.gui.utils.CharFilter;
+import polarisdevelopment.polarisclient.gui.themes.meteor.widgets.pressable.*;
+import polarisdevelopment.polarisclient.gui.utils.AlignmentX;
+import polarisdevelopment.polarisclient.gui.utils.CharFilter;
 import meteordevelopment.meteorclient.gui.widgets.*;
-import meteordevelopment.meteorclient.gui.widgets.containers.WSection;
-import meteordevelopment.meteorclient.gui.widgets.containers.WView;
-import meteordevelopment.meteorclient.gui.widgets.containers.WWindow;
-import meteordevelopment.meteorclient.gui.widgets.input.WDropdown;
-import meteordevelopment.meteorclient.gui.widgets.input.WSlider;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.*;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WSection;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WView;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WWindow;
+import polarisdevelopment.polarisclient.gui.widgets.input.WDropdown;
+import polarisdevelopment.polarisclient.gui.widgets.input.WSlider;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
 import meteordevelopment.meteorclient.gui.widgets.pressable.*;
-import meteordevelopment.meteorclient.renderer.text.TextRenderer;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.*;
+import polarisdevelopment.polarisclient.renderer.text.TextRenderer;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.accounts.Account;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.accounts.Account;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.MeteorClient;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static net.minecraft.client.MinecraftClient.IS_SYSTEM_MAC;
 
 public class MeteorGuiTheme extends GuiTheme {
@@ -55,7 +60,7 @@ public class MeteorGuiTheme extends GuiTheme {
             .sliderRange(0.75, 4)
             .onSliderRelease()
             .onChanged(aDouble -> {
-                if (mc.currentScreen instanceof WidgetScreen) ((WidgetScreen) mc.currentScreen).invalidate();
+                if (MeteorClient.mc.currentScreen instanceof WidgetScreen) ((WidgetScreen) MeteorClient.mc.currentScreen).invalidate();
             })
             .build()
     );
@@ -79,7 +84,7 @@ public class MeteorGuiTheme extends GuiTheme {
             .description("Hide HUD when in GUI.")
             .defaultValue(false)
             .onChanged(v -> {
-                if (mc.currentScreen instanceof WidgetScreen) mc.options.hudHidden = v;
+                if (MeteorClient.mc.currentScreen instanceof WidgetScreen) MeteorClient.mc.options.hudHidden = v;
             })
             .build()
     );
@@ -361,7 +366,7 @@ public class MeteorGuiTheme extends GuiTheme {
         double scaled = value * scale.get();
 
         if (IS_SYSTEM_MAC) {
-            scaled /= (double) mc.getWindow().getWidth() / mc.getWindow().getFramebufferWidth();
+            scaled /= (double) MeteorClient.mc.getWindow().getWidth() / MeteorClient.mc.getWindow().getFramebufferWidth();
         }
 
         return scaled;

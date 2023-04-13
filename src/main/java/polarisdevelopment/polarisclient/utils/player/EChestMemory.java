@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.OpenScreenEvent;
-import meteordevelopment.meteorclient.events.world.BlockActivateEvent;
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.OpenScreenEvent;
+import polarisdevelopment.polarisclient.events.world.BlockActivateEvent;
+import polarisdevelopment.polarisclient.utils.PreInit;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.EnderChestBlock;
 import net.minecraft.client.gui.screen.ingame.GenericContainerScreen;
@@ -16,8 +16,6 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.util.collection.DefaultedList;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class EChestMemory {
     public static final DefaultedList<ItemStack> ITEMS = DefaultedList.ofSize(27, ItemStack.EMPTY);
@@ -41,8 +39,8 @@ public class EChestMemory {
         }
         if (echestOpenedState == 0) return;
 
-        if (!(mc.currentScreen instanceof GenericContainerScreen)) return;
-        GenericContainerScreenHandler container = ((GenericContainerScreen) mc.currentScreen).getScreenHandler();
+        if (!(MeteorClient.mc.currentScreen instanceof GenericContainerScreen)) return;
+        GenericContainerScreenHandler container = ((GenericContainerScreen) MeteorClient.mc.currentScreen).getScreenHandler();
         if (container == null) return;
         Inventory inv = container.getInventory();
 

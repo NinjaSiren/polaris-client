@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.packets;
+package polarisdevelopment.polarisclient.events.packets;
 
 import net.minecraft.network.packet.s2c.play.InventoryS2CPacket;
 

@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.notebot;
+package polarisdevelopment.polarisclient.utils.notebot;
 
-import meteordevelopment.meteorclient.utils.notebot.instrumentdetect.InstrumentDetectFunction;
-import meteordevelopment.meteorclient.utils.notebot.song.Note;
+import polarisdevelopment.polarisclient.utils.notebot.instrumentdetect.InstrumentDetectFunction;
+import polarisdevelopment.polarisclient.utils.notebot.song.Note;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.NoteBlock;
 import net.minecraft.block.enums.Instrument;

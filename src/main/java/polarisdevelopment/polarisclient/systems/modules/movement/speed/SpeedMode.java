@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.speed;
+package polarisdevelopment.polarisclient.systems.modules.movement.speed;
 
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

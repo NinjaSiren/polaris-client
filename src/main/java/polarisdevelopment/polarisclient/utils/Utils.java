@@ -3,25 +3,25 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils;
+package polarisdevelopment.polarisclient.utils;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
 import meteordevelopment.meteorclient.mixin.*;
-import meteordevelopment.meteorclient.mixininterface.IMinecraftClient;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.BetterTooltips;
-import meteordevelopment.meteorclient.systems.modules.world.Timer;
-import meteordevelopment.meteorclient.utils.player.EChestMemory;
-import meteordevelopment.meteorclient.utils.render.PeekScreen;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.world.BlockEntityIterator;
-import meteordevelopment.meteorclient.utils.world.ChunkIterator;
+import polarisdevelopment.polarisclient.mixininterface.IMinecraftClient;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.BetterTooltips;
+import polarisdevelopment.polarisclient.systems.modules.world.Timer;
+import polarisdevelopment.polarisclient.utils.player.EChestMemory;
+import polarisdevelopment.polarisclient.utils.render.PeekScreen;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.world.BlockEntityIterator;
+import polarisdevelopment.polarisclient.utils.world.ChunkIterator;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -51,6 +51,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Range;
 import org.joml.Matrix4f;
 import org.joml.Vector3d;
+import polarisdevelopment.polarisclient.mixin.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +61,6 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Utils {
@@ -81,18 +81,18 @@ public class Utils {
 
     @EventHandler
     private static void onTick(TickEvent.Post event) {
-        if (screenToOpen != null && mc.currentScreen == null) {
-            mc.setScreen(screenToOpen);
+        if (screenToOpen != null && MeteorClient.mc.currentScreen == null) {
+            MeteorClient.mc.setScreen(screenToOpen);
             screenToOpen = null;
         }
     }
 
     public static Vec3d getPlayerSpeed() {
-        if (mc.player == null) return Vec3d.ZERO;
+        if (MeteorClient.mc.player == null) return Vec3d.ZERO;
 
-        double tX = mc.player.getX() - mc.player.prevX;
-        double tY = mc.player.getY() - mc.player.prevY;
-        double tZ = mc.player.getZ() - mc.player.prevZ;
+        double tX = MeteorClient.mc.player.getX() - MeteorClient.mc.player.prevX;
+        double tY = MeteorClient.mc.player.getY() - MeteorClient.mc.player.prevY;
+        double tZ = MeteorClient.mc.player.getZ() - MeteorClient.mc.player.prevZ;
 
         Timer timer = Modules.get().get(Timer.class);
         if (timer.isActive()) {
@@ -100,7 +100,7 @@ public class Utils {
             tY *= timer.getMultiplier();
             tZ *= timer.getMultiplier();
         }
-        
+
         tX *= 20;
         tY *= 20;
         tZ *= 20;
@@ -109,9 +109,9 @@ public class Utils {
     }
 
     public static String getWorldTime() {
-        if (mc.world == null) return "00:00";
+        if (MeteorClient.mc.world == null) return "00:00";
 
-        int ticks = (int) (mc.world.getTimeOfDay() % 24000);
+        int ticks = (int) (MeteorClient.mc.world.getTimeOfDay() % 24000);
         ticks += 6000;
         if (ticks > 24000) ticks -= 24000;
 
@@ -155,24 +155,24 @@ public class Utils {
     }
 
     public static int getRenderDistance() {
-        return Math.max(mc.options.getViewDistance().getValue(), ((ClientPlayNetworkHandlerAccessor) mc.getNetworkHandler()).getChunkLoadDistance());
+        return Math.max(MeteorClient.mc.options.getViewDistance().getValue(), ((ClientPlayNetworkHandlerAccessor) MeteorClient.mc.getNetworkHandler()).getChunkLoadDistance());
     }
 
     public static int getWindowWidth() {
-        return mc.getWindow().getFramebufferWidth();
+        return MeteorClient.mc.getWindow().getFramebufferWidth();
     }
 
     public static int getWindowHeight() {
-        return mc.getWindow().getFramebufferHeight();
+        return MeteorClient.mc.getWindow().getFramebufferHeight();
     }
 
     public static void unscaledProjection() {
-        RenderSystem.setProjectionMatrix(new Matrix4f().setOrtho(0, mc.getWindow().getFramebufferWidth(), mc.getWindow().getFramebufferHeight(), 0, 1000, 3000));
+        RenderSystem.setProjectionMatrix(new Matrix4f().setOrtho(0, MeteorClient.mc.getWindow().getFramebufferWidth(), MeteorClient.mc.getWindow().getFramebufferHeight(), 0, 1000, 3000));
         rendering3D = false;
     }
 
     public static void scaledProjection() {
-        RenderSystem.setProjectionMatrix(new Matrix4f().setOrtho(0, (float) (mc.getWindow().getFramebufferWidth() / mc.getWindow().getScaleFactor()), (float) (mc.getWindow().getFramebufferHeight() / mc.getWindow().getScaleFactor()), 0, 1000, 3000));
+        RenderSystem.setProjectionMatrix(new Matrix4f().setOrtho(0, (float) (MeteorClient.mc.getWindow().getFramebufferWidth() / MeteorClient.mc.getWindow().getScaleFactor()), (float) (MeteorClient.mc.getWindow().getFramebufferHeight() / MeteorClient.mc.getWindow().getScaleFactor()), 0, 1000, 3000));
         rendering3D = true;
     }
 
@@ -184,7 +184,7 @@ public class Utils {
         if (hasItems(itemStack) || itemStack.getItem() == Items.ENDER_CHEST) {
             Utils.getItemsInContainerItem(itemStack, contents);
             if (pause) screenToOpen = new PeekScreen(itemStack, contents);
-            else mc.setScreen(new PeekScreen(itemStack, contents));
+            else MeteorClient.mc.setScreen(new PeekScreen(itemStack, contents));
             return true;
         }
 
@@ -322,19 +322,19 @@ public class Utils {
 
     public static String getWorldName() {
         // Singleplayer
-        if (mc.isInSingleplayer()) {
-            if (mc.world == null) return "";
+        if (MeteorClient.mc.isInSingleplayer()) {
+            if (MeteorClient.mc.world == null) return "";
 
-            File folder = ((MinecraftServerAccessor) mc.getServer()).getSession().getWorldDirectory(mc.world.getRegistryKey()).toFile();
-            if (folder.toPath().relativize(mc.runDirectory.toPath()).getNameCount() != 2) {
+            File folder = ((MinecraftServerAccessor) MeteorClient.mc.getServer()).getSession().getWorldDirectory(MeteorClient.mc.world.getRegistryKey()).toFile();
+            if (folder.toPath().relativize(MeteorClient.mc.runDirectory.toPath()).getNameCount() != 2) {
                 folder = folder.getParentFile();
             }
             return folder.getName();
         }
 
         // Multiplayer
-        if (mc.getCurrentServerEntry() != null) {
-            return mc.isConnectedToRealms() ? "realms" : mc.getCurrentServerEntry().address;
+        if (MeteorClient.mc.getCurrentServerEntry() != null) {
+            return MeteorClient.mc.isConnectedToRealms() ? "realms" : MeteorClient.mc.getCurrentServerEntry().address;
         }
 
         return "";
@@ -444,17 +444,17 @@ public class Utils {
     }
 
     public static boolean canUpdate() {
-        return mc != null && mc.world != null && mc.player != null;
+        return MeteorClient.mc != null && MeteorClient.mc.world != null && MeteorClient.mc.player != null;
     }
 
     public static boolean canOpenGui() {
-        if (canUpdate()) return mc.currentScreen == null;
+        if (canUpdate()) return MeteorClient.mc.currentScreen == null;
 
-        return mc.currentScreen instanceof TitleScreen || mc.currentScreen instanceof MultiplayerScreen || mc.currentScreen instanceof SelectWorldScreen;
+        return MeteorClient.mc.currentScreen instanceof TitleScreen || MeteorClient.mc.currentScreen instanceof MultiplayerScreen || MeteorClient.mc.currentScreen instanceof SelectWorldScreen;
     }
 
     public static boolean canCloseGui() {
-        return mc.currentScreen instanceof TabScreen;
+        return MeteorClient.mc.currentScreen instanceof TabScreen;
     }
 
     public static int random(int min, int max) {
@@ -466,13 +466,13 @@ public class Utils {
     }
 
     public static void leftClick() {
-        mc.options.attackKey.setPressed(true);
-        ((MinecraftClientAccessor) mc).leftClick();
-        mc.options.attackKey.setPressed(false);
+        MeteorClient.mc.options.attackKey.setPressed(true);
+        ((MinecraftClientAccessor) MeteorClient.mc).leftClick();
+        MeteorClient.mc.options.attackKey.setPressed(false);
     }
 
     public static void rightClick() {
-        ((IMinecraftClient) mc).rightClick();
+        ((IMinecraftClient) MeteorClient.mc).rightClick();
     }
 
     public static boolean isShulker(Item item) {
@@ -571,7 +571,7 @@ public class Utils {
     }
 
     public static boolean isLoading() {
-        ResourceReloadLogger.ReloadState state = ((ResourceReloadLoggerAccessor) ((MinecraftClientAccessor) mc).getResourceReloadLogger()).getReloadState();
+        ResourceReloadLogger.ReloadState state = ((ResourceReloadLoggerAccessor) ((MinecraftClientAccessor) MeteorClient.mc).getResourceReloadLogger()).getReloadState();
         return state == null || !((ReloadStateAccessor) state).isFinished();
     }
 

@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.proxies;
+package polarisdevelopment.polarisclient.systems.proxies;
 
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
 import net.minecraft.nbt.NbtCompound;
 import org.jetbrains.annotations.NotNull;
 

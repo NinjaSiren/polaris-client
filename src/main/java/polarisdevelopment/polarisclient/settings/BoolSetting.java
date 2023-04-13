@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.nbt.NbtCompound;

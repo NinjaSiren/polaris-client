@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Lifecycle;
 import it.unimi.dsi.fastutil.objects.ObjectIterators;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.input;
+package polarisdevelopment.polarisclient.gui.widgets.input;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WRoot;
-import meteordevelopment.meteorclient.gui.widgets.containers.WVerticalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WPressable;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WRoot;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WVerticalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WPressable;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 public abstract class WDropdown<T> extends WPressable {
     public Runnable action;

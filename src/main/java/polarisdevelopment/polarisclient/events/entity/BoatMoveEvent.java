@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.entity;
+package polarisdevelopment.polarisclient.events.entity;
 
 import net.minecraft.entity.vehicle.BoatEntity;
 

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.render;
+package polarisdevelopment.polarisclient.events.render;
 
 import net.minecraft.client.item.TooltipData;
 import net.minecraft.item.ItemStack;

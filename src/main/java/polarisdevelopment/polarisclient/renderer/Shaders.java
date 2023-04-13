@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.PreInit;
 
 public class Shaders {
     public static Shader POS_COLOR;

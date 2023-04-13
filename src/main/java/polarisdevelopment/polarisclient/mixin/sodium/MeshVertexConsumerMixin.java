@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin.sodium;
+package polarisdevelopment.polarisclient.mixin.sodium;
 
 import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
 import me.jellysquid.mods.sodium.client.render.vertex.VertexFormatDescription;
 import me.jellysquid.mods.sodium.client.render.vertex.transform.CommonVertexElement;
-import meteordevelopment.meteorclient.utils.render.MeshVertexConsumerProvider;
+import polarisdevelopment.polarisclient.utils.render.MeshVertexConsumerProvider;
 import net.minecraft.client.render.VertexConsumer;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;

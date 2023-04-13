@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.GameJoinedEvent;
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.GameJoinedEvent;
+import polarisdevelopment.polarisclient.utils.PreInit;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.OtherClientPlayerEntity;
@@ -17,8 +17,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkSide;
 import net.minecraft.world.Difficulty;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class FakeClientPlayer {
     private static ClientWorld world;
@@ -38,14 +36,14 @@ public class FakeClientPlayer {
     }
 
     public static PlayerEntity getPlayer() {
-        String id = mc.getSession().getUuid();
+        String id = MeteorClient.mc.getSession().getUuid();
 
         if (player == null || (!id.equals(lastId))) {
             if (world == null) {
-                world = new ClientWorld(new ClientPlayNetworkHandler(mc, null, new ClientConnection(NetworkSide.CLIENTBOUND), mc.getCurrentServerEntry(), mc.getSession().getProfile(), null), new ClientWorld.Properties(Difficulty.NORMAL, false, false), world.getRegistryKey(), world.getDimensionEntry(), 1, 1, mc::getProfiler, null, false, 0);
+                world = new ClientWorld(new ClientPlayNetworkHandler(MeteorClient.mc, null, new ClientConnection(NetworkSide.CLIENTBOUND), MeteorClient.mc.getCurrentServerEntry(), MeteorClient.mc.getSession().getProfile(), null), new ClientWorld.Properties(Difficulty.NORMAL, false, false), world.getRegistryKey(), world.getDimensionEntry(), 1, 1, MeteorClient.mc::getProfiler, null, false, 0);
             }
 
-            player = new OtherClientPlayerEntity(world, mc.getSession().getProfile());
+            player = new OtherClientPlayerEntity(world, MeteorClient.mc.getSession().getProfile());
 
             lastId = id;
             needsNewEntry = true;
@@ -56,7 +54,7 @@ public class FakeClientPlayer {
 
     public static PlayerListEntry getPlayerListEntry() {
         if (playerListEntry == null || needsNewEntry) {
-            playerListEntry = new PlayerListEntry(mc.getSession().getProfile(), false);
+            playerListEntry = new PlayerListEntry(MeteorClient.mc.getSession().getProfile(), false);
             needsNewEntry = false;
         }
 

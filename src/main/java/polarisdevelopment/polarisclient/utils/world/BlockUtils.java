@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.world;
+package polarisdevelopment.polarisclient.utils.world;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.player.FindItemResult;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.player.FindItemResult;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.block.*;
@@ -32,8 +32,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class BlockUtils {
     public static boolean breaking;
@@ -68,7 +66,7 @@ public class BlockUtils {
 
     public static boolean place(BlockPos blockPos, FindItemResult findItemResult, boolean rotate, int rotationPriority, boolean swingHand, boolean checkEntities, boolean swapBack) {
         if (findItemResult.isOffhand()) {
-            return place(blockPos, Hand.OFF_HAND, mc.player.getInventory().selectedSlot, rotate, rotationPriority, swingHand, checkEntities, swapBack);
+            return place(blockPos, Hand.OFF_HAND, MeteorClient.mc.player.getInventory().selectedSlot, rotate, rotationPriority, swingHand, checkEntities, swapBack);
         } else if (findItemResult.isHotbar()) {
             return place(blockPos, Hand.MAIN_HAND, findItemResult.slot(), rotate, rotationPriority, swingHand, checkEntities, swapBack);
         }
@@ -115,17 +113,17 @@ public class BlockUtils {
     }
 
     public static void interact(BlockHitResult blockHitResult, Hand hand, boolean swing) {
-        boolean wasSneaking = mc.player.input.sneaking;
-        mc.player.input.sneaking = false;
+        boolean wasSneaking = MeteorClient.mc.player.input.sneaking;
+        MeteorClient.mc.player.input.sneaking = false;
 
-        ActionResult result = mc.interactionManager.interactBlock(mc.player, hand, blockHitResult);
+        ActionResult result = MeteorClient.mc.interactionManager.interactBlock(MeteorClient.mc.player, hand, blockHitResult);
 
         if (result.shouldSwingHand()) {
-            if (swing) mc.player.swingHand(hand);
-            else mc.getNetworkHandler().sendPacket(new HandSwingC2SPacket(hand));
+            if (swing) MeteorClient.mc.player.swingHand(hand);
+            else MeteorClient.mc.getNetworkHandler().sendPacket(new HandSwingC2SPacket(hand));
         }
 
-        mc.player.input.sneaking = wasSneaking;
+        MeteorClient.mc.player.input.sneaking = wasSneaking;
     }
 
     public static boolean canPlace(BlockPos blockPos, boolean checkEntities) {
@@ -135,10 +133,10 @@ public class BlockUtils {
         if (!World.isValid(blockPos)) return false;
 
         // Check if current block is replaceable
-        if (!mc.world.getBlockState(blockPos).getMaterial().isReplaceable()) return false;
+        if (!MeteorClient.mc.world.getBlockState(blockPos).getMaterial().isReplaceable()) return false;
 
         // Check if intersects entities
-        return !checkEntities || mc.world.canPlace(Blocks.OBSIDIAN.getDefaultState(), blockPos, ShapeContext.absent());
+        return !checkEntities || MeteorClient.mc.world.canPlace(Blocks.OBSIDIAN.getDefaultState(), blockPos, ShapeContext.absent());
     }
 
     public static boolean canPlace(BlockPos blockPos) {
@@ -150,7 +148,7 @@ public class BlockUtils {
             BlockPos neighbor = blockPos.offset(side);
             Direction side2 = side.getOpposite();
 
-            BlockState state = mc.world.getBlockState(neighbor);
+            BlockState state = MeteorClient.mc.world.getBlockState(neighbor);
 
             // Check if neighbour isn't empty
             if (state.isAir() || isClickable(state.getBlock())) continue;
@@ -175,7 +173,7 @@ public class BlockUtils {
     private static void onTickPost(TickEvent.Post event) {
         if (!breakingThisTick && breaking) {
             breaking = false;
-            if (mc.interactionManager != null) mc.interactionManager.cancelBlockBreaking();
+            if (MeteorClient.mc.interactionManager != null) MeteorClient.mc.interactionManager.cancelBlockBreaking();
         }
     }
 
@@ -183,17 +181,17 @@ public class BlockUtils {
      * Needs to be used in {@link TickEvent.Pre}
      */
     public static boolean breakBlock(BlockPos blockPos, boolean swing) {
-        if (!canBreak(blockPos, mc.world.getBlockState(blockPos))) return false;
+        if (!canBreak(blockPos, MeteorClient.mc.world.getBlockState(blockPos))) return false;
 
         // Creating new instance of block pos because minecraft assigns the parameter to a field and we don't want it to change when it has been stored in a field somewhere
         BlockPos pos = blockPos instanceof BlockPos.Mutable ? new BlockPos(blockPos) : blockPos;
 
-        if (mc.interactionManager.isBreakingBlock())
-            mc.interactionManager.updateBlockBreakingProgress(pos, Direction.UP);
-        else mc.interactionManager.attackBlock(pos, Direction.UP);
+        if (MeteorClient.mc.interactionManager.isBreakingBlock())
+            MeteorClient.mc.interactionManager.updateBlockBreakingProgress(pos, Direction.UP);
+        else MeteorClient.mc.interactionManager.attackBlock(pos, Direction.UP);
 
-        if (swing) mc.player.swingHand(Hand.MAIN_HAND);
-        else mc.getNetworkHandler().sendPacket(new HandSwingC2SPacket(Hand.MAIN_HAND));
+        if (swing) MeteorClient.mc.player.swingHand(Hand.MAIN_HAND);
+        else MeteorClient.mc.getNetworkHandler().sendPacket(new HandSwingC2SPacket(Hand.MAIN_HAND));
 
         breaking = true;
         breakingThisTick = true;
@@ -202,30 +200,30 @@ public class BlockUtils {
     }
 
     public static boolean canBreak(BlockPos blockPos, BlockState state) {
-        if (!mc.player.isCreative() && state.getHardness(mc.world, blockPos) < 0) return false;
-        return state.getOutlineShape(mc.world, blockPos) != VoxelShapes.empty();
+        if (!MeteorClient.mc.player.isCreative() && state.getHardness(MeteorClient.mc.world, blockPos) < 0) return false;
+        return state.getOutlineShape(MeteorClient.mc.world, blockPos) != VoxelShapes.empty();
     }
 
     public static boolean canBreak(BlockPos blockPos) {
-        return canBreak(blockPos, mc.world.getBlockState(blockPos));
+        return canBreak(blockPos, MeteorClient.mc.world.getBlockState(blockPos));
     }
 
     public static boolean canInstaBreak(BlockPos blockPos, float breakSpeed) {
-        return mc.player.isCreative() || calcBlockBreakingDelta2(blockPos, breakSpeed) >= 1;
+        return MeteorClient.mc.player.isCreative() || calcBlockBreakingDelta2(blockPos, breakSpeed) >= 1;
     }
 
     public static boolean canInstaBreak(BlockPos blockPos) {
-        BlockState state = mc.world.getBlockState(blockPos);
-        return canInstaBreak(blockPos, mc.player.getBlockBreakingSpeed(state));
+        BlockState state = MeteorClient.mc.world.getBlockState(blockPos);
+        return canInstaBreak(blockPos, MeteorClient.mc.player.getBlockBreakingSpeed(state));
     }
 
     public static float calcBlockBreakingDelta2(BlockPos blockPos, float breakSpeed) {
-        BlockState state = mc.world.getBlockState(blockPos);
-        float f = state.getHardness(mc.world, blockPos);
+        BlockState state = MeteorClient.mc.world.getBlockState(blockPos);
+        float f = state.getHardness(MeteorClient.mc.world, blockPos);
         if (f == -1.0F) {
             return 0.0F;
         } else {
-            int i = mc.player.canHarvest(state) ? 30 : 100;
+            int i = MeteorClient.mc.player.canHarvest(state) ? 30 : 100;
             return breakSpeed / f / (float) i;
         }
     }
@@ -247,17 +245,17 @@ public class BlockUtils {
 
     public static MobSpawn isValidMobSpawn(BlockPos blockPos, boolean newMobSpawnLightLevel) {
         int spawnLightLimit = newMobSpawnLightLevel ? 0 : 7;
-        if (!(mc.world.getBlockState(blockPos).getBlock() instanceof AirBlock) ||
-            mc.world.getBlockState(blockPos.down()).getBlock() == Blocks.BEDROCK) return MobSpawn.Never;
+        if (!(MeteorClient.mc.world.getBlockState(blockPos).getBlock() instanceof AirBlock) ||
+            MeteorClient.mc.world.getBlockState(blockPos.down()).getBlock() == Blocks.BEDROCK) return MobSpawn.Never;
 
-        if (!topSurface(mc.world.getBlockState(blockPos.down()))) {
-            if (mc.world.getBlockState(blockPos.down()).getCollisionShape(mc.world, blockPos.down()) != VoxelShapes.fullCube())
+        if (!topSurface(MeteorClient.mc.world.getBlockState(blockPos.down()))) {
+            if (MeteorClient.mc.world.getBlockState(blockPos.down()).getCollisionShape(MeteorClient.mc.world, blockPos.down()) != VoxelShapes.fullCube())
                 return MobSpawn.Never;
-            if (mc.world.getBlockState(blockPos.down()).isTranslucent(mc.world, blockPos.down())) return MobSpawn.Never;
+            if (MeteorClient.mc.world.getBlockState(blockPos.down()).isTranslucent(MeteorClient.mc.world, blockPos.down())) return MobSpawn.Never;
         }
 
-        if (mc.world.getLightLevel(blockPos, 0) <= spawnLightLimit) return MobSpawn.Potential;
-        else if (mc.world.getLightLevel(LightType.BLOCK, blockPos) <= spawnLightLimit) return MobSpawn.Always;
+        if (MeteorClient.mc.world.getLightLevel(blockPos, 0) <= spawnLightLimit) return MobSpawn.Potential;
+        else if (MeteorClient.mc.world.getLightLevel(LightType.BLOCK, blockPos) <= spawnLightLimit) return MobSpawn.Always;
 
         return MobSpawn.Never;
     }
@@ -277,7 +275,7 @@ public class BlockUtils {
 
     public static boolean isExposed(BlockPos blockPos) {
         for (Direction direction : Direction.values()) {
-            if (!mc.world.getBlockState(EXPOSED_POS.get().set(blockPos, direction)).isOpaque()) return true;
+            if (!MeteorClient.mc.world.getBlockState(EXPOSED_POS.get().set(blockPos, direction)).isOpaque()) return true;
         }
 
         return false;
@@ -287,27 +285,27 @@ public class BlockUtils {
         float hardness = state.getHardness(null, null);
         if (hardness == -1) return 0;
         else {
-            return getBlockBreakingSpeed(slot, state) / hardness / (!state.isToolRequired() || mc.player.getInventory().main.get(slot).isSuitableFor(state) ? 30 : 100);
+            return getBlockBreakingSpeed(slot, state) / hardness / (!state.isToolRequired() || MeteorClient.mc.player.getInventory().main.get(slot).isSuitableFor(state) ? 30 : 100);
         }
     }
 
     private static double getBlockBreakingSpeed(int slot, BlockState block) {
-        double speed = mc.player.getInventory().main.get(slot).getMiningSpeedMultiplier(block);
+        double speed = MeteorClient.mc.player.getInventory().main.get(slot).getMiningSpeedMultiplier(block);
 
         if (speed > 1) {
-            ItemStack tool = mc.player.getInventory().getStack(slot);
+            ItemStack tool = MeteorClient.mc.player.getInventory().getStack(slot);
 
             int efficiency = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, tool);
 
             if (efficiency > 0 && !tool.isEmpty()) speed += efficiency * efficiency + 1;
         }
 
-        if (StatusEffectUtil.hasHaste(mc.player)) {
-            speed *= 1 + (StatusEffectUtil.getHasteAmplifier(mc.player) + 1) * 0.2F;
+        if (StatusEffectUtil.hasHaste(MeteorClient.mc.player)) {
+            speed *= 1 + (StatusEffectUtil.getHasteAmplifier(MeteorClient.mc.player) + 1) * 0.2F;
         }
 
-        if (mc.player.hasStatusEffect(StatusEffects.MINING_FATIGUE)) {
-            float k = switch (mc.player.getStatusEffect(StatusEffects.MINING_FATIGUE).getAmplifier()) {
+        if (MeteorClient.mc.player.hasStatusEffect(StatusEffects.MINING_FATIGUE)) {
+            float k = switch (MeteorClient.mc.player.getStatusEffect(StatusEffects.MINING_FATIGUE).getAmplifier()) {
                 case 0 -> 0.3F;
                 case 1 -> 0.09F;
                 case 2 -> 0.0027F;
@@ -317,11 +315,11 @@ public class BlockUtils {
             speed *= k;
         }
 
-        if (mc.player.isSubmergedIn(FluidTags.WATER) && !EnchantmentHelper.hasAquaAffinity(mc.player)) {
+        if (MeteorClient.mc.player.isSubmergedIn(FluidTags.WATER) && !EnchantmentHelper.hasAquaAffinity(MeteorClient.mc.player)) {
             speed /= 5.0F;
         }
 
-        if (!mc.player.isOnGround()) {
+        if (!MeteorClient.mc.player.isOnGround()) {
             speed /= 5.0F;
         }
 

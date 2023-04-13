@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.game;
+package polarisdevelopment.polarisclient.events.game;
 
 public class GameJoinedEvent {
     private static final GameJoinedEvent INSTANCE = new GameJoinedEvent();

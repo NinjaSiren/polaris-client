@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.files;
+package polarisdevelopment.polarisclient.utils.files;
 
 import java.io.*;
 

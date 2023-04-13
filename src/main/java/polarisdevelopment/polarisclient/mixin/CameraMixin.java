@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.ICamera;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.CameraTweaks;
-import meteordevelopment.meteorclient.systems.modules.render.FreeLook;
-import meteordevelopment.meteorclient.systems.modules.render.Freecam;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.systems.modules.world.HighwayBuilder;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.mixininterface.ICamera;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.CameraTweaks;
+import polarisdevelopment.polarisclient.systems.modules.render.FreeLook;
+import polarisdevelopment.polarisclient.systems.modules.render.Freecam;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.systems.modules.world.HighwayBuilder;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.CameraSubmersionType;
 import net.minecraft.entity.Entity;

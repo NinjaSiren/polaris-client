@@ -3,14 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.systems.modules.render.*;
-import meteordevelopment.meteorclient.systems.modules.world.Ambience;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.postprocess.EntityShader;
-import meteordevelopment.meteorclient.utils.render.postprocess.PostProcessShaders;
+import polarisdevelopment.polarisclient.systems.modules.render.*;
+import polarisdevelopment.polarisclient.systems.modules.world.Ambience;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.postprocess.EntityShader;
+import polarisdevelopment.polarisclient.utils.render.postprocess.PostProcessShaders;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gl.Framebuffer;
 import net.minecraft.client.render.*;

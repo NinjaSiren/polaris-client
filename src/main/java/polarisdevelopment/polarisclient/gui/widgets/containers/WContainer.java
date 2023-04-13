@@ -3,19 +3,19 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.containers;
+package polarisdevelopment.polarisclient.gui.widgets.containers;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
 import net.minecraft.client.Mouse;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-import static meteordevelopment.meteorclient.utils.Utils.getWindowHeight;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowHeight;
 
 public abstract class WContainer extends WWidget {
     public final List<Cell<?>> cells = new ArrayList<>();
@@ -54,7 +54,7 @@ public abstract class WContainer extends WWidget {
         for (Cell<?> cell : cells) {
             cell.move(deltaX, deltaY);
 
-            Mouse mouse = mc.mouse;
+            Mouse mouse = MeteorClient.mc.mouse;
             cell.widget().mouseMoved(mouse.getX(), mouse.getY(), mouse.getX(), mouse.getY());
         }
     }

@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc.input;
+package polarisdevelopment.polarisclient.utils.misc.input;
 
-import meteordevelopment.meteorclient.mixin.KeyBindingAccessor;
+import polarisdevelopment.polarisclient.mixin.KeyBindingAccessor;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;

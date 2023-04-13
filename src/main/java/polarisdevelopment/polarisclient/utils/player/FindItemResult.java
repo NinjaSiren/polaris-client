@@ -3,11 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
 import net.minecraft.util.Hand;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public record FindItemResult(int slot, int count) {
     public boolean found() {
@@ -16,7 +15,7 @@ public record FindItemResult(int slot, int count) {
 
     public Hand getHand() {
         if (slot == SlotUtils.OFFHAND) return Hand.OFF_HAND;
-        else if (slot == mc.player.getInventory().selectedSlot) return Hand.MAIN_HAND;
+        else if (slot == MeteorClient.mc.player.getInventory().selectedSlot) return Hand.MAIN_HAND;
         return null;
     }
 

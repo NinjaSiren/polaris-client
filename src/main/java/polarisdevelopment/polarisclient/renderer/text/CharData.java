@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer.text;
+package polarisdevelopment.polarisclient.renderer.text;
 
 public class CharData {
     public final float x0, y0, x1, y1;

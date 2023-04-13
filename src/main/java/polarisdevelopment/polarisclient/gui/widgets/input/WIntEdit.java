@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.input;
+package polarisdevelopment.polarisclient.gui.widgets.input;
 
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
 
 public class WIntEdit extends WHorizontalList {
     private int value;

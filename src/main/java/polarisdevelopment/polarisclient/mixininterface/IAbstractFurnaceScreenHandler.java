@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixininterface;
+package polarisdevelopment.polarisclient.mixininterface;
 
 import net.minecraft.item.ItemStack;
 

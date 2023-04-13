@@ -3,18 +3,18 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.BufferUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.nio.ByteBuffer;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.opengl.GL32C.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -113,7 +113,7 @@ public class Mesh {
         rendering3D = Utils.rendering3D;
 
         if (rendering3D) {
-            Vec3d camera = mc.gameRenderer.getCamera().getPos();
+            Vec3d camera = MeteorClient.mc.gameRenderer.getCamera().getPos();
 
             cameraX = camera.x;
             cameraZ = camera.z;
@@ -246,7 +246,7 @@ public class Mesh {
 
             if (matrices != null) matrixStack.multiplyPositionMatrix(matrices.peek().getPositionMatrix());
 
-            Vec3d cameraPos = mc.gameRenderer.getCamera().getPos();
+            Vec3d cameraPos = MeteorClient.mc.gameRenderer.getCamera().getPos();
             matrixStack.translate(0, -cameraPos.y, 0);
         }
 

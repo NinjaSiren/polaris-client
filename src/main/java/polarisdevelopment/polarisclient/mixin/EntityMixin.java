@@ -3,24 +3,24 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.LivingEntityMoveEvent;
-import meteordevelopment.meteorclient.events.entity.player.JumpVelocityMultiplierEvent;
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.combat.Hitboxes;
-import meteordevelopment.meteorclient.systems.modules.movement.NoFall;
-import meteordevelopment.meteorclient.systems.modules.movement.NoSlow;
-import meteordevelopment.meteorclient.systems.modules.movement.Velocity;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFly;
-import meteordevelopment.meteorclient.systems.modules.render.ESP;
-import meteordevelopment.meteorclient.systems.modules.render.NoRender;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerEntity;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.postprocess.PostProcessShaders;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.LivingEntityMoveEvent;
+import polarisdevelopment.polarisclient.events.entity.player.JumpVelocityMultiplierEvent;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.combat.Hitboxes;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoFall;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoSlow;
+import polarisdevelopment.polarisclient.systems.modules.movement.Velocity;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFly;
+import polarisdevelopment.polarisclient.systems.modules.render.ESP;
+import polarisdevelopment.polarisclient.systems.modules.render.NoRender;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerEntity;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.postprocess.PostProcessShaders;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -44,8 +44,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-
 @Mixin(Entity.class)
 public abstract class EntityMixin {
     @Shadow public World world;
@@ -58,7 +56,7 @@ public abstract class EntityMixin {
         Vec3d vec = state.getVelocity(world, pos);
 
         Velocity velocity = Modules.get().get(Velocity.class);
-        if ((Object) this == mc.player && velocity.isActive() && velocity.liquids.get()) {
+        if ((Object) this == MeteorClient.mc.player && velocity.isActive() && velocity.liquids.get()) {
             vec = vec.multiply(velocity.getHorizontal(velocity.liquidsHorizontal), velocity.getVertical(velocity.liquidsVertical), velocity.getHorizontal(velocity.liquidsHorizontal));
         }
 
@@ -70,7 +68,7 @@ public abstract class EntityMixin {
         Velocity velocity = Modules.get().get(Velocity.class);
 
         // Velocity
-        if ((Object) this == mc.player && velocity.isActive() && velocity.entityPush.get()) {
+        if ((Object) this == MeteorClient.mc.player && velocity.isActive() && velocity.entityPush.get()) {
             double multiplier = velocity.entityPushAmount.get();
             args.set(0, (double) args.get(0) * multiplier);
             args.set(2, (double) args.get(2) * multiplier);
@@ -84,7 +82,7 @@ public abstract class EntityMixin {
 
     @Inject(method = "getJumpVelocityMultiplier", at = @At("HEAD"), cancellable = true)
     private void onGetJumpVelocityMultiplier(CallbackInfoReturnable<Float> info) {
-        if ((Object) this == mc.player) {
+        if ((Object) this == MeteorClient.mc.player) {
             float f = world.getBlockState(getBlockPos()).getBlock().getJumpVelocityMultiplier();
             float g = world.getBlockState(getVelocityAffectingPos()).getBlock().getJumpVelocityMultiplier();
             float a = f == 1.0D ? g : f;
@@ -96,7 +94,7 @@ public abstract class EntityMixin {
 
     @Inject(method = "move", at = @At("HEAD"))
     private void onMove(MovementType type, Vec3d movement, CallbackInfo info) {
-        if ((Object) this == mc.player) {
+        if ((Object) this == MeteorClient.mc.player) {
             MeteorClient.EVENT_BUS.post(PlayerMoveEvent.get(type, movement));
         }
         else if ((Object) this instanceof LivingEntity) {
@@ -114,7 +112,7 @@ public abstract class EntityMixin {
 
     @Redirect(method = "getVelocityMultiplier", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;getBlock()Lnet/minecraft/block/Block;"))
     private Block getVelocityMultiplierGetBlockProxy(BlockState blockState) {
-        if ((Object) this != mc.player) return blockState.getBlock();
+        if ((Object) this != MeteorClient.mc.player) return blockState.getBlock();
         if (blockState.getBlock() == Blocks.SOUL_SAND && Modules.get().get(NoSlow.class).soulSand()) return Blocks.STONE;
         if (blockState.getBlock() == Blocks.HONEY_BLOCK && Modules.get().get(NoSlow.class).honeyBlock()) return Blocks.STONE;
         return blockState.getBlock();
@@ -145,7 +143,7 @@ public abstract class EntityMixin {
 
     @Inject(method = "getPose", at = @At("HEAD"), cancellable = true)
     private void getPoseHook(CallbackInfoReturnable<EntityPose> info) {
-        if ((Object) this == mc.player && Modules.get().get(ElytraFly.class).canPacketEfly()) {
+        if ((Object) this == MeteorClient.mc.player && Modules.get().get(ElytraFly.class).canPacketEfly()) {
             info.setReturnValue(EntityPose.FALL_FLYING);
         }
     }

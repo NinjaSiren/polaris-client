@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import net.minecraft.client.render.MapRenderer;
 import net.minecraft.item.map.MapState;

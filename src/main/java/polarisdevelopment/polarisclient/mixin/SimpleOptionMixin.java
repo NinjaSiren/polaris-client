@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.ISimpleOption;
+import polarisdevelopment.polarisclient.mixininterface.ISimpleOption;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.SimpleOption;
 import org.spongepowered.asm.mixin.Final;

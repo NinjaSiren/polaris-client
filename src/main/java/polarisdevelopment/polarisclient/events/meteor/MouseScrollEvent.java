@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.meteor;
+package polarisdevelopment.polarisclient.events.meteor;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 
 public class MouseScrollEvent extends Cancellable {
     private static final MouseScrollEvent INSTANCE = new MouseScrollEvent();

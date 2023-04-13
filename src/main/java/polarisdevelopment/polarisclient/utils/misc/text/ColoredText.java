@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc.text;
+package polarisdevelopment.polarisclient.utils.misc.text;
 
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 import java.util.Objects;
 

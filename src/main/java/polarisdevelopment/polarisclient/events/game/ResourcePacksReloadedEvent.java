@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.game;
+package polarisdevelopment.polarisclient.events.game;
 
 public class ResourcePacksReloadedEvent {
     private static final ResourcePacksReloadedEvent INSTANCE = new ResourcePacksReloadedEvent();

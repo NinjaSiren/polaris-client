@@ -3,22 +3,22 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens.settings;
+package polarisdevelopment.polarisclient.gui.screens.settings;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.utils.Cell;
-import meteordevelopment.meteorclient.gui.widgets.WLabel;
-import meteordevelopment.meteorclient.gui.widgets.WWidget;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.containers.WView;
-import meteordevelopment.meteorclient.gui.widgets.input.WDropdown;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.renderer.Fonts;
-import meteordevelopment.meteorclient.renderer.text.FontFamily;
-import meteordevelopment.meteorclient.renderer.text.FontInfo;
-import meteordevelopment.meteorclient.settings.FontFaceSetting;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.widgets.WLabel;
+import polarisdevelopment.polarisclient.gui.widgets.WWidget;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WView;
+import polarisdevelopment.polarisclient.gui.widgets.input.WDropdown;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.renderer.Fonts;
+import polarisdevelopment.polarisclient.renderer.text.FontFamily;
+import polarisdevelopment.polarisclient.renderer.text.FontInfo;
+import polarisdevelopment.polarisclient.settings.FontFaceSetting;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.tooltip;
+package polarisdevelopment.polarisclient.utils.tooltip;
 
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.tooltip.TooltipComponent;
@@ -18,8 +18,7 @@ import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.util.math.RotationAxis;
 import org.joml.Quaternionf;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 // Thanks to
 // https://github.com/Queerbric/Inspecio/blob/1.17/src/main/java/io/github/queerbric/inspecio/tooltip/EntityTooltipComponent.java
@@ -55,7 +54,7 @@ public class EntityTooltipComponent implements MeteorTooltipData, TooltipCompone
     }
 
     protected void renderEntity(MatrixStack matrices, int x, int y) {
-        if (mc.player == null) return;
+        if (MeteorClient.mc.player == null) return;
         float size = 24;
         if (Math.max(entity.getWidth(), entity.getHeight()) > 1.0) {
             size /= Math.max(entity.getWidth(), entity.getHeight());
@@ -78,12 +77,12 @@ public class EntityTooltipComponent implements MeteorTooltipData, TooltipCompone
         hamiltonProduct(quaternion, quaternion2);
         matrices.multiply(quaternion);
         setupAngles();
-        EntityRenderDispatcher entityRenderDispatcher = mc.getEntityRenderDispatcher();
+        EntityRenderDispatcher entityRenderDispatcher = MeteorClient.mc.getEntityRenderDispatcher();
         quaternion2.conjugate();
         entityRenderDispatcher.setRotation(quaternion2);
         entityRenderDispatcher.setRenderShadows(false);
-        VertexConsumerProvider.Immediate immediate = mc.getBufferBuilders().getEntityVertexConsumers();
-        entity.age = mc.player.age;
+        VertexConsumerProvider.Immediate immediate = MeteorClient.mc.getBufferBuilders().getEntityVertexConsumers();
+        entity.age = MeteorClient.mc.player.age;
         entity.setCustomNameVisible(false);
         entityRenderDispatcher.render(entity, 0, 0, 0, 0.f, 1.f, matrices, immediate, 15728880);
         immediate.draw();

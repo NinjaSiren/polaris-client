@@ -3,22 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.render.blockesp;
+package polarisdevelopment.polarisclient.systems.modules.render.blockesp;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkSectionPos;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.chunk.Chunk;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-import static meteordevelopment.meteorclient.utils.Utils.getRenderDistance;
 
 public class ESPChunk {
     private static final BlockPos.Mutable blockPos = new BlockPos.Mutable();
@@ -73,9 +72,9 @@ public class ESPChunk {
     }
 
     public boolean shouldBeDeleted() {
-        int viewDist = getRenderDistance() + 1;
-        int chunkX = ChunkSectionPos.getSectionCoord(mc.player.getBlockPos().getX());
-        int chunkZ = ChunkSectionPos.getSectionCoord(mc.player.getBlockPos().getZ());
+        int viewDist = Utils.getRenderDistance() + 1;
+        int chunkX = ChunkSectionPos.getSectionCoord(MeteorClient.mc.player.getBlockPos().getX());
+        int chunkZ = ChunkSectionPos.getSectionCoord(MeteorClient.mc.player.getBlockPos().getZ());
 
         return x > chunkX + viewDist || x < chunkX - viewDist || z > chunkZ + viewDist || z < chunkZ - viewDist;
     }
@@ -95,7 +94,7 @@ public class ESPChunk {
             for (int z = chunk.getPos().getStartZ(); z <= chunk.getPos().getEndZ(); z++) {
                 int height = chunk.getHeightmap(Heightmap.Type.WORLD_SURFACE).get(x - chunk.getPos().getStartX(), z - chunk.getPos().getStartZ());
 
-                for (int y = mc.world.getBottomY(); y < height; y++) {
+                for (int y = MeteorClient.mc.world.getBottomY(); y < height; y++) {
                     blockPos.set(x, y, z);
                     BlockState bs = chunk.getBlockState(blockPos);
 

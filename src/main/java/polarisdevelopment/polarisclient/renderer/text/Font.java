@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer.text;
+package polarisdevelopment.polarisclient.renderer.text;
 
-import meteordevelopment.meteorclient.renderer.Mesh;
-import meteordevelopment.meteorclient.utils.render.ByteTexture;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.renderer.Mesh;
+import polarisdevelopment.polarisclient.utils.render.ByteTexture;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.texture.AbstractTexture;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBTTFontinfo;

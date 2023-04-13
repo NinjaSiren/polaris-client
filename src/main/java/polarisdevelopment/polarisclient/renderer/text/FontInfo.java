@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer.text;
+package polarisdevelopment.polarisclient.renderer.text;
 
 public record FontInfo(String family, Type type) {
     @Override

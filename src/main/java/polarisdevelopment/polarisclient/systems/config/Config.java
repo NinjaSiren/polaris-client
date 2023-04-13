@@ -3,15 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.config;
+package polarisdevelopment.polarisclient.systems.config;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.renderer.Fonts;
-import meteordevelopment.meteorclient.renderer.text.FontFace;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.renderer.Fonts;
+import polarisdevelopment.polarisclient.renderer.text.FontFace;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
@@ -19,8 +20,6 @@ import net.minecraft.nbt.NbtString;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Config extends System<Config> {
     public final Settings settings = new Settings();
@@ -73,8 +72,8 @@ public class Config extends System<Config> {
         .name("custom-window-title")
         .description("Show custom text in the window title.")
         .defaultValue(false)
-        .onModuleActivated(setting -> mc.updateWindowTitle())
-        .onChanged(value -> mc.updateWindowTitle())
+        .onModuleActivated(setting -> MeteorClient.mc.updateWindowTitle())
+        .onChanged(value -> MeteorClient.mc.updateWindowTitle())
         .build()
     );
 
@@ -83,7 +82,7 @@ public class Config extends System<Config> {
         .description("The text it displays in the window title.")
         .visible(customWindowTitle::get)
         .defaultValue("Minecraft {mc_version} - {meteor.name} {meteor.version}")
-        .onChanged(value -> mc.updateWindowTitle())
+        .onChanged(value -> MeteorClient.mc.updateWindowTitle())
         .build()
     );
 

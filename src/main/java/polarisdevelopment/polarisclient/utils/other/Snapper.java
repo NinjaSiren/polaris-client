@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.other;
+package polarisdevelopment.polarisclient.utils.other;
 
 public class Snapper {
     private final Container container;

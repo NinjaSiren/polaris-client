@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
-import meteordevelopment.meteorclient.gui.renderer.packer.TextureRegion;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.renderer.packer.TextureRegion;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class Renderer2D {

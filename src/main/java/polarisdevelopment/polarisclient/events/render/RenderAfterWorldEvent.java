@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.render;
+package polarisdevelopment.polarisclient.events.render;
 
 public class RenderAfterWorldEvent {
     private static final RenderAfterWorldEvent INSTANCE = new RenderAfterWorldEvent();

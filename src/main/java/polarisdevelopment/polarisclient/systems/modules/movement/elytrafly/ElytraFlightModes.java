@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.elytrafly;
+package polarisdevelopment.polarisclient.systems.modules.movement.elytrafly;
 
 public enum ElytraFlightModes {
     Vanilla,

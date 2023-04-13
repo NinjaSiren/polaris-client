@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -17,10 +17,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class SimpleBlockRenderer {
     private static final MatrixStack MATRICES = new MatrixStack();
@@ -31,7 +30,7 @@ public class SimpleBlockRenderer {
         SimpleBlockRenderer.render(blockEntity.getPos(), blockEntity.getCachedState(), vertexConsumerProvider);
 
         vertexConsumerProvider.setOffset(blockEntity.getPos().getX(), blockEntity.getPos().getY(), blockEntity.getPos().getZ());
-        BlockEntityRenderer<BlockEntity> renderer = mc.getBlockEntityRenderDispatcher().get(blockEntity);
+        BlockEntityRenderer<BlockEntity> renderer = MeteorClient.mc.getBlockEntityRenderDispatcher().get(blockEntity);
         if (renderer != null && blockEntity.hasWorld() && blockEntity.getType().supports(blockEntity.getCachedState())) renderer.render(blockEntity, tickDelta, MATRICES, vertexConsumerProvider, LightmapTextureManager.MAX_LIGHT_COORDINATE, OverlayTexture.DEFAULT_UV);
         vertexConsumerProvider.setOffset(0, 0, 0);
     }
@@ -40,8 +39,8 @@ public class SimpleBlockRenderer {
         if (state.getRenderType() != BlockRenderType.MODEL) return;
 
         VertexConsumer consumer = consumerProvider.getBuffer(RenderLayer.getSolid());
-        BakedModel model = mc.getBlockRenderManager().getModel(state);
-        Vec3d offset = state.getModelOffset(mc.world, pos);
+        BakedModel model = MeteorClient.mc.getBlockRenderManager().getModel(state);
+        Vec3d offset = state.getModelOffset(MeteorClient.mc.world, pos);
 
         double offsetX = pos.getX() + offset.x;
         double offsetY = pos.getY() + offset.y;

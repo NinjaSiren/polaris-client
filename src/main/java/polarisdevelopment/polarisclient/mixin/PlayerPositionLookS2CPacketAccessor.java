@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import net.minecraft.network.packet.s2c.play.PlayerPositionLookS2CPacket;
 import org.spongepowered.asm.mixin.Mixin;

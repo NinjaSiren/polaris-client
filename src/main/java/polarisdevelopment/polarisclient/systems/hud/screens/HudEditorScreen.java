@@ -3,27 +3,26 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.screens;
+package polarisdevelopment.polarisclient.systems.hud.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.gui.tabs.builtin.HudTab;
-import meteordevelopment.meteorclient.renderer.Renderer2D;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.other.Snapper;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.gui.tabs.builtin.HudTab;
+import polarisdevelopment.polarisclient.renderer.Renderer2D;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.HudRenderer;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.other.Snapper;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import org.lwjgl.glfw.GLFW;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
     private static final Color SPLIT_LINES_COLOR = new Color(255, 255, 255, 75);
@@ -64,7 +63,7 @@ public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
 
         mouseX *= s;
         mouseY *= s;
@@ -93,7 +92,7 @@ public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
 
     @Override
     public void mouseMoved(double mouseX, double mouseY) {
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
 
         mouseX *= s;
         mouseY *= s;
@@ -111,7 +110,7 @@ public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
 
     @Override
     public boolean mouseReleased(double mouseX, double mouseY, int button) {
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
 
         mouseX *= s;
         mouseY *= s;
@@ -134,8 +133,8 @@ public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
             else if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
                 HudElement hovered = getHovered((int) mouseX, (int) mouseY);
 
-                if (hovered != null) mc.setScreen(new HudElementScreen(theme, hovered));
-                else mc.setScreen(new AddHudElementScreen(theme, lastMouseX, lastMouseY));
+                if (hovered != null) MeteorClient.mc.setScreen(new HudElementScreen(theme, hovered));
+                else MeteorClient.mc.setScreen(new AddHudElementScreen(theme, lastMouseX, lastMouseY));
             }
         }
 
@@ -261,7 +260,7 @@ public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         if (!Utils.canUpdate()) renderBackground(matrices);
 
-        double s = mc.getWindow().getScaleFactor();
+        double s = MeteorClient.mc.getWindow().getScaleFactor();
 
         mouseX *= s;
         mouseY *= s;
@@ -342,7 +341,7 @@ public class HudEditorScreen extends WidgetScreen implements Snapper.Container {
     }
 
     public static boolean isOpen() {
-        Screen s = mc.currentScreen;
+        Screen s = MeteorClient.mc.currentScreen;
         return s instanceof HudEditorScreen || s instanceof AddHudElementScreen || s instanceof HudElementPresetsScreen || s instanceof HudElementScreen || s instanceof HudTab.HudScreen;
     }
 

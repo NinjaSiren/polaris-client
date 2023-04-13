@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.containers;
+package polarisdevelopment.polarisclient.gui.widgets.containers;
 
-import meteordevelopment.meteorclient.gui.utils.Cell;
+import polarisdevelopment.polarisclient.gui.utils.Cell;
 
 public class WHorizontalList extends WContainer {
     public double spacing = 3;

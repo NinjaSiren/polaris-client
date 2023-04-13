@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.utils;
+package polarisdevelopment.polarisclient.gui.utils;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.systems.hud.elements.TextHud;
-import meteordevelopment.meteorclient.utils.misc.MeteorStarscript;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.systems.hud.elements.TextHud;
+import polarisdevelopment.polarisclient.utils.misc.MeteorStarscript;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import meteordevelopment.starscript.compiler.Parser;
 
 import java.util.ArrayList;

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.commands;
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import baritone.api.BaritoneAPI;
 import baritone.api.pathing.goals.GoalXZ;
@@ -12,17 +12,17 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import meteordevelopment.meteorclient.systems.commands.Command;
-import meteordevelopment.meteorclient.systems.commands.Commands;
-import meteordevelopment.meteorclient.systems.commands.arguments.ModuleArgumentType;
-import meteordevelopment.meteorclient.systems.commands.arguments.PlayerArgumentType;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.misc.swarm.Swarm;
-import meteordevelopment.meteorclient.systems.modules.misc.swarm.SwarmConnection;
-import meteordevelopment.meteorclient.systems.modules.misc.swarm.SwarmWorker;
-import meteordevelopment.meteorclient.systems.modules.world.InfinityMiner;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.systems.commands.Commands;
+import polarisdevelopment.polarisclient.systems.commands.arguments.ModuleArgumentType;
+import polarisdevelopment.polarisclient.systems.commands.arguments.PlayerArgumentType;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.misc.swarm.Swarm;
+import polarisdevelopment.polarisclient.systems.modules.misc.swarm.SwarmConnection;
+import polarisdevelopment.polarisclient.systems.modules.misc.swarm.SwarmWorker;
+import polarisdevelopment.polarisclient.systems.modules.world.InfinityMiner;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.argument.BlockStateArgument;
 import net.minecraft.command.argument.BlockStateArgumentType;

@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils;
+package polarisdevelopment.polarisclient.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.widgets.pressable;
+package polarisdevelopment.polarisclient.gui.widgets.pressable;
 
-import meteordevelopment.meteorclient.gui.renderer.packer.GuiTexture;
+import polarisdevelopment.polarisclient.gui.renderer.packer.GuiTexture;
 
 public abstract class WButton extends WPressable {
     protected String text;

@@ -3,32 +3,31 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
-import meteordevelopment.meteorclient.gui.widgets.WLabel;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WCheckbox;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WMinus;
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.proxies.Proxies;
-import meteordevelopment.meteorclient.systems.proxies.Proxy;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderer;
+import polarisdevelopment.polarisclient.gui.widgets.WLabel;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WCheckbox;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WMinus;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.proxies.Proxies;
+import polarisdevelopment.polarisclient.systems.proxies.Proxy;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.util.tinyfd.TinyFileDialogs;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class ProxiesScreen extends WindowScreen {
     private final List<WCheckbox> checkboxes = new ArrayList<>();
@@ -48,7 +47,7 @@ public class ProxiesScreen extends WindowScreen {
 
         // New
         WButton newBtn = l.add(theme.button("New")).expandX().widget();
-        newBtn.action = () -> mc.setScreen(new EditProxyScreen(theme, null, this::reload));
+        newBtn.action = () -> MeteorClient.mc.setScreen(new EditProxyScreen(theme, null, this::reload));
 
         // Import
         PointerBuffer filters = BufferUtils.createPointerBuffer(1);
@@ -63,7 +62,7 @@ public class ProxiesScreen extends WindowScreen {
             String selectedFile = TinyFileDialogs.tinyfd_openFileDialog("Import Proxies", null, filters, null, false);
             if (selectedFile != null) {
                 File file = new File(selectedFile);
-                mc.setScreen(new ProxiesImportScreen(theme, file));
+                MeteorClient.mc.setScreen(new ProxiesImportScreen(theme, file));
             }
         };
     }
@@ -97,7 +96,7 @@ public class ProxiesScreen extends WindowScreen {
             ipList.add(theme.label(Integer.toString(proxy.port.get())));
 
             WButton edit = table.add(theme.button(GuiRenderer.EDIT)).widget();
-            edit.action = () -> mc.setScreen(new EditProxyScreen(theme, proxy, this::reload));
+            edit.action = () -> MeteorClient.mc.setScreen(new EditProxyScreen(theme, proxy, this::reload));
 
             WMinus remove = table.add(theme.minus()).widget();
             remove.action = () -> {

@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin.indigo;
+package polarisdevelopment.polarisclient.mixin.indigo;
 
-import meteordevelopment.meteorclient.systems.modules.render.Xray;
+import polarisdevelopment.polarisclient.systems.modules.render.Xray;
 import net.fabricmc.fabric.impl.client.indigo.renderer.mesh.MutableQuadViewImpl;
 import net.fabricmc.fabric.impl.client.indigo.renderer.render.AbstractQuadRenderer;
 import net.fabricmc.fabric.impl.client.indigo.renderer.render.BlockRenderInfo;

@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.meteor;
+package polarisdevelopment.polarisclient.events.meteor;
 
-import meteordevelopment.meteorclient.events.Cancellable;
-import meteordevelopment.meteorclient.utils.misc.input.KeyAction;
+import polarisdevelopment.polarisclient.events.Cancellable;
+import polarisdevelopment.polarisclient.utils.misc.input.KeyAction;
 
 public class MouseButtonEvent extends Cancellable {
     private static final MouseButtonEvent INSTANCE = new MouseButtonEvent();

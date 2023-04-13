@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.network;
+package polarisdevelopment.polarisclient.utils.network;
 
-import meteordevelopment.meteorclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.PreInit;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

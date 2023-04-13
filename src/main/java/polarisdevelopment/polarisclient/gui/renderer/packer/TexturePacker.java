@@ -3,16 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer.packer;
+package polarisdevelopment.polarisclient.gui.renderer.packer;
 
 import com.mojang.blaze3d.platform.TextureUtil;
-import meteordevelopment.meteorclient.utils.render.ByteTexture;
+import polarisdevelopment.polarisclient.utils.render.ByteTexture;
 import net.minecraft.util.Identifier;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBImage;
 import org.lwjgl.stb.STBImageResize;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,8 +23,6 @@ import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-
 public class TexturePacker {
     private static final int maxWidth = 2048;
 
@@ -31,7 +30,7 @@ public class TexturePacker {
 
     public GuiTexture add(Identifier id) {
         try {
-            InputStream in = mc.getResourceManager().getResource(id).get().getInputStream();
+            InputStream in = MeteorClient.mc.getResourceManager().getResource(id).get().getInputStream();
             GuiTexture texture = new GuiTexture();
 
             try (MemoryStack stack = MemoryStack.stackPush()) {

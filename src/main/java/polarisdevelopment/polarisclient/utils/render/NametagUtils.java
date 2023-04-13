@@ -3,16 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.client.util.math.MatrixStack;
 import org.joml.Matrix4f;
 import org.joml.Vector3d;
 import org.joml.Vector4f;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class NametagUtils {
     private static final Vector4f vec4 = new Vector4f();
@@ -30,11 +29,11 @@ public class NametagUtils {
         model = new Matrix4f(matrices.peek().getPositionMatrix());
         NametagUtils.projection = projection;
 
-        Utils.set(camera, mc.gameRenderer.getCamera().getPos());
+        Utils.set(camera, MeteorClient.mc.gameRenderer.getCamera().getPos());
         cameraNegated.set(camera);
         cameraNegated.negate();
 
-        windowScale = mc.getWindow().calculateScaleFactor(1, false);
+        windowScale = MeteorClient.mc.getWindow().calculateScaleFactor(1, false);
     }
 
     public static boolean to2D(Vector3d pos, double scale) {
@@ -55,12 +54,12 @@ public class NametagUtils {
         if (pmMat4.w <= 0.0f) return false;
 
         toScreen(pmMat4);
-        double x = pmMat4.x * mc.getWindow().getFramebufferWidth();
-        double y = pmMat4.y * mc.getWindow().getFramebufferHeight();
+        double x = pmMat4.x * MeteorClient.mc.getWindow().getFramebufferWidth();
+        double y = pmMat4.y * MeteorClient.mc.getWindow().getFramebufferHeight();
 
         if (Double.isInfinite(x) || Double.isInfinite(y)) return false;
 
-        pos.set(x / windowScale, mc.getWindow().getFramebufferHeight() - y / windowScale, pmMat4.z);
+        pos.set(x / windowScale, MeteorClient.mc.getWindow().getFramebufferHeight() - y / windowScale, pmMat4.z);
         return true;
     }
 

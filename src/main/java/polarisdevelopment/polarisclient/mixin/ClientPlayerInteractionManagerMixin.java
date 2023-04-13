@@ -3,18 +3,19 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.DropItemsEvent;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.DropItemsEvent;
 import meteordevelopment.meteorclient.events.entity.player.*;
-import meteordevelopment.meteorclient.mixininterface.IClientPlayerInteractionManager;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.misc.InventoryTweaks;
-import meteordevelopment.meteorclient.systems.modules.player.BreakDelay;
-import meteordevelopment.meteorclient.systems.modules.player.Reach;
-import meteordevelopment.meteorclient.utils.player.Rotations;
-import meteordevelopment.meteorclient.utils.world.BlockUtils;
+import polarisdevelopment.polarisclient.events.entity.player.*;
+import polarisdevelopment.polarisclient.mixininterface.IClientPlayerInteractionManager;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.misc.InventoryTweaks;
+import polarisdevelopment.polarisclient.systems.modules.player.BreakDelay;
+import polarisdevelopment.polarisclient.systems.modules.player.Reach;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.utils.world.BlockUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;

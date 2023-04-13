@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.utils.misc.MyPotion;
+import polarisdevelopment.polarisclient.utils.misc.MyPotion;
 
 import java.util.function.Consumer;
 

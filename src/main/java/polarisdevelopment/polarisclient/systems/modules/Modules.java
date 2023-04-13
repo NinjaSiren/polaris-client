@@ -3,41 +3,47 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules;
+package polarisdevelopment.polarisclient.systems.modules;
 
 import com.google.common.collect.Ordering;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Lifecycle;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.game.GameJoinedEvent;
-import meteordevelopment.meteorclient.events.game.GameLeftEvent;
-import meteordevelopment.meteorclient.events.game.OpenScreenEvent;
-import meteordevelopment.meteorclient.events.meteor.ActiveModulesChangedEvent;
-import meteordevelopment.meteorclient.events.meteor.KeyEvent;
-import meteordevelopment.meteorclient.events.meteor.ModuleBindChangedEvent;
-import meteordevelopment.meteorclient.events.meteor.MouseButtonEvent;
-import meteordevelopment.meteorclient.settings.Setting;
-import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.game.GameJoinedEvent;
+import polarisdevelopment.polarisclient.events.game.GameLeftEvent;
+import polarisdevelopment.polarisclient.events.game.OpenScreenEvent;
+import polarisdevelopment.polarisclient.events.meteor.ActiveModulesChangedEvent;
+import polarisdevelopment.polarisclient.events.meteor.KeyEvent;
+import polarisdevelopment.polarisclient.events.meteor.ModuleBindChangedEvent;
+import polarisdevelopment.polarisclient.events.meteor.MouseButtonEvent;
+import polarisdevelopment.polarisclient.settings.Setting;
+import polarisdevelopment.polarisclient.settings.SettingGroup;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
 import meteordevelopment.meteorclient.systems.modules.combat.*;
 import meteordevelopment.meteorclient.systems.modules.misc.*;
-import meteordevelopment.meteorclient.systems.modules.misc.swarm.Swarm;
+import polarisdevelopment.polarisclient.systems.modules.combat.*;
+import polarisdevelopment.polarisclient.systems.modules.misc.*;
+import polarisdevelopment.polarisclient.systems.modules.misc.swarm.Swarm;
 import meteordevelopment.meteorclient.systems.modules.movement.*;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.ElytraFly;
-import meteordevelopment.meteorclient.systems.modules.movement.speed.Speed;
+import polarisdevelopment.polarisclient.systems.modules.movement.*;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.ElytraFly;
+import polarisdevelopment.polarisclient.systems.modules.movement.speed.Speed;
 import meteordevelopment.meteorclient.systems.modules.player.*;
 import meteordevelopment.meteorclient.systems.modules.render.*;
-import meteordevelopment.meteorclient.systems.modules.render.marker.Marker;
-import meteordevelopment.meteorclient.systems.modules.render.blockesp.BlockESP;
-import meteordevelopment.meteorclient.systems.modules.world.Timer;
+import polarisdevelopment.polarisclient.systems.modules.player.*;
+import polarisdevelopment.polarisclient.systems.modules.render.*;
+import polarisdevelopment.polarisclient.systems.modules.render.marker.Marker;
+import polarisdevelopment.polarisclient.systems.modules.render.blockesp.BlockESP;
+import polarisdevelopment.polarisclient.systems.modules.world.*;
 import meteordevelopment.meteorclient.systems.modules.world.*;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
-import meteordevelopment.meteorclient.utils.misc.ValueComparableMap;
-import meteordevelopment.meteorclient.utils.misc.input.Input;
-import meteordevelopment.meteorclient.utils.misc.input.KeyAction;
+import polarisdevelopment.polarisclient.systems.modules.world.Timer;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.misc.ValueComparableMap;
+import polarisdevelopment.polarisclient.utils.misc.input.Input;
+import polarisdevelopment.polarisclient.utils.misc.input.KeyAction;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.nbt.NbtCompound;
@@ -58,8 +64,6 @@ import java.io.File;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Modules extends System<Modules> {
     public static final ModuleRegistry REGISTRY = new ModuleRegistry();
@@ -264,7 +268,7 @@ public class Modules extends System<Modules> {
     }
 
     private void onAction(boolean isKey, int value, boolean isPress) {
-        if (mc.currentScreen == null && !Input.isKeyPressed(GLFW.GLFW_KEY_F3)) {
+        if (MeteorClient.mc.currentScreen == null && !Input.isKeyPressed(GLFW.GLFW_KEY_F3)) {
             for (Module module : moduleInstances.values()) {
                 if (module.keybind.matches(isKey, value) && (isPress || module.toggleOnBindRelease)) {
                     module.toggle();

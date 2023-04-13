@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render.color;
+package polarisdevelopment.polarisclient.utils.render.color;
 
 public class RainbowColor extends Color {
     private double speed;

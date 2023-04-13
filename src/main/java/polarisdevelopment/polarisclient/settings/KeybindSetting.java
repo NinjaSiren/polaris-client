@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.settings;
+package polarisdevelopment.polarisclient.settings;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.meteor.KeyEvent;
-import meteordevelopment.meteorclient.events.meteor.MouseButtonEvent;
-import meteordevelopment.meteorclient.gui.widgets.WKeybind;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.misc.input.KeyAction;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.meteor.KeyEvent;
+import polarisdevelopment.polarisclient.events.meteor.MouseButtonEvent;
+import polarisdevelopment.polarisclient.gui.widgets.WKeybind;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.misc.input.KeyAction;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.nbt.NbtCompound;

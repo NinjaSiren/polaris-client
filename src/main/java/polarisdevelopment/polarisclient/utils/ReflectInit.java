@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils;
+package polarisdevelopment.polarisclient.utils;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.addons.AddonManager;
-import meteordevelopment.meteorclient.addons.MeteorAddon;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.addons.AddonManager;
+import polarisdevelopment.polarisclient.addons.MeteorAddon;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 

@@ -3,22 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render.prompts;
+package polarisdevelopment.polarisclient.utils.render.prompts;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.GuiThemes;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
-import meteordevelopment.meteorclient.gui.widgets.pressable.WCheckbox;
-import meteordevelopment.meteorclient.systems.config.Config;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.GuiThemes;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WHorizontalList;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WButton;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.WCheckbox;
+import polarisdevelopment.polarisclient.systems.config.Config;
 import net.minecraft.client.gui.screen.Screen;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class YesNoPrompt {
     private final GuiTheme theme;
@@ -32,7 +31,7 @@ public class YesNoPrompt {
     private Runnable onNo = () -> {};
 
     private YesNoPrompt() {
-        this(GuiThemes.get(), mc.currentScreen);
+        this(GuiThemes.get(), MeteorClient.mc.currentScreen);
     }
 
     private YesNoPrompt(GuiTheme theme, Screen parent) {
@@ -83,10 +82,10 @@ public class YesNoPrompt {
         if (Config.get().dontShowAgainPrompts.contains(id)) return;
 
         if (!RenderSystem.isOnRenderThread()) {
-            RenderSystem.recordRenderCall(() -> mc.setScreen(new PromptScreen(theme)));
+            RenderSystem.recordRenderCall(() -> MeteorClient.mc.setScreen(new PromptScreen(theme)));
         }
         else {
-            mc.setScreen(new PromptScreen(theme));
+            MeteorClient.mc.setScreen(new PromptScreen(theme));
         }
     }
 

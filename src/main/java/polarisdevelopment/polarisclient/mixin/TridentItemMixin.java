@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.TridentBoost;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.TridentBoost;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -20,19 +20,18 @@ import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 @Mixin(TridentItem.class)
 public class TridentItemMixin {
     @Inject(method = "onStoppedUsing", at = @At("HEAD"))
     private void onStoppedUsingHead(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo info) {
-        if (user == mc.player) Utils.isReleasingTrident = true;
+        if (user == MeteorClient.mc.player) Utils.isReleasingTrident = true;
     }
 
     @Inject(method = "onStoppedUsing", at = @At("TAIL"))
     private void onStoppedUsingTail(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfo info) {
-        if (user == mc.player) Utils.isReleasingTrident = false;
+        if (user == MeteorClient.mc.player) Utils.isReleasingTrident = false;
     }
 
     @ModifyArgs(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addVelocity(DDD)V"))
@@ -48,13 +47,13 @@ public class TridentItemMixin {
     private boolean isInWaterUse(PlayerEntity playerEntity) {
         TridentBoost tridentBoost = Modules.get().get(TridentBoost.class);
 
-        return tridentBoost.allowOutOfWater() || mc.player.isTouchingWaterOrRain();
+        return tridentBoost.allowOutOfWater() || MeteorClient.mc.player.isTouchingWaterOrRain();
     }
 
     @Redirect(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;isTouchingWaterOrRain()Z"))
     private boolean isInWaterPostUse(PlayerEntity playerEntity) {
         TridentBoost tridentBoost = Modules.get().get(TridentBoost.class);
 
-        return tridentBoost.allowOutOfWater() || mc.player.isTouchingWaterOrRain();
+        return tridentBoost.allowOutOfWater() || MeteorClient.mc.player.isTouchingWaterOrRain();
     }
 }

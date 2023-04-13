@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer;
+package polarisdevelopment.polarisclient.gui.renderer;
 
-import meteordevelopment.meteorclient.utils.misc.Pool;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.misc.Pool;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 
 public abstract class GuiRenderOperation<T extends GuiRenderOperation<T>> {
     protected double x, y;

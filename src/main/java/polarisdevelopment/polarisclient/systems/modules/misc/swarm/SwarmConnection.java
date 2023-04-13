@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.misc.swarm;
+package polarisdevelopment.polarisclient.systems.modules.misc.swarm;
 
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

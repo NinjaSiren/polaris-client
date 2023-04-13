@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.misc.swarm;
+package polarisdevelopment.polarisclient.systems.modules.misc.swarm;
 
 import baritone.api.BaritoneAPI;
-import meteordevelopment.meteorclient.systems.commands.Commands;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.systems.commands.Commands;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import net.minecraft.block.Block;
 
 import java.io.DataInputStream;

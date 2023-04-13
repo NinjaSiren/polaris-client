@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer;
+package polarisdevelopment.polarisclient.gui.renderer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static meteordevelopment.meteorclient.utils.Utils.getWindowHeight;
+import static polarisdevelopment.polarisclient.utils.Utils.getWindowHeight;
 import static org.lwjgl.opengl.GL11.glScissor;
 
 public class Scissor {

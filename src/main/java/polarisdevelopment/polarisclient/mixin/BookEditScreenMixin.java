@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import it.unimi.dsi.fastutil.io.FastByteArrayOutputStream;
 import net.minecraft.client.gui.screen.Screen;
@@ -21,6 +21,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -28,8 +29,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 @Mixin(BookEditScreen.class)
 public abstract class BookEditScreenMixin extends Screen {
@@ -63,9 +62,9 @@ public abstract class BookEditScreenMixin extends Screen {
                     }
 
                     try {
-                        GLFW.glfwSetClipboardString(mc.getWindow().getHandle(), Base64.getEncoder().encodeToString(bytes.array));
+                        GLFW.glfwSetClipboardString(MeteorClient.mc.getWindow().getHandle(), Base64.getEncoder().encodeToString(bytes.array));
                     } catch (OutOfMemoryError exception) {
-                        GLFW.glfwSetClipboardString(mc.getWindow().getHandle(), exception.toString());
+                        GLFW.glfwSetClipboardString(MeteorClient.mc.getWindow().getHandle(), exception.toString());
                     }
                 })
                 .position(4, 4)
@@ -75,7 +74,7 @@ public abstract class BookEditScreenMixin extends Screen {
 
         addDrawableChild(
                 new ButtonWidget.Builder(Text.literal("Paste"), button -> {
-                    String clipboard = GLFW.glfwGetClipboardString(mc.getWindow().getHandle());
+                    String clipboard = GLFW.glfwGetClipboardString(MeteorClient.mc.getWindow().getHandle());
                     if (clipboard == null) return;
 
                     byte[] bytes;

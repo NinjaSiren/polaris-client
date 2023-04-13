@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.world;
+package polarisdevelopment.polarisclient.events.world;
 
 public class TickEvent {
     public static class Pre extends TickEvent {

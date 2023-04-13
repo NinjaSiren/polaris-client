@@ -3,23 +3,24 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.elytrafly;
+package polarisdevelopment.polarisclient.systems.modules.movement.elytrafly;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.modes.Packet;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.modes.Pitch40;
-import meteordevelopment.meteorclient.systems.modules.movement.elytrafly.modes.Vanilla;
-import meteordevelopment.meteorclient.systems.modules.player.ChestSwap;
-import meteordevelopment.meteorclient.systems.modules.render.Freecam;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.modes.Packet;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.modes.Pitch40;
+import polarisdevelopment.polarisclient.systems.modules.movement.elytrafly.modes.Vanilla;
+import polarisdevelopment.polarisclient.systems.modules.player.ChestSwap;
+import polarisdevelopment.polarisclient.systems.modules.render.Freecam;
+import polarisdevelopment.polarisclient.utils.Utils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

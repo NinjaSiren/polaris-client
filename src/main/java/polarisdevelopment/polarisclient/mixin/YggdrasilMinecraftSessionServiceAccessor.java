@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import com.mojang.authlib.Environment;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;

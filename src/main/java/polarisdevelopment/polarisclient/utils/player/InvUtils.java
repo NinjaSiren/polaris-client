@@ -3,18 +3,17 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.mixininterface.IClientPlayerInteractionManager;
+import polarisdevelopment.polarisclient.mixininterface.IClientPlayerInteractionManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.SlotActionType;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.function.Predicate;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class InvUtils {
     private static final Action ACTION = new Action();
@@ -23,7 +22,7 @@ public class InvUtils {
     // Predicates
 
     public static boolean testInMainHand(Predicate<ItemStack> predicate) {
-        return predicate.test(mc.player.getMainHandStack());
+        return predicate.test(MeteorClient.mc.player.getMainHandStack());
     }
 
     public static boolean testInMainHand(Item... items) {
@@ -34,7 +33,7 @@ public class InvUtils {
     }
 
     public static boolean testInOffHand(Predicate<ItemStack> predicate) {
-        return predicate.test(mc.player.getOffHandStack());
+        return predicate.test(MeteorClient.mc.player.getOffHandStack());
     }
 
     public static boolean testInOffHand(Item... items) {
@@ -56,7 +55,7 @@ public class InvUtils {
         if (testInHands(predicate)) return true;
 
         for (int i = SlotUtils.HOTBAR_START; i < SlotUtils.HOTBAR_END; i++) {
-            ItemStack stack = mc.player.getInventory().getStack(i);
+            ItemStack stack = MeteorClient.mc.player.getInventory().getStack(i);
             if (predicate.test(stack)) return true;
         }
 
@@ -87,11 +86,11 @@ public class InvUtils {
 
     public static FindItemResult findInHotbar(Predicate<ItemStack> isGood) {
         if (testInOffHand(isGood)) {
-            return new FindItemResult(SlotUtils.OFFHAND, mc.player.getOffHandStack().getCount());
+            return new FindItemResult(SlotUtils.OFFHAND, MeteorClient.mc.player.getOffHandStack().getCount());
         }
 
         if (testInMainHand(isGood)) {
-            return new FindItemResult(mc.player.getInventory().selectedSlot, mc.player.getMainHandStack().getCount());
+            return new FindItemResult(MeteorClient.mc.player.getInventory().selectedSlot, MeteorClient.mc.player.getMainHandStack().getCount());
         }
 
         return find(isGood, 0, 8);
@@ -107,17 +106,17 @@ public class InvUtils {
     }
 
     public static FindItemResult find(Predicate<ItemStack> isGood) {
-        if (mc.player == null) return new FindItemResult(0, 0);
-        return find(isGood, 0, mc.player.getInventory().size());
+        if (MeteorClient.mc.player == null) return new FindItemResult(0, 0);
+        return find(isGood, 0, MeteorClient.mc.player.getInventory().size());
     }
 
     public static FindItemResult find(Predicate<ItemStack> isGood, int start, int end) {
-        if (mc.player == null) return new FindItemResult(0, 0);
+        if (MeteorClient.mc.player == null) return new FindItemResult(0, 0);
 
         int slot = -1, count = 0;
 
         for (int i = start; i <= end; i++) {
-            ItemStack stack = mc.player.getInventory().getStack(i);
+            ItemStack stack = MeteorClient.mc.player.getInventory().getStack(i);
 
             if (isGood.test(stack)) {
                 if (slot == -1) slot = i;
@@ -133,7 +132,7 @@ public class InvUtils {
         int slot = -1;
 
         for (int i = 0; i < 9; i++) {
-            ItemStack stack = mc.player.getInventory().getStack(i);
+            ItemStack stack = MeteorClient.mc.player.getInventory().getStack(i);
             if (!stack.isSuitableFor(state)) continue;
 
             float score = stack.getMiningSpeedMultiplier(state);
@@ -151,11 +150,11 @@ public class InvUtils {
     public static boolean swap(int slot, boolean swapBack) {
         if (slot == SlotUtils.OFFHAND) return true;
         if (slot < 0 || slot > 8) return false;
-        if (swapBack && previousSlot == -1) previousSlot = mc.player.getInventory().selectedSlot;
+        if (swapBack && previousSlot == -1) previousSlot = MeteorClient.mc.player.getInventory().selectedSlot;
         else if (!swapBack) previousSlot = -1;
 
-        mc.player.getInventory().selectedSlot = slot;
-        ((IClientPlayerInteractionManager) mc.interactionManager).syncSelected();
+        MeteorClient.mc.player.getInventory().selectedSlot = slot;
+        ((IClientPlayerInteractionManager) MeteorClient.mc.interactionManager).syncSelected();
         return true;
     }
 
@@ -190,7 +189,7 @@ public class InvUtils {
     }
 
     public static void dropHand() {
-        if (!mc.player.currentScreenHandler.getCursorStack().isEmpty()) mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, ScreenHandler.EMPTY_SPACE_SLOT_INDEX, 0, SlotActionType.PICKUP, mc.player);
+        if (!MeteorClient.mc.player.currentScreenHandler.getCursorStack().isEmpty()) MeteorClient.mc.interactionManager.clickSlot(MeteorClient.mc.player.currentScreenHandler.syncId, ScreenHandler.EMPTY_SPACE_SLOT_INDEX, 0, SlotActionType.PICKUP, MeteorClient.mc.player);
     }
 
     public static class Action {
@@ -288,7 +287,7 @@ public class InvUtils {
         // Other
 
         private void run() {
-            boolean hadEmptyCursor = mc.player.currentScreenHandler.getCursorStack().isEmpty();
+            boolean hadEmptyCursor = MeteorClient.mc.player.currentScreenHandler.getCursorStack().isEmpty();
 
             if (type != null && from != -1 && to != -1) {
                click(from);
@@ -306,7 +305,7 @@ public class InvUtils {
             to = -1;
             data = 0;
 
-            if (!isRecursive && hadEmptyCursor && preType == SlotActionType.PICKUP && preTwo && (preFrom != -1 && preTo != -1) && !mc.player.currentScreenHandler.getCursorStack().isEmpty()) {
+            if (!isRecursive && hadEmptyCursor && preType == SlotActionType.PICKUP && preTwo && (preFrom != -1 && preTo != -1) && !MeteorClient.mc.player.currentScreenHandler.getCursorStack().isEmpty()) {
                 isRecursive = true;
                 InvUtils.click().slotId(preFrom);
                 isRecursive = false;
@@ -314,7 +313,7 @@ public class InvUtils {
         }
 
         private void click(int id) {
-            mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, id, data, type, mc.player);
+            MeteorClient.mc.interactionManager.clickSlot(MeteorClient.mc.player.currentScreenHandler.syncId, id, data, type, MeteorClient.mc.player);
         }
     }
 }

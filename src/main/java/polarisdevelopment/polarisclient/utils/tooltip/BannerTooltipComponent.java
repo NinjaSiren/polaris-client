@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.tooltip;
+package polarisdevelopment.polarisclient.utils.tooltip;
 
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.client.font.TextRenderer;
@@ -19,8 +19,7 @@ import net.minecraft.client.render.model.ModelLoader;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.BannerItem;
 import net.minecraft.item.ItemStack;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class BannerTooltipComponent implements MeteorTooltipData, TooltipComponent {
     private final ItemStack banner;
@@ -28,7 +27,7 @@ public class BannerTooltipComponent implements MeteorTooltipData, TooltipCompone
 
     public BannerTooltipComponent(ItemStack banner) {
         this.banner = banner;
-        this.bannerField = mc.getEntityModelLoader().getModelPart(EntityModelLayers.BANNER).getChild("flag");
+        this.bannerField = MeteorClient.mc.getEntityModelLoader().getModelPart(EntityModelLayers.BANNER).getChild("flag");
     }
 
     @Override
@@ -59,7 +58,7 @@ public class BannerTooltipComponent implements MeteorTooltipData, TooltipCompone
         matrices.push();
         matrices.translate(2.5, 8.5, 0);
         matrices.scale(5, 5, 5);
-        VertexConsumerProvider.Immediate immediate = mc.getBufferBuilders().getEntityVertexConsumers();
+        VertexConsumerProvider.Immediate immediate = MeteorClient.mc.getBufferBuilders().getEntityVertexConsumers();
         this.bannerField.pitch = 0f;
         this.bannerField.pivotY = -32f;
         BannerBlockEntityRenderer.renderCanvas(

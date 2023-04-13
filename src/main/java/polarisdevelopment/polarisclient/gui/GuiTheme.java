@@ -3,27 +3,32 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui;
+package polarisdevelopment.polarisclient.gui;
 
-import meteordevelopment.meteorclient.gui.renderer.packer.GuiTexture;
+import polarisdevelopment.polarisclient.gui.renderer.packer.GuiTexture;
 import meteordevelopment.meteorclient.gui.screens.*;
-import meteordevelopment.meteorclient.gui.tabs.TabScreen;
-import meteordevelopment.meteorclient.gui.utils.CharFilter;
-import meteordevelopment.meteorclient.gui.utils.SettingsWidgetFactory;
-import meteordevelopment.meteorclient.gui.utils.WindowConfig;
+import polarisdevelopment.polarisclient.gui.screens.*;
+import polarisdevelopment.polarisclient.gui.tabs.TabScreen;
+import polarisdevelopment.polarisclient.gui.utils.CharFilter;
+import polarisdevelopment.polarisclient.gui.utils.SettingsWidgetFactory;
+import polarisdevelopment.polarisclient.gui.utils.WindowConfig;
 import meteordevelopment.meteorclient.gui.widgets.*;
 import meteordevelopment.meteorclient.gui.widgets.containers.*;
 import meteordevelopment.meteorclient.gui.widgets.input.*;
 import meteordevelopment.meteorclient.gui.widgets.pressable.*;
-import meteordevelopment.meteorclient.renderer.Texture;
-import meteordevelopment.meteorclient.renderer.text.TextRenderer;
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.accounts.Account;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.misc.Names;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.gui.widgets.*;
+import polarisdevelopment.polarisclient.gui.widgets.containers.*;
+import polarisdevelopment.polarisclient.gui.widgets.input.*;
+import polarisdevelopment.polarisclient.gui.widgets.pressable.*;
+import polarisdevelopment.polarisclient.renderer.Texture;
+import polarisdevelopment.polarisclient.renderer.text.TextRenderer;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.accounts.Account;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.misc.Names;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;

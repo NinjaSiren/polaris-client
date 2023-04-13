@@ -1,21 +1,25 @@
-package meteordevelopment.meteorclient.utils.render;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
+
+package polarisdevelopment.polarisclient.utils.render;
 
 import com.mojang.blaze3d.platform.TextureUtil;
 import com.mojang.blaze3d.systems.RenderSystem;
-import meteordevelopment.meteorclient.renderer.Texture;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
-import meteordevelopment.meteorclient.utils.network.Http;
+import polarisdevelopment.polarisclient.renderer.Texture;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.network.Http;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBImage;
 import org.lwjgl.system.MemoryStack;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class PlayerHeadTexture extends Texture {
     private boolean needsRotate;
@@ -66,7 +70,7 @@ public class PlayerHeadTexture extends Texture {
 
     public PlayerHeadTexture() {
         try {
-            ByteBuffer data = TextureUtil.readResource(mc.getResourceManager().getResource(new MeteorIdentifier("textures/steve.png")).get().getInputStream());
+            ByteBuffer data = TextureUtil.readResource(MeteorClient.mc.getResourceManager().getResource(new MeteorIdentifier("textures/steve.png")).get().getInputStream());
             data.rewind();
 
             try (MemoryStack stack = MemoryStack.stackPush()) {

@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.game;
+package polarisdevelopment.polarisclient.events.game;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 
 public class SendMessageEvent extends Cancellable {
     private static final SendMessageEvent INSTANCE = new SendMessageEvent();

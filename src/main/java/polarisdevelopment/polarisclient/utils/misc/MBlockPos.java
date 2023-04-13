@@ -3,13 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class MBlockPos {
     private static final BlockPos.Mutable POS = new BlockPos.Mutable();
@@ -56,7 +55,7 @@ public class MBlockPos {
     }
 
     public BlockState getState() {
-        return mc.world.getBlockState(getMcPos());
+        return MeteorClient.mc.world.getBlockState(getMcPos());
     }
 
     @Override

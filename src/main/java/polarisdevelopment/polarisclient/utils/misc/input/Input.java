@@ -3,14 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc.input;
+package polarisdevelopment.polarisclient.utils.misc.input;
 
-import meteordevelopment.meteorclient.gui.GuiKeyEvents;
-import meteordevelopment.meteorclient.utils.misc.CursorStyle;
+import polarisdevelopment.polarisclient.gui.GuiKeyEvents;
+import polarisdevelopment.polarisclient.utils.misc.CursorStyle;
 import net.minecraft.client.option.KeyBinding;
 import org.lwjgl.glfw.GLFW;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class Input {
     private static final boolean[] keys = new boolean[512];
@@ -48,7 +47,7 @@ public class Input {
 
     public static void setCursorStyle(CursorStyle style) {
         if (lastCursorStyle != style) {
-            GLFW.glfwSetCursor(mc.getWindow().getHandle(), style.getGlfwCursor());
+            GLFW.glfwSetCursor(MeteorClient.mc.getWindow().getHandle(), style.getGlfwCursor());
             lastCursorStyle = style;
         }
     }

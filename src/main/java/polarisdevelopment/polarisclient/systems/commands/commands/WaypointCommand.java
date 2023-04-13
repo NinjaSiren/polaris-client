@@ -3,15 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.commands;
+package polarisdevelopment.polarisclient.systems.commands.commands;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import meteordevelopment.meteorclient.systems.commands.Command;
-import meteordevelopment.meteorclient.systems.commands.arguments.WaypointArgumentType;
-import meteordevelopment.meteorclient.systems.waypoints.Waypoint;
-import meteordevelopment.meteorclient.systems.waypoints.Waypoints;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.systems.commands.Command;
+import polarisdevelopment.polarisclient.systems.commands.arguments.WaypointArgumentType;
+import polarisdevelopment.polarisclient.systems.waypoints.Waypoint;
+import polarisdevelopment.polarisclient.systems.waypoints.Waypoints;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.Formatting;
 

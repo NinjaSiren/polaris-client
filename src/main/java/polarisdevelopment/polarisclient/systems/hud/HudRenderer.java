@@ -3,21 +3,22 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud;
+package polarisdevelopment.polarisclient.systems.hud;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.meteor.CustomFontChangedEvent;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.meteor.CustomFontChangedEvent;
 import meteordevelopment.meteorclient.renderer.*;
-import meteordevelopment.meteorclient.renderer.text.CustomTextRenderer;
-import meteordevelopment.meteorclient.renderer.text.Font;
-import meteordevelopment.meteorclient.renderer.text.VanillaTextRenderer;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.renderer.*;
+import polarisdevelopment.polarisclient.renderer.text.CustomTextRenderer;
+import polarisdevelopment.polarisclient.renderer.text.Font;
+import polarisdevelopment.polarisclient.renderer.text.VanillaTextRenderer;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;

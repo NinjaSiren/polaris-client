@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.misc;
+package polarisdevelopment.polarisclient.utils.misc;
 
-import meteordevelopment.meteorclient.MeteorClient;
+import polarisdevelopment.polarisclient.MeteorClient;
 import net.minecraft.util.Identifier;
 
 public class MeteorIdentifier extends Identifier {

@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.entity.player;
+package polarisdevelopment.polarisclient.events.entity.player;
 
-import meteordevelopment.meteorclient.events.Cancellable;
+import polarisdevelopment.polarisclient.events.Cancellable;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 

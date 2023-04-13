@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands.arguments;
+package polarisdevelopment.polarisclient.systems.commands.arguments;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -15,12 +15,11 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class PlayerArgumentType implements ArgumentType<PlayerEntity> {
     private static final DynamicCommandExceptionType NO_SUCH_PLAYER = new DynamicCommandExceptionType(name -> Text.literal("Player with name " + name + " doesn't exist."));
@@ -40,7 +39,7 @@ public class PlayerArgumentType implements ArgumentType<PlayerEntity> {
         String argument = reader.readString();
         PlayerEntity playerEntity = null;
 
-        for (PlayerEntity p : mc.world.getPlayers()) {
+        for (PlayerEntity p : MeteorClient.mc.world.getPlayers()) {
             if (p.getEntityName().equalsIgnoreCase(argument)) {
                 playerEntity = p;
                 break;
@@ -53,7 +52,7 @@ public class PlayerArgumentType implements ArgumentType<PlayerEntity> {
 
     @Override
     public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> context, SuggestionsBuilder builder) {
-        return CommandSource.suggestMatching(mc.world.getPlayers().stream().map(PlayerEntity::getEntityName), builder);
+        return CommandSource.suggestMatching(MeteorClient.mc.world.getPlayers().stream().map(PlayerEntity::getEntityName), builder);
     }
 
     @Override

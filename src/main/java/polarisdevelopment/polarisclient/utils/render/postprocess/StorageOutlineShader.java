@@ -1,7 +1,12 @@
-package meteordevelopment.meteorclient.utils.render.postprocess;
+/*
+ * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
+ * Copyright (c) Meteor Development.
+ */
 
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.StorageESP;
+package polarisdevelopment.polarisclient.utils.render.postprocess;
+
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.StorageESP;
 import net.minecraft.entity.Entity;
 
 public class StorageOutlineShader extends PostProcessShader {

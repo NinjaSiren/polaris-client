@@ -3,24 +3,22 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.addons.AddonManager;
-import meteordevelopment.meteorclient.addons.GithubRepo;
-import meteordevelopment.meteorclient.addons.MeteorAddon;
-import meteordevelopment.meteorclient.gui.GuiThemes;
-import meteordevelopment.meteorclient.gui.screens.CommitsScreen;
-import meteordevelopment.meteorclient.utils.network.Http;
-import meteordevelopment.meteorclient.utils.network.MeteorExecutor;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.addons.AddonManager;
+import polarisdevelopment.polarisclient.addons.GithubRepo;
+import polarisdevelopment.polarisclient.addons.MeteorAddon;
+import polarisdevelopment.polarisclient.gui.GuiThemes;
+import polarisdevelopment.polarisclient.gui.screens.CommitsScreen;
+import polarisdevelopment.polarisclient.utils.network.Http;
+import polarisdevelopment.polarisclient.utils.network.MeteorExecutor;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.util.math.MatrixStack;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class TitleScreenCredits {
     private static final int WHITE = Color.fromRGBA(255, 255, 255, 255);
@@ -78,32 +76,32 @@ public class TitleScreenCredits {
 
         int y = 3;
         for (Credit credit : credits) {
-            int x = mc.currentScreen.width - 3 - credit.width;
+            int x = MeteorClient.mc.currentScreen.width - 3 - credit.width;
 
             synchronized (credit.sections) {
                 for (Section section : credit.sections) {
-                    mc.textRenderer.drawWithShadow(matrices, section.text, x, y, section.color);
+                    MeteorClient.mc.textRenderer.drawWithShadow(matrices, section.text, x, y, section.color);
                     x += section.width;
                 }
             }
 
-            y += mc.textRenderer.fontHeight + 2;
+            y += MeteorClient.mc.textRenderer.fontHeight + 2;
         }
     }
 
     public static boolean onClicked(double mouseX, double mouseY) {
         int y = 3;
         for (Credit credit : credits) {
-            int x = mc.currentScreen.width - 3 - credit.width;
+            int x = MeteorClient.mc.currentScreen.width - 3 - credit.width;
 
-            if (mouseX >= x && mouseX <= x + credit.width && mouseY >= y && mouseY <= y + mc.textRenderer.fontHeight + 2) {
+            if (mouseX >= x && mouseX <= x + credit.width && mouseY >= y && mouseY <= y + MeteorClient.mc.textRenderer.fontHeight + 2) {
                 if (credit.addon.getRepo() != null && credit.addon.getCommit() != null) {
-                    mc.setScreen(new CommitsScreen(GuiThemes.get(), credit.addon));
+                    MeteorClient.mc.setScreen(new CommitsScreen(GuiThemes.get(), credit.addon));
                     return true;
                 }
             }
 
-            y += mc.textRenderer.fontHeight + 2;
+            y += MeteorClient.mc.textRenderer.fontHeight + 2;
         }
 
         return false;
@@ -131,7 +129,7 @@ public class TitleScreenCredits {
         public Section(String text, int color) {
             this.text = text;
             this.color = color;
-            this.width = mc.textRenderer.getWidth(text);
+            this.width = MeteorClient.mc.textRenderer.getWidth(text);
         }
     }
 

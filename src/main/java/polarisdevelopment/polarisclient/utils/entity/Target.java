@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.entity;
+package polarisdevelopment.polarisclient.utils.entity;
 
 public enum Target {
     Head,

@@ -3,15 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.speed.modes;
+package polarisdevelopment.polarisclient.systems.modules.movement.speed.modes;
 
-import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.Anchor;
-import meteordevelopment.meteorclient.systems.modules.movement.speed.SpeedMode;
-import meteordevelopment.meteorclient.systems.modules.movement.speed.SpeedModes;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.events.entity.player.PlayerMoveEvent;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.Anchor;
+import polarisdevelopment.polarisclient.systems.modules.movement.speed.SpeedMode;
+import polarisdevelopment.polarisclient.systems.modules.movement.speed.SpeedModes;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
 import org.joml.Vector2d;
 
 public class Strafe extends SpeedMode {

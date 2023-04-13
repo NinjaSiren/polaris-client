@@ -3,20 +3,20 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import com.mojang.authlib.GameProfile;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.DamageEvent;
-import meteordevelopment.meteorclient.events.entity.DropItemsEvent;
-import meteordevelopment.meteorclient.events.entity.player.SendMovementPacketsEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.NoSlow;
-import meteordevelopment.meteorclient.systems.modules.movement.Scaffold;
-import meteordevelopment.meteorclient.systems.modules.movement.Sneak;
-import meteordevelopment.meteorclient.systems.modules.movement.Velocity;
-import meteordevelopment.meteorclient.systems.modules.player.Portals;
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.DamageEvent;
+import polarisdevelopment.polarisclient.events.entity.DropItemsEvent;
+import polarisdevelopment.polarisclient.events.entity.player.SendMovementPacketsEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoSlow;
+import polarisdevelopment.polarisclient.systems.modules.movement.Scaffold;
+import polarisdevelopment.polarisclient.systems.modules.movement.Sneak;
+import polarisdevelopment.polarisclient.systems.modules.movement.Velocity;
+import polarisdevelopment.polarisclient.systems.modules.player.Portals;
+import polarisdevelopment.polarisclient.utils.Utils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.AbstractClientPlayerEntity;

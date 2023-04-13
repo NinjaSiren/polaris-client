@@ -3,24 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.entity;
+package polarisdevelopment.polarisclient.utils.entity;
 
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerEntity;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerManager;
-import meteordevelopment.meteorclient.utils.player.PlayerUtils;
-import meteordevelopment.meteorclient.utils.player.Rotations;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerEntity;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerManager;
+import polarisdevelopment.polarisclient.utils.player.PlayerUtils;
+import polarisdevelopment.polarisclient.utils.player.Rotations;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.GameMode;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class TargetUtils {
     private static final List<Entity> ENTITIES = new ArrayList<>();
@@ -38,7 +37,7 @@ public class TargetUtils {
     public static void getList(List<Entity> targetList, Predicate<Entity> isGood, SortPriority sortPriority, int maxCount) {
         targetList.clear();
 
-        for (Entity entity : mc.world.getEntities()) {
+        for (Entity entity : MeteorClient.mc.world.getEntities()) {
             if (entity != null && isGood.test(entity)) targetList.add(entity);
         }
 
@@ -53,7 +52,7 @@ public class TargetUtils {
     public static PlayerEntity getPlayerTarget(double range, SortPriority priority) {
         if (!Utils.canUpdate()) return null;
         return (PlayerEntity) get(entity -> {
-            if (!(entity instanceof PlayerEntity) || entity == mc.player) return false;
+            if (!(entity instanceof PlayerEntity) || entity == MeteorClient.mc.player) return false;
             if (((PlayerEntity) entity).isDead() || ((PlayerEntity) entity).getHealth() <= 0) return false;
             if (!PlayerUtils.isWithin(entity, range)) return false;
             if (!Friends.get().shouldAttack((PlayerEntity) entity)) return false;
@@ -95,11 +94,11 @@ public class TargetUtils {
         else if (e1l && !e2l) return 1;
         else if (!e1l) return -1;
 
-        double e1yaw = Math.abs(Rotations.getYaw(e1) - mc.player.getYaw());
-        double e2yaw = Math.abs(Rotations.getYaw(e2) - mc.player.getYaw());
+        double e1yaw = Math.abs(Rotations.getYaw(e1) - MeteorClient.mc.player.getYaw());
+        double e2yaw = Math.abs(Rotations.getYaw(e2) - MeteorClient.mc.player.getYaw());
 
-        double e1pitch = Math.abs(Rotations.getPitch(e1) - mc.player.getPitch());
-        double e2pitch = Math.abs(Rotations.getPitch(e2) - mc.player.getPitch());
+        double e1pitch = Math.abs(Rotations.getPitch(e1) - MeteorClient.mc.player.getPitch());
+        double e2pitch = Math.abs(Rotations.getPitch(e2) - MeteorClient.mc.player.getPitch());
 
         return Double.compare(e1yaw * e1yaw + e1pitch * e1pitch, e2yaw * e2yaw + e2pitch * e2pitch);
     }

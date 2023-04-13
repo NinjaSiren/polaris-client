@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.render;
+package polarisdevelopment.polarisclient.utils.render;
 
-import meteordevelopment.meteorclient.events.render.Render3DEvent;
-import meteordevelopment.meteorclient.renderer.Renderer3D;
-import meteordevelopment.meteorclient.renderer.ShapeMode;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.Chams;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.events.render.Render3DEvent;
+import polarisdevelopment.polarisclient.renderer.Renderer3D;
+import polarisdevelopment.polarisclient.renderer.ShapeMode;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.Chams;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.*;
@@ -28,8 +28,7 @@ import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector4f;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class WireframeEntityRenderer {
     private static final MatrixStack matrices = new MatrixStack();
@@ -54,7 +53,7 @@ public class WireframeEntityRenderer {
         matrices.push();
         matrices.scale((float) scale, (float) scale, (float) scale);
 
-        EntityRenderer<?> entityRenderer = mc.getEntityRenderDispatcher().getRenderer(entity);
+        EntityRenderer<?> entityRenderer = MeteorClient.mc.getEntityRenderDispatcher().getRenderer(entity);
 
         // LivingEntityRenderer
         if (entityRenderer instanceof LivingEntityRenderer renderer) {

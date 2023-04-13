@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.IAbstractFurnaceScreenHandler;
+import polarisdevelopment.polarisclient.mixininterface.IAbstractFurnaceScreenHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.AbstractFurnaceScreenHandler;
 import org.spongepowered.asm.mixin.Mixin;

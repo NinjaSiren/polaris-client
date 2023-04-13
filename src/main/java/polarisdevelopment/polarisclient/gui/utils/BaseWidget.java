@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.utils;
+package polarisdevelopment.polarisclient.gui.utils;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
 
 public interface BaseWidget {
     GuiTheme getTheme();

@@ -3,12 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.tabs;
+package polarisdevelopment.polarisclient.gui.tabs;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
 import net.minecraft.client.gui.screen.Screen;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public abstract class Tab {
     public final String name;
@@ -20,7 +19,7 @@ public abstract class Tab {
     public void openScreen(GuiTheme theme) {
         TabScreen screen = this.createScreen(theme);
         screen.addDirect(theme.topBar()).top().centerX();
-        mc.setScreen(screen);
+        MeteorClient.mc.setScreen(screen);
     }
 
     public abstract TabScreen createScreen(GuiTheme theme);

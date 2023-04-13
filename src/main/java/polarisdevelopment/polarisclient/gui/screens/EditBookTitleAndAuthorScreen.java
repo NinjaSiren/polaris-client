@@ -3,22 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.WindowScreen;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.WindowScreen;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
 import net.minecraft.client.gui.screen.ingame.BookScreen;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.packet.c2s.play.BookUpdateC2SPacket;
 import net.minecraft.util.Hand;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class EditBookTitleAndAuthorScreen extends WindowScreen {
     private final ItemStack itemStack;
@@ -50,7 +49,7 @@ public class EditBookTitleAndAuthorScreen extends WindowScreen {
             List<String> pages = new ArrayList<>(contents.getPageCount());
             for (int i = 0; i < contents.getPageCount(); i++) pages.add(contents.getPage(i).getString());
 
-            mc.getNetworkHandler().sendPacket(new BookUpdateC2SPacket(hand == Hand.MAIN_HAND ? mc.player.getInventory().selectedSlot : 40, pages, Optional.of(title.get())));
+            MeteorClient.mc.getNetworkHandler().sendPacket(new BookUpdateC2SPacket(hand == Hand.MAIN_HAND ? MeteorClient.mc.player.getInventory().selectedSlot : 40, pages, Optional.of(title.get())));
 
             close();
         };

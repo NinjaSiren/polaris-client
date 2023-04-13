@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud;
+package polarisdevelopment.polarisclient.systems.hud;
 
-import meteordevelopment.meteorclient.settings.Settings;
-import meteordevelopment.meteorclient.systems.hud.screens.HudEditorScreen;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
-import meteordevelopment.meteorclient.utils.other.Snapper;
+import polarisdevelopment.polarisclient.settings.Settings;
+import polarisdevelopment.polarisclient.systems.hud.screens.HudEditorScreen;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.utils.other.Snapper;
 import net.minecraft.nbt.NbtCompound;
 
 public abstract class HudElement implements Snapper.Element, ISerializable<HudElement> {

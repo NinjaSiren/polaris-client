@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.screens;
+package polarisdevelopment.polarisclient.gui.screens;
 
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.widgets.containers.WTable;
-import meteordevelopment.meteorclient.gui.widgets.input.WTextBox;
-import meteordevelopment.meteorclient.systems.accounts.Accounts;
-import meteordevelopment.meteorclient.systems.accounts.types.CrackedAccount;
+import polarisdevelopment.polarisclient.gui.GuiTheme;
+import polarisdevelopment.polarisclient.gui.widgets.containers.WTable;
+import polarisdevelopment.polarisclient.gui.widgets.input.WTextBox;
+import polarisdevelopment.polarisclient.systems.accounts.Accounts;
+import polarisdevelopment.polarisclient.systems.accounts.types.CrackedAccount;
 
 public class AddCrackedAccountScreen extends AddAccountScreen {
     public AddCrackedAccountScreen(GuiTheme theme, AccountsScreen parent) {

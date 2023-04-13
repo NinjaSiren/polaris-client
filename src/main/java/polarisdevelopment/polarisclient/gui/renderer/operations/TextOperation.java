@@ -3,10 +3,10 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.gui.renderer.operations;
+package polarisdevelopment.polarisclient.gui.renderer.operations;
 
-import meteordevelopment.meteorclient.gui.renderer.GuiRenderOperation;
-import meteordevelopment.meteorclient.renderer.text.TextRenderer;
+import polarisdevelopment.polarisclient.gui.renderer.GuiRenderOperation;
+import polarisdevelopment.polarisclient.renderer.text.TextRenderer;
 
 public class TextOperation extends GuiRenderOperation<TextOperation> {
     private String text;

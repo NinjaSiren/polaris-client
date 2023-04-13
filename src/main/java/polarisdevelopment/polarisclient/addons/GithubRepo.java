@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.addons;
+package polarisdevelopment.polarisclient.addons;
 
 public record GithubRepo(String owner, String name, String branch) {
     public GithubRepo(String owner, String name) {

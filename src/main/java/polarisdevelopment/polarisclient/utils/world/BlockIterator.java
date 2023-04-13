@@ -3,13 +3,13 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.world;
+package polarisdevelopment.polarisclient.utils.world;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.Pool;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.Pool;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.block.BlockState;
@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.BiConsumer;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class BlockIterator {
     private static final Pool<Callback> callbackPool = new Pool<>(Callback::new);
@@ -42,17 +40,17 @@ public class BlockIterator {
     private static void onTick(TickEvent.Pre event) {
         if (!Utils.canUpdate()) return;
 
-        int px = mc.player.getBlockX();
-        int py = mc.player.getBlockY();
-        int pz = mc.player.getBlockZ();
+        int px = MeteorClient.mc.player.getBlockX();
+        int py = MeteorClient.mc.player.getBlockY();
+        int pz = MeteorClient.mc.player.getBlockZ();
 
         for (int x = px - hRadius; x <= px + hRadius; x++) {
             for (int z = pz - hRadius; z <= pz + hRadius; z++) {
-                for (int y = Math.max(mc.world.getBottomY(), py - vRadius); y <= py + vRadius; y++) {
-                    if (y > mc.world.getTopY()) break;
+                for (int y = Math.max(MeteorClient.mc.world.getBottomY(), py - vRadius); y <= py + vRadius; y++) {
+                    if (y > MeteorClient.mc.world.getTopY()) break;
 
                     blockPos.set(x, y, z);
-                    BlockState blockState = mc.world.getBlockState(blockPos);
+                    BlockState blockState = MeteorClient.mc.world.getBlockState(blockPos);
 
                     int dx = Math.abs(x - px);
                     int dy = Math.abs(y - py);

@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.asm.transformers;
+package polarisdevelopment.polarisclient.asm.transformers;
 
-import meteordevelopment.meteorclient.asm.AsmTransformer;
-import meteordevelopment.meteorclient.asm.Descriptor;
-import meteordevelopment.meteorclient.asm.MethodInfo;
+import polarisdevelopment.polarisclient.asm.AsmTransformer;
+import polarisdevelopment.polarisclient.asm.Descriptor;
+import polarisdevelopment.polarisclient.asm.MethodInfo;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.ClassNode;

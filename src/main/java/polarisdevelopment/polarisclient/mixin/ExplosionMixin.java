@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.IExplosion;
+import polarisdevelopment.polarisclient.mixininterface.IExplosion;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -15,8 +15,7 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 @Mixin(Explosion.class)
 public class ExplosionMixin implements IExplosion {
@@ -33,7 +32,7 @@ public class ExplosionMixin implements IExplosion {
 
     @Override
     public void set(Vec3d pos, float power, boolean createFire) {
-        this.world = mc.world;
+        this.world = MeteorClient.mc.world;
         this.entity = null;
         this.x = pos.x;
         this.y = pos.y;

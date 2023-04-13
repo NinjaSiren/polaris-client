@@ -3,20 +3,21 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement;
+package polarisdevelopment.polarisclient.systems.modules.movement;
 
 import baritone.api.BaritoneAPI;
 import com.google.common.collect.Streams;
-import meteordevelopment.meteorclient.events.entity.player.CanWalkOnFluidEvent;
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.events.world.CollisionShapeEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.mixin.LivingEntityAccessor;
-import meteordevelopment.meteorclient.mixininterface.IVec3d;
+import polarisdevelopment.polarisclient.events.entity.player.CanWalkOnFluidEvent;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.events.world.CollisionShapeEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.mixin.LivingEntityAccessor;
+import polarisdevelopment.polarisclient.mixininterface.IVec3d;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.entity.EntityUtils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.entity.EntityUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Material;
 import net.minecraft.enchantment.ProtectionEnchantment;

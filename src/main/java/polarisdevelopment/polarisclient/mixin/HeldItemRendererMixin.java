@@ -3,14 +3,14 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
 import com.google.common.base.MoreObjects;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.render.ArmRenderEvent;
-import meteordevelopment.meteorclient.events.render.HeldItemRendererEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.render.HandView;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.render.ArmRenderEvent;
+import polarisdevelopment.polarisclient.events.render.HeldItemRendererEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.render.HandView;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.HeldItemRenderer;
@@ -23,20 +23,18 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-
 @Mixin(HeldItemRenderer.class)
 public abstract class HeldItemRendererMixin {
     @ModifyVariable(method = "renderItem(FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider$Immediate;Lnet/minecraft/client/network/ClientPlayerEntity;I)V", at = @At(value = "STORE", ordinal = 0), index = 6)
     private float modifySwing(float swingProgress) {
         HandView module = Modules.get().get(HandView.class);
-        Hand hand = MoreObjects.firstNonNull(mc.player.preferredHand, Hand.MAIN_HAND);
+        Hand hand = MoreObjects.firstNonNull(MeteorClient.mc.player.preferredHand, Hand.MAIN_HAND);
 
         if (module.isActive()) {
-            if (hand == Hand.OFF_HAND && !mc.player.getOffHandStack().isEmpty()) {
+            if (hand == Hand.OFF_HAND && !MeteorClient.mc.player.getOffHandStack().isEmpty()) {
                 return swingProgress + module.offSwing.get().floatValue();
             }
-            if (hand == Hand.MAIN_HAND && !mc.player.getMainHandStack().isEmpty()) {
+            if (hand == Hand.MAIN_HAND && !MeteorClient.mc.player.getMainHandStack().isEmpty()) {
                 return swingProgress + module.mainSwing.get().floatValue();
             }
         }

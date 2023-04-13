@@ -3,16 +3,16 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.DropItemsEvent;
-import meteordevelopment.meteorclient.events.entity.player.ClipAtLedgeEvent;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.Anchor;
-import meteordevelopment.meteorclient.systems.modules.movement.NoSlow;
-import meteordevelopment.meteorclient.systems.modules.player.SpeedMine;
-import meteordevelopment.meteorclient.utils.world.BlockUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.DropItemsEvent;
+import polarisdevelopment.polarisclient.events.entity.player.ClipAtLedgeEvent;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.Anchor;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoSlow;
+import polarisdevelopment.polarisclient.systems.modules.player.SpeedMine;
+import polarisdevelopment.polarisclient.utils.world.BlockUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -30,8 +30,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin extends LivingEntity {
@@ -63,7 +61,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         float breakSpeed = cir.getReturnValue();
         float breakSpeedMod = (float) (breakSpeed * module.modifier.get());
 
-        HitResult result = mc.crosshairTarget;
+        HitResult result = MeteorClient.mc.crosshairTarget;
         if (result != null && result.getType() == HitResult.Type.BLOCK) {
             BlockPos pos = ((BlockHitResult) result).getBlockPos();
             if (module.modifier.get() < 1 || (BlockUtils.canInstaBreak(pos, breakSpeed) == BlockUtils.canInstaBreak(pos, breakSpeedMod)))

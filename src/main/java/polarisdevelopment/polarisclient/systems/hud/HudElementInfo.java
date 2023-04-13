@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud;
+package polarisdevelopment.polarisclient.systems.hud;
 
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Comparator;

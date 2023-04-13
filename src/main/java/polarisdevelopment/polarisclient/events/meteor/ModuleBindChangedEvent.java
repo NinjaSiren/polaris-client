@@ -3,9 +3,9 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.events.meteor;
+package polarisdevelopment.polarisclient.events.meteor;
 
-import meteordevelopment.meteorclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.systems.modules.Module;
 
 public class ModuleBindChangedEvent {
     private static final ModuleBindChangedEvent INSTANCE = new ModuleBindChangedEvent();

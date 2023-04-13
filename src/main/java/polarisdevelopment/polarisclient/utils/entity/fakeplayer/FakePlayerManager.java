@@ -3,16 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.entity.fakeplayer;
+package polarisdevelopment.polarisclient.utils.entity.fakeplayer;
 
-import meteordevelopment.meteorclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class FakePlayerManager {
     private static final List<FakePlayerEntity> ENTITIES = new ArrayList<>();
@@ -32,7 +31,7 @@ public class FakePlayerManager {
     public static void add(String name, float health, boolean copyInv) {
         if (!Utils.canUpdate()) return;
 
-        FakePlayerEntity fakePlayer = new FakePlayerEntity(mc.player, name, health, copyInv);
+        FakePlayerEntity fakePlayer = new FakePlayerEntity(MeteorClient.mc.player, name, health, copyInv);
         fakePlayer.spawn();
         ENTITIES.add(fakePlayer);
     }

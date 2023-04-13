@@ -3,23 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud.elements;
+package polarisdevelopment.polarisclient.systems.hud.elements;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudElement;
-import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
-import meteordevelopment.meteorclient.systems.hud.HudRenderer;
-import meteordevelopment.meteorclient.utils.player.InvUtils;
-import meteordevelopment.meteorclient.utils.render.color.Color;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.hud.Hud;
+import polarisdevelopment.polarisclient.systems.hud.HudElement;
+import polarisdevelopment.polarisclient.systems.hud.HudElementInfo;
+import polarisdevelopment.polarisclient.systems.hud.HudRenderer;
+import polarisdevelopment.polarisclient.utils.player.InvUtils;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 public class ItemHud extends HudElement {
     public static HudElementInfo<ItemHud> INFO = new HudElementInfo<>(Hud.GROUP, "item", "Displays the item count.", ItemHud::new);
@@ -127,22 +127,22 @@ public class ItemHud extends HudElement {
     private void render(ItemStack itemStack, int x, int y) {
         switch (noneMode.get()) {
             case HideItem -> {
-                mc.getItemRenderer().renderGuiItemIcon(itemStack, x, y);
-                mc.getItemRenderer().renderGuiItemOverlay(mc.textRenderer, itemStack, x, y, Integer.toString(itemStack.getCount()));
+                MeteorClient.mc.getItemRenderer().renderGuiItemIcon(itemStack, x, y);
+                MeteorClient.mc.getItemRenderer().renderGuiItemOverlay(MeteorClient.mc.textRenderer, itemStack, x, y, Integer.toString(itemStack.getCount()));
             }
             case HideCount -> {
                 if (itemStack.getCount() == 0) itemStack.setCount(Integer.MAX_VALUE);
-                mc.getItemRenderer().renderGuiItemIcon(itemStack, x, y);
+                MeteorClient.mc.getItemRenderer().renderGuiItemIcon(itemStack, x, y);
                 if (itemStack.getCount() == Integer.MAX_VALUE) itemStack.setCount(0);
 
                 if (!itemStack.isEmpty()) {
-                    mc.getItemRenderer().renderGuiItemOverlay(mc.textRenderer, itemStack, x, y, Integer.toString(itemStack.getCount()));
+                    MeteorClient.mc.getItemRenderer().renderGuiItemOverlay(MeteorClient.mc.textRenderer, itemStack, x, y, Integer.toString(itemStack.getCount()));
                 }
             }
             case ShowCount -> {
                 if (itemStack.getCount() == 0) itemStack.setCount(Integer.MAX_VALUE);
-                mc.getItemRenderer().renderGuiItemIcon(itemStack, x, y);
-                mc.getItemRenderer().renderGuiItemOverlay(mc.textRenderer, itemStack, x, y, Integer.toString(itemStack.getCount() == Integer.MAX_VALUE ? 0 : itemStack.getCount()));
+                MeteorClient.mc.getItemRenderer().renderGuiItemIcon(itemStack, x, y);
+                MeteorClient.mc.getItemRenderer().renderGuiItemOverlay(MeteorClient.mc.textRenderer, itemStack, x, y, Integer.toString(itemStack.getCount() == Integer.MAX_VALUE ? 0 : itemStack.getCount()));
                 if (itemStack.getCount() == Integer.MAX_VALUE) itemStack.setCount(0);
             }
         }

@@ -3,25 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.meteor.CustomFontChangedEvent;
-import meteordevelopment.meteorclient.gui.WidgetScreen;
-import meteordevelopment.meteorclient.renderer.text.CustomTextRenderer;
-import meteordevelopment.meteorclient.renderer.text.FontFace;
-import meteordevelopment.meteorclient.renderer.text.FontFamily;
-import meteordevelopment.meteorclient.renderer.text.FontInfo;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.render.FontUtils;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.meteor.CustomFontChangedEvent;
+import polarisdevelopment.polarisclient.gui.WidgetScreen;
+import polarisdevelopment.polarisclient.renderer.text.CustomTextRenderer;
+import polarisdevelopment.polarisclient.renderer.text.FontFace;
+import polarisdevelopment.polarisclient.renderer.text.FontFamily;
+import polarisdevelopment.polarisclient.renderer.text.FontInfo;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.render.FontUtils;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Fonts {
     public static final String[] BUILTIN_FONTS = { "JetBrains Mono", "Comfortaa", "Tw Cen MT", "Pixelation" };
@@ -71,8 +69,8 @@ public class Fonts {
             load(Fonts.DEFAULT_FONT);
         }
 
-        if (mc.currentScreen instanceof WidgetScreen && Config.get().customFont.get()) {
-            ((WidgetScreen) mc.currentScreen).invalidate();
+        if (MeteorClient.mc.currentScreen instanceof WidgetScreen && Config.get().customFont.get()) {
+            ((WidgetScreen) MeteorClient.mc.currentScreen).invalidate();
         }
     }
 

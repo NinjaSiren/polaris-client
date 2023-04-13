@@ -3,11 +3,11 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems;
+package polarisdevelopment.polarisclient.systems;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.utils.files.StreamUtils;
-import meteordevelopment.meteorclient.utils.misc.ISerializable;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.utils.files.StreamUtils;
+import polarisdevelopment.polarisclient.utils.misc.ISerializable;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 

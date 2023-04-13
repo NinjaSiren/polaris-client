@@ -3,15 +3,15 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.player;
+package polarisdevelopment.polarisclient.utils.player;
 
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.events.entity.player.SendMovementPacketsEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.systems.config.Config;
-import meteordevelopment.meteorclient.utils.PreInit;
-import meteordevelopment.meteorclient.utils.entity.Target;
-import meteordevelopment.meteorclient.utils.misc.Pool;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.events.entity.player.SendMovementPacketsEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.systems.config.Config;
+import polarisdevelopment.polarisclient.utils.PreInit;
+import polarisdevelopment.polarisclient.utils.entity.Target;
+import polarisdevelopment.polarisclient.utils.misc.Pool;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -21,8 +21,6 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Rotations {
     private static final Pool<Rotation> rotationPool = new Pool<>(Rotation::new);
@@ -82,7 +80,7 @@ public class Rotations {
 
     @EventHandler
     private static void onSendMovementPacketsPre(SendMovementPacketsEvent.Pre event) {
-        if (mc.cameraEntity != mc.player) return;
+        if (MeteorClient.mc.cameraEntity != MeteorClient.mc.player) return;
         sentLastRotation = false;
 
         if (!rotations.isEmpty()) {
@@ -114,17 +112,17 @@ public class Rotations {
     }
 
     private static void setClientRotation(Rotation rotation) {
-        preYaw = mc.player.getYaw();
-        prePitch = mc.player.getPitch();
+        preYaw = MeteorClient.mc.player.getYaw();
+        prePitch = MeteorClient.mc.player.getPitch();
 
-        mc.player.setYaw((float) rotation.yaw);
-        mc.player.setPitch((float) rotation.pitch);
+        MeteorClient.mc.player.setYaw((float) rotation.yaw);
+        MeteorClient.mc.player.setPitch((float) rotation.pitch);
     }
 
     @EventHandler
     private static void onSendMovementPacketsPost(SendMovementPacketsEvent.Post event) {
         if (!rotations.isEmpty()) {
-            if (mc.cameraEntity == mc.player) {
+            if (MeteorClient.mc.cameraEntity == MeteorClient.mc.player) {
                 rotations.get(i - 1).runCallback();
 
                 if (rotations.size() == 1) lastRotation = rotations.get(i - 1);
@@ -152,8 +150,8 @@ public class Rotations {
     }
 
     private static void resetPreRotation() {
-        mc.player.setYaw(preYaw);
-        mc.player.setPitch(prePitch);
+        MeteorClient.mc.player.setYaw(preYaw);
+        MeteorClient.mc.player.setPitch(prePitch);
     }
 
     @EventHandler
@@ -162,21 +160,21 @@ public class Rotations {
     }
 
     public static double getYaw(Entity entity) {
-        return mc.player.getYaw() + MathHelper.wrapDegrees((float) Math.toDegrees(Math.atan2(entity.getZ() - mc.player.getZ(), entity.getX() - mc.player.getX())) - 90f - mc.player.getYaw());
+        return MeteorClient.mc.player.getYaw() + MathHelper.wrapDegrees((float) Math.toDegrees(Math.atan2(entity.getZ() - MeteorClient.mc.player.getZ(), entity.getX() - MeteorClient.mc.player.getX())) - 90f - MeteorClient.mc.player.getYaw());
     }
 
     public static double getYaw(Vec3d pos) {
-        return mc.player.getYaw() + MathHelper.wrapDegrees((float) Math.toDegrees(Math.atan2(pos.getZ() - mc.player.getZ(), pos.getX() - mc.player.getX())) - 90f - mc.player.getYaw());
+        return MeteorClient.mc.player.getYaw() + MathHelper.wrapDegrees((float) Math.toDegrees(Math.atan2(pos.getZ() - MeteorClient.mc.player.getZ(), pos.getX() - MeteorClient.mc.player.getX())) - 90f - MeteorClient.mc.player.getYaw());
     }
 
     public static double getPitch(Vec3d pos) {
-        double diffX = pos.getX() - mc.player.getX();
-        double diffY = pos.getY() - (mc.player.getY() + mc.player.getEyeHeight(mc.player.getPose()));
-        double diffZ = pos.getZ() - mc.player.getZ();
+        double diffX = pos.getX() - MeteorClient.mc.player.getX();
+        double diffY = pos.getY() - (MeteorClient.mc.player.getY() + MeteorClient.mc.player.getEyeHeight(MeteorClient.mc.player.getPose()));
+        double diffZ = pos.getZ() - MeteorClient.mc.player.getZ();
 
         double diffXZ = Math.sqrt(diffX * diffX + diffZ * diffZ);
 
-        return mc.player.getPitch() + MathHelper.wrapDegrees((float) -Math.toDegrees(Math.atan2(diffY, diffXZ)) - mc.player.getPitch());
+        return MeteorClient.mc.player.getPitch() + MathHelper.wrapDegrees((float) -Math.toDegrees(Math.atan2(diffY, diffXZ)) - MeteorClient.mc.player.getPitch());
     }
 
     public static double getPitch(Entity entity, Target target) {
@@ -185,13 +183,13 @@ public class Rotations {
         else if (target == Target.Body) y = entity.getY() + entity.getHeight() / 2;
         else y = entity.getY();
 
-        double diffX = entity.getX() - mc.player.getX();
-        double diffY = y - (mc.player.getY() + mc.player.getEyeHeight(mc.player.getPose()));
-        double diffZ = entity.getZ() - mc.player.getZ();
+        double diffX = entity.getX() - MeteorClient.mc.player.getX();
+        double diffY = y - (MeteorClient.mc.player.getY() + MeteorClient.mc.player.getEyeHeight(MeteorClient.mc.player.getPose()));
+        double diffZ = entity.getZ() - MeteorClient.mc.player.getZ();
 
         double diffXZ = Math.sqrt(diffX * diffX + diffZ * diffZ);
 
-        return mc.player.getPitch() + MathHelper.wrapDegrees((float) -Math.toDegrees(Math.atan2(diffY, diffXZ)) - mc.player.getPitch());
+        return MeteorClient.mc.player.getPitch() + MathHelper.wrapDegrees((float) -Math.toDegrees(Math.atan2(diffY, diffXZ)) - MeteorClient.mc.player.getPitch());
     }
 
     public static double getPitch(Entity entity) {
@@ -199,17 +197,17 @@ public class Rotations {
     }
 
     public static double getYaw(BlockPos pos) {
-        return mc.player.getYaw() + MathHelper.wrapDegrees((float) Math.toDegrees(Math.atan2(pos.getZ() + 0.5 - mc.player.getZ(), pos.getX() + 0.5 - mc.player.getX())) - 90f - mc.player.getYaw());
+        return MeteorClient.mc.player.getYaw() + MathHelper.wrapDegrees((float) Math.toDegrees(Math.atan2(pos.getZ() + 0.5 - MeteorClient.mc.player.getZ(), pos.getX() + 0.5 - MeteorClient.mc.player.getX())) - 90f - MeteorClient.mc.player.getYaw());
     }
 
     public static double getPitch(BlockPos pos) {
-        double diffX = pos.getX() + 0.5 - mc.player.getX();
-        double diffY = pos.getY() + 0.5 - (mc.player.getY() + mc.player.getEyeHeight(mc.player.getPose()));
-        double diffZ = pos.getZ() + 0.5 - mc.player.getZ();
+        double diffX = pos.getX() + 0.5 - MeteorClient.mc.player.getX();
+        double diffY = pos.getY() + 0.5 - (MeteorClient.mc.player.getY() + MeteorClient.mc.player.getEyeHeight(MeteorClient.mc.player.getPose()));
+        double diffZ = pos.getZ() + 0.5 - MeteorClient.mc.player.getZ();
 
         double diffXZ = Math.sqrt(diffX * diffX + diffZ * diffZ);
 
-        return mc.player.getPitch() + MathHelper.wrapDegrees((float) -Math.toDegrees(Math.atan2(diffY, diffXZ)) - mc.player.getPitch());
+        return MeteorClient.mc.player.getPitch() + MathHelper.wrapDegrees((float) -Math.toDegrees(Math.atan2(diffY, diffXZ)) - MeteorClient.mc.player.getPitch());
     }
 
     public static void setCamRotation(double yaw, double pitch) {
@@ -233,7 +231,7 @@ public class Rotations {
         }
 
         public void sendPacket() {
-            mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.LookAndOnGround((float) yaw, (float) pitch, mc.player.isOnGround()));
+            MeteorClient.mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.LookAndOnGround((float) yaw, (float) pitch, MeteorClient.mc.player.isOnGround()));
             runCallback();
         }
 

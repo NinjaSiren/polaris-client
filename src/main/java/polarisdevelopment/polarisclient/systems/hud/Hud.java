@@ -3,28 +3,29 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.hud;
+package polarisdevelopment.polarisclient.systems.hud;
 
-import meteordevelopment.meteorclient.events.meteor.CustomFontChangedEvent;
-import meteordevelopment.meteorclient.events.render.Render2DEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.events.meteor.CustomFontChangedEvent;
+import polarisdevelopment.polarisclient.events.render.Render2DEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
 import meteordevelopment.meteorclient.systems.hud.elements.*;
-import meteordevelopment.meteorclient.systems.hud.screens.HudEditorScreen;
-import meteordevelopment.meteorclient.utils.Utils;
-import meteordevelopment.meteorclient.utils.misc.Keybind;
-import meteordevelopment.meteorclient.utils.misc.NbtUtils;
-import meteordevelopment.meteorclient.utils.render.color.SettingColor;
+import polarisdevelopment.polarisclient.systems.hud.elements.*;
+import polarisdevelopment.polarisclient.systems.hud.screens.HudEditorScreen;
+import polarisdevelopment.polarisclient.utils.Utils;
+import polarisdevelopment.polarisclient.utils.misc.Keybind;
+import polarisdevelopment.polarisclient.utils.misc.NbtUtils;
+import polarisdevelopment.polarisclient.utils.render.color.SettingColor;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import org.jetbrains.annotations.NotNull;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 import java.util.*;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Hud extends System<Hud> implements Iterable<HudElement> {
     public static final HudGroup GROUP = new HudGroup("Meteor");
@@ -214,7 +215,7 @@ public class Hud extends System<Hud> implements Iterable<HudElement> {
     @EventHandler
     private void onRender(Render2DEvent event) {
         if (Utils.isLoading()) return;
-        if (!(active && ((!mc.options.hudHidden && !mc.options.debugEnabled) || HudEditorScreen.isOpen()))) return;
+        if (!(active && ((!MeteorClient.mc.options.hudHidden && !MeteorClient.mc.options.debugEnabled) || HudEditorScreen.isOpen()))) return;
 
         HudRenderer.INSTANCE.begin();
 

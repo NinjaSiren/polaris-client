@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.utils.network;
+package polarisdevelopment.polarisclient.utils.network;
 
 import net.minecraft.network.Packet;
 import org.reflections.Reflections;
@@ -186,7 +186,7 @@ public class PacketUtilsUtil {
         writer.write("import com.google.common.collect.Iterators;\n");
         writer.write("import com.mojang.datafixers.util.Pair;\n");
         writer.write("import com.mojang.serialization.Lifecycle;\n");
-        writer.write("import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;\n");
+        writer.write("import misc.utils.polarisdevelopment.polarisclient.MeteorIdentifier;\n");
         writer.write("import net.minecraft.network.Packet;\n");
         writer.write("import net.minecraft.registry.Registry;\n");
         writer.write("import net.minecraft.registry.RegistryKey;\n");

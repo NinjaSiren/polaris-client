@@ -3,29 +3,29 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.commands;
+package polarisdevelopment.polarisclient.systems.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import meteordevelopment.meteorclient.systems.System;
-import meteordevelopment.meteorclient.systems.Systems;
+import polarisdevelopment.polarisclient.systems.System;
+import polarisdevelopment.polarisclient.systems.Systems;
 import meteordevelopment.meteorclient.systems.commands.commands.*;
 import net.minecraft.client.network.ClientCommandSource;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.command.CommandSource;
 import net.minecraft.registry.BuiltinRegistries;
 import net.minecraft.server.command.CommandManager;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.systems.commands.commands.*;
 
 import java.util.*;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Commands extends System<Commands> {
     public static final CommandRegistryAccess REGISTRY_ACCESS = CommandManager.createRegistryAccess(BuiltinRegistries.createWrapperLookup());
 
     public static final CommandDispatcher<CommandSource> DISPATCHER = new CommandDispatcher<>();
-    public static final CommandSource COMMAND_SOURCE = new ClientCommandSource(null, mc);
+    public static final CommandSource COMMAND_SOURCE = new ClientCommandSource(null, MeteorClient.mc);
 
     private final List<Command> commands = new ArrayList<>();
 

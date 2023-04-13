@@ -3,22 +3,23 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.misc;
+package polarisdevelopment.polarisclient.systems.modules.misc;
 
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import meteordevelopment.meteorclient.events.entity.EntityAddedEvent;
-import meteordevelopment.meteorclient.events.entity.EntityRemovedEvent;
-import meteordevelopment.meteorclient.events.game.GameJoinedEvent;
-import meteordevelopment.meteorclient.events.packets.PacketEvent;
-import meteordevelopment.meteorclient.events.world.TickEvent;
+import polarisdevelopment.polarisclient.events.entity.EntityAddedEvent;
+import polarisdevelopment.polarisclient.events.entity.EntityRemovedEvent;
+import polarisdevelopment.polarisclient.events.game.GameJoinedEvent;
+import polarisdevelopment.polarisclient.events.packets.PacketEvent;
+import polarisdevelopment.polarisclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
-import meteordevelopment.meteorclient.systems.friends.Friends;
-import meteordevelopment.meteorclient.systems.modules.Categories;
-import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.utils.entity.fakeplayer.FakePlayerEntity;
-import meteordevelopment.meteorclient.utils.player.ChatUtils;
+import polarisdevelopment.polarisclient.settings.*;
+import polarisdevelopment.polarisclient.systems.friends.Friends;
+import polarisdevelopment.polarisclient.systems.modules.Categories;
+import polarisdevelopment.polarisclient.systems.modules.Module;
+import polarisdevelopment.polarisclient.utils.entity.fakeplayer.FakePlayerEntity;
+import polarisdevelopment.polarisclient.utils.player.ChatUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -34,8 +35,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
-
-import static meteordevelopment.meteorclient.utils.player.ChatUtils.formatCoords;
 
 public class Notifier extends Module {
     private final SettingGroup sgTotemPops = settings.createGroup("Totem Pops");
@@ -154,7 +153,7 @@ public class Notifier extends Module {
             } else {
                 MutableText text = Text.literal(event.entity.getType().getName().getString()).formatted(Formatting.WHITE);
                 text.append(Text.literal(" has spawned at ").formatted(Formatting.GRAY));
-                text.append(formatCoords(event.entity.getPos()));
+                text.append(ChatUtils.formatCoords(event.entity.getPos()));
                 text.append(Text.literal(".").formatted(Formatting.GRAY));
                 info(text);
             }
@@ -177,7 +176,7 @@ public class Notifier extends Module {
             } else {
                 MutableText text = Text.literal(event.entity.getType().getName().getString()).formatted(Formatting.WHITE);
                 text.append(Text.literal(" has despawned at ").formatted(Formatting.GRAY));
-                text.append(formatCoords(event.entity.getPos()));
+                text.append(ChatUtils.formatCoords(event.entity.getPos()));
                 text.append(Text.literal(".").formatted(Formatting.GRAY));
                 info(text);
             }

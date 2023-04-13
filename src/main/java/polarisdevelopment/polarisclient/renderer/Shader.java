@@ -3,21 +3,20 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.renderer;
+package polarisdevelopment.polarisclient.renderer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import meteordevelopment.meteorclient.MeteorClient;
-import meteordevelopment.meteorclient.utils.misc.MeteorIdentifier;
-import meteordevelopment.meteorclient.utils.render.color.Color;
+import polarisdevelopment.polarisclient.MeteorClient;
+import polarisdevelopment.polarisclient.utils.misc.MeteorIdentifier;
+import polarisdevelopment.polarisclient.utils.render.color.Color;
 import org.apache.commons.io.IOUtils;
 import org.joml.Matrix4f;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 import static org.lwjgl.opengl.GL32C.*;
 
 public class Shader {
@@ -59,7 +58,7 @@ public class Shader {
 
     private String read(String path) {
         try {
-            return IOUtils.toString(mc.getResourceManager().getResource(new MeteorIdentifier("shaders/" + path)).get().getInputStream(), StandardCharsets.UTF_8);
+            return IOUtils.toString(MeteorClient.mc.getResourceManager().getResource(new MeteorIdentifier("shaders/" + path)).get().getInputStream(), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
             return "";

@@ -3,12 +3,12 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.mixin;
+package polarisdevelopment.polarisclient.mixin;
 
-import meteordevelopment.meteorclient.mixininterface.IPlayerInteractEntityC2SPacket;
-import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.modules.movement.NoSlow;
-import meteordevelopment.meteorclient.systems.modules.movement.Sneak;
+import polarisdevelopment.polarisclient.mixininterface.IPlayerInteractEntityC2SPacket;
+import polarisdevelopment.polarisclient.systems.modules.Modules;
+import polarisdevelopment.polarisclient.systems.modules.movement.NoSlow;
+import polarisdevelopment.polarisclient.systems.modules.movement.Sneak;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import org.spongepowered.asm.mixin.Final;
@@ -16,8 +16,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
+import polarisdevelopment.polarisclient.MeteorClient;
 
 @Mixin(PlayerInteractEntityC2SPacket.class)
 public class PlayerInteractEntityC2SPacketMixin implements IPlayerInteractEntityC2SPacket {
@@ -31,7 +30,7 @@ public class PlayerInteractEntityC2SPacketMixin implements IPlayerInteractEntity
 
     @Override
     public Entity getEntity() {
-        return mc.world.getEntityById(entityId);
+        return MeteorClient.mc.world.getEntityById(entityId);
     }
 
     @ModifyVariable(method = "<init>(IZLnet/minecraft/network/packet/c2s/play/PlayerInteractEntityC2SPacket$InteractTypeHandler;)V", at = @At("HEAD"), ordinal = 0, argsOnly = true)

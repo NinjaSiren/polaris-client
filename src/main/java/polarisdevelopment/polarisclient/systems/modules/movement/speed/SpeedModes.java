@@ -3,7 +3,7 @@
  * Copyright (c) Meteor Development.
  */
 
-package meteordevelopment.meteorclient.systems.modules.movement.speed;
+package polarisdevelopment.polarisclient.systems.modules.movement.speed;
 
 public enum SpeedModes {
     Strafe,
