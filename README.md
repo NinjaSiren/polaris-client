@@ -1,20 +1,18 @@
 
 <p align="center">
-<img src="https://meteorclient.com/icon.png" alt="meteor-client-logo" width="15%"/>
+<img src="https://i.imgur.com/dyloU9m.png" alt="polaris-client-logo" width="35%"/>
 </p>
 
-<h1 align="center">Meteor Client</h1>
+<h1 align="center">Polaris Client</h1>
 <p align="center">A Minecraft Fabric Utility Mod for anarchy servers.</p>
 
 <div align="center">
-    <a href="https://discord.gg/bBGQZvd"><img src="https://img.shields.io/discord/689197705683140636?logo=discord" alt="Discord"/></a>
+    <img src="https://img.shields.io/github/last-commit/NinjaSiren/polaris-client" alt="GitHub last commit"/>
+    <img src="https://img.shields.io/github/commit-activity/w/NinjaSiren/polaris-client" alt="GitHub commit activity"/>
+    <img src="https://img.shields.io/github/contributors/NinjaSiren/polaris-client" alt="GitHub contributors"/>
     <br>
-    <img src="https://img.shields.io/github/last-commit/MeteorDevelopment/meteor-client" alt="GitHub last commit"/>
-    <img src="https://img.shields.io/github/commit-activity/w/MeteorDevelopment/meteor-client" alt="GitHub commit activity"/>
-    <img src="https://img.shields.io/github/contributors/MeteorDevelopment/meteor-client" alt="GitHub contributors"/>
-    <br>
-    <img src="https://img.shields.io/github/languages/code-size/MeteorDevelopment/meteor-client" alt="GitHub code size in bytes"/>
-    <img src="https://tokei.rs/b1/github/MeteorDevelopment/meteor-client" alt="GitHub lines of code"/>
+    <img src="https://img.shields.io/github/languages/code-size/NinjaSiren/polaris-client" alt="GitHub code size in bytes"/>
+    <img src="https://tokei.rs/b1/github/NinjaSiren/polaris-client" alt="GitHub lines of code"/>
 </div>
 
 ## Usage
@@ -48,6 +46,7 @@ You will be rewarded with a role on our Discord server, an in-game cape, and an 
 ⚠️ _Make sure to create a Meteor account and link your Discord and Minecraft accounts to fully experience your rewards._ ⚠️
 
 ## Credits
+[Meteor Dev Team](https://github.com/MeteorDevelopment)     
 [Cabaletta](https://github.com/cabaletta) and [WagYourTail](https://github.com/wagyourtail) for [Baritone](https://github.com/cabaletta/baritone)  
 The [Fabric Team](https://github.com/FabricMC) for [Fabric](https://github.com/FabricMC/fabric-loader) and [Yarn](https://github.com/FabricMC/yarn)
 
