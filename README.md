@@ -6,15 +6,6 @@
 <h1 align="center">Polaris Client</h1>
 <p align="center">A Minecraft Fabric Utility Mod for anarchy servers.</p>
 
-<div align="center">
-    <img src="https://img.shields.io/github/last-commit/NinjaSiren/polaris-client" alt="GitHub last commit"/>
-    <img src="https://img.shields.io/github/commit-activity/w/NinjaSiren/polaris-client" alt="GitHub commit activity"/>
-    <img src="https://img.shields.io/github/contributors/NinjaSiren/polaris-client" alt="GitHub contributors"/>
-    <br>
-    <img src="https://img.shields.io/github/languages/code-size/NinjaSiren/polaris-client" alt="GitHub code size in bytes"/>
-    <img src="https://tokei.rs/b1/github/NinjaSiren/polaris-client" alt="GitHub lines of code"/>
-</div>
-
 ## Usage
 
 ### Building
