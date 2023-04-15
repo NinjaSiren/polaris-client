@@ -21,6 +21,7 @@ import meteordevelopment.meteorclient.settings.SettingGroup;
 import meteordevelopment.meteorclient.systems.System;
 import meteordevelopment.meteorclient.systems.Systems;
 import meteordevelopment.meteorclient.systems.modules.combat.*;
+import meteordevelopment.meteorclient.systems.modules.dupes.ItemFrame;
 import meteordevelopment.meteorclient.systems.modules.misc.*;
 import meteordevelopment.meteorclient.systems.modules.misc.swarm.Swarm;
 import meteordevelopment.meteorclient.systems.modules.movement.*;
@@ -84,6 +85,7 @@ public class Modules extends System<Modules> {
     @Override
     public void init() {
         initCombat();
+        initDupes();
         initPlayer();
         initMovement();
         initRender();
@@ -411,6 +413,10 @@ public class Modules extends System<Modules> {
         add(new SelfTrap());
         add(new SelfWeb());
         add(new Surround());
+    }
+
+    private void initDupes() {
+        add(new ItemFrame());
     }
 
     private void initPlayer() {
