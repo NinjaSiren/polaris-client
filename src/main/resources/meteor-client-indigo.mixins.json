@@ -2,9 +2,9 @@
   "required": false,
   "package": "meteordevelopment.meteorclient.mixin.indigo",
   "compatibilityLevel": "JAVA_17",
-  "plugin": "polarisdevelopment.polarisclient.MixinPlugin",
+  "plugin": "meteordevelopment.meteorclient.MixinPlugin",
   "client": [
-    "polarisdevelopment.polarisclient.mixin.indigo.AbstractQuadRendererMixin"
+    "AbstractQuadRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

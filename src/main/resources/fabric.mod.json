@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "name": "Meteor Client",
+  "name": "Polaris Client",
   "id": "meteor-client",
   "version": "${version}",
-  "description": "Based utility mod.",
+  "description": "A private version of Meteor Client Based utility mod.",
   "authors": [
     "MineGame159",
     "squidoodly",
-    "seasnail"
+    "seasnail",
+    "NinjaSiren"
   ],
   "contact": {
     "homepage": "https://meteorclient.com",
@@ -20,7 +21,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "polarisdevelopment.polarisclient.MeteorClient"
+      "meteordevelopment.meteorclient.MeteorClient"
     ]
   },
   "mixins": [

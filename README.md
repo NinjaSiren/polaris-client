@@ -6,6 +6,8 @@
 <h1 align="center">Polaris Client</h1>
 <p align="center">A personal Minecraft Fabric Utility Mod for anarchy servers.</p>
 
+<p align="center">Adds some important modules from Meteor Rejects and other modules in one client!</p>
+
 ## Usage
 
 ### Building
@@ -18,7 +20,7 @@
 The [Fabric Team](https://github.com/FabricMC) for [Fabric](https://github.com/FabricMC/fabric-loader) and [Yarn](https://github.com/FabricMC/yarn)
 
 ## Licensing
-This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). 
+This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 If you use **ANY** code from the source:
 - You must disclose the source code of your modified work and the source code you took from this project. This means you are not allowed to use code from this project (even partially) in a closed-source and/or obfuscated application.
