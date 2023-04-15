@@ -16,7 +16,7 @@
 
 ## Credits
 [Meteor Dev Team](https://github.com/MeteorDevelopment)     
-[AntiCope](https://github.com/AntiCope) for the Meteor Rejects addon
+[AntiCope](https://github.com/AntiCope) for the Meteor Rejects addon    
 [Cabaletta](https://github.com/cabaletta) and [WagYourTail](https://github.com/wagyourtail) for [Baritone](https://github.com/cabaletta/baritone)  
 The [Fabric Team](https://github.com/FabricMC) for [Fabric](https://github.com/FabricMC/fabric-loader) and [Yarn](https://github.com/FabricMC/yarn)
 
