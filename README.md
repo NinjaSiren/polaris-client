@@ -4,7 +4,7 @@
 </p>
 
 <h1 align="center">Polaris Client</h1>
-<p align="center">A personal Minecraft Fabric Utility Mod for anarchy servers.</p>
+<p align="center">A <b>personal</b> Minecraft Fabric Utility Mod for anarchy servers.</p>
 
 <p align="center">Adds some important modules from Meteor Rejects and other modules in one client!</p>
 
