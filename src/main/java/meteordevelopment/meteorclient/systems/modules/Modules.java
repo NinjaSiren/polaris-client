@@ -578,6 +578,7 @@ public class Modules extends System<Modules> {
         add(new Notebot());
         add(new Notifier());
         add(new PacketCanceller());
+        add(new PlayerOnline());
         add(new SoundBlocker());
         add(new Spam());
         add(new ServerSpoof());

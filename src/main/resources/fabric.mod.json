@@ -11,9 +11,9 @@
     "NinjaSiren"
   ],
   "contact": {
-    "homepage": "https://meteorclient.com",
-    "issues": "https://github.com/MeteorDevelopment/meteor-client/issues",
-    "sources": "https://github.com/MeteorDevelopment/meteor-client",
+    "homepage": "https://github.com/NinjaSiren/polaris-client",
+    "issues": "https://github.com/NinjaSiren/polaris-client/issues",
+    "sources": "https://github.com/NinjaSiren/polaris-client",
     "discord": "https://meteorclient.com/discord"
   },
   "license": "GPL-3.0",
