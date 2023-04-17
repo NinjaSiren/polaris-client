@@ -4,7 +4,7 @@
 </p>
 
 <h1 align="center">Polaris Client</h1>
-<p align="center">A personal Minecraft Fabric Utility Mod for anarchy servers.</p>
+<p align="center">A <b>personal</b> Minecraft Fabric Utility Mod for anarchy servers, designed specifically for 6B6T and 8B8T.</p>
 
 <p align="center">Adds some important modules from Meteor Rejects and other modules in one client!</p>
 
@@ -16,6 +16,7 @@
 
 ## Credits
 [Meteor Dev Team](https://github.com/MeteorDevelopment)     
+[AntiCope](https://github.com/AntiCope) for the Meteor Rejects addon    
 [Cabaletta](https://github.com/cabaletta) and [WagYourTail](https://github.com/wagyourtail) for [Baritone](https://github.com/cabaletta/baritone)  
 The [Fabric Team](https://github.com/FabricMC) for [Fabric](https://github.com/FabricMC/fabric-loader) and [Yarn](https://github.com/FabricMC/yarn)
 
