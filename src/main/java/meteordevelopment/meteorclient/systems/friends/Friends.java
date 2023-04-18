@@ -20,9 +20,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Friends extends System<Friends> implements Iterable<Friend> {
     private final List<Friend> friends = new ArrayList<>();
+
+    private final List<String> friendsList = new ArrayList<>();
 
     public Friends() {
         super("friends");
@@ -37,6 +40,7 @@ public class Friends extends System<Friends> implements Iterable<Friend> {
 
         if (!friends.contains(friend)) {
             friends.add(friend);
+            friendsList.add(friend.name);
             save();
 
             return true;
@@ -46,7 +50,7 @@ public class Friends extends System<Friends> implements Iterable<Friend> {
     }
 
     public boolean remove(Friend friend) {
-        if (friends.remove(friend)) {
+        if (friends.remove(friend) && friendsList.remove(friend.name)) {
             save();
             return true;
         }
@@ -68,6 +72,8 @@ public class Friends extends System<Friends> implements Iterable<Friend> {
         return get(player.getEntityName());
     }
 
+    public List<String> list() { return friendsList; }
+
     public Friend get(PlayerListEntry player) {
         return get(player.getProfile().getName());
     }
@@ -78,6 +84,15 @@ public class Friends extends System<Friends> implements Iterable<Friend> {
 
     public boolean isFriend(PlayerListEntry player) {
         return get(player) != null;
+    }
+
+    public boolean isFriend(String name) {
+        for (Friend friend : friends) {
+            if (friend.name.equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean shouldAttack(PlayerEntity player) {
@@ -123,6 +138,7 @@ public class Friends extends System<Friends> implements Iterable<Friend> {
                 : new Friend(name);
 
             friends.add(friend);
+            friendsList.add(friend.name);
         }
 
         Collections.sort(friends);

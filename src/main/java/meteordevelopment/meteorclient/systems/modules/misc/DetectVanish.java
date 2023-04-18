@@ -93,16 +93,12 @@ public class DetectVanish extends Module {
 
                 for (String playerName : completionPlayerCache) {
                     if (Objects.equals(playerName, mc.player.getName().getString())) continue;
-                    if (joinedOrQuit.test(playerName)) {
-                        info("Player joined: " + playerName);
-                    }
+                    if (joinedOrQuit.test(playerName)) info("Player joined: " + playerName);
                 }
 
                 for (String playerName : lastUsernames) {
                     if (Objects.equals(playerName, mc.player.getName().getString())) continue;
-                    if (joinedOrQuit.test(playerName)) {
-                        info("Player left: " + playerName);
-                    }
+                    if (joinedOrQuit.test(playerName)) info("Player left: " + playerName);
                 }
 
                 completionIDs.remove(Integer.valueOf(packet.getCompletionId()));
@@ -129,9 +125,7 @@ public class DetectVanish extends Module {
                 for (UUID uuid : oldPlayers.keySet()) {
                     if (playerCache.containsKey(uuid)) continue;
                     String name = oldPlayers.get(uuid);
-                    if (messageCache.stream().noneMatch(s -> s.contains(name))) {
-                        warning(name + " has gone into vanish.");
-                    }
+                    if (messageCache.stream().noneMatch(s -> s.contains(name))) warning(name + " has gone into vanish.");
                 }
             }
             case RealJoinMessage -> {
